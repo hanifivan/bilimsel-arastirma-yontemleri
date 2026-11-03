@@ -410,6 +410,9 @@ details.ayrinti summary { cursor: pointer; font-weight: 700; color: var(--navy);
 details.ayrinti[open] summary { margin-bottom: .6rem; }
 .sekil-kart svg.sekil[style] { max-width: 420px; }
 
+.as-wrap { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: .4rem; }
+.as-wrap svg { width: 100%; height: auto; display: block; }
+
 </style>
 </head>
 <body>
@@ -1045,8 +1048,15 @@ details.ayrinti[open] summary { margin-bottom: .6rem; }
       <div class="sekil-kart" style="cursor:default">
         <div class="sk-bas">Kural 1: Hata payını yarıya indirmek dört kat kişi ister<small>Kare kök yasası</small></div>
         <svg viewBox="0 0 360 200" class="sekil" role="img" style="max-width:420px"><line x1="20" y1="160" x2="350" y2="160" stroke="#cfd6e4"/><rect x="20" y="26.4" width="54" height="133.6" rx="5" fill="#028090"/><text x="47" y="20.4" font-size="12" font-weight="700" fill="#1E2D5E" text-anchor="middle">±9,8</text><text x="47" y="177" font-size="11" fill="#6b7280" text-anchor="middle">n = 100</text><rect x="109" y="93.2" width="54" height="66.8" rx="5" fill="#028090"/><text x="136" y="87.2" font-size="12" font-weight="700" fill="#1E2D5E" text-anchor="middle">±4,9</text><text x="136" y="177" font-size="11" fill="#6b7280" text-anchor="middle">n = 400</text><rect x="197" y="117.7" width="54" height="42.3" rx="5" fill="#028090"/><text x="224" y="111.7" font-size="12" font-weight="700" fill="#1E2D5E" text-anchor="middle">±3,1</text><text x="224" y="177" font-size="11" fill="#6b7280" text-anchor="middle">n = 1.000</text><rect x="286" y="139.5" width="54" height="20.5" rx="5" fill="#028090"/><text x="313" y="133.5" font-size="12" font-weight="700" fill="#1E2D5E" text-anchor="middle">±1,5</text><text x="313" y="177" font-size="11" fill="#6b7280" text-anchor="middle">n = 4.000</text><text x="180" y="194" font-size="10.5" fill="#6b7280" text-anchor="middle">hata payı (puan), %95 güven, p = 0,5</text></svg>
-        <div class="sk-not">hata payı = 1,96 × √(0,25 / n)</div>
-        <p>100 kişiden 400 kişiye çıkınca hata payı ±9,8'den ±4,9'a iner; 1.000'den 4.000'e çıkınca ±3,1'den ±1,5'e. Her seferinde dört kat görüşme, yarı hata payı. Eğri 1.000 civarında yatıklaşır: ulusal anketlerin çoğu bu yüzden 1.000 ile 1.500 kişidir; daha fazlası pahalı, kazancı küçüktür.</p>
+        <div class="sk-not">hata payı = 1,96 × √(0,25 / n): n karekökün içinde</div>
+        <p><strong>Ne diyor?</strong> Hata payı, görüştüğünüz kişi sayısının kendisiyle değil, <em>kareköküyle</em> küçülür. Kişi sayısını 4 katına çıkarırsanız karekökü 2 katına çıkar, hata payı yarıya iner. 2 katına çıkarırsanız hata payı yalnız yüzde 30 azalır.</p>
+        <div class="table-scroll"><table><thead><tr><th>Görüşme (n)</th><th>√n</th><th>Hata payı</th><th>Anlamı</th></tr></thead><tbody>
+          <tr><td>100</td><td>10</td><td>±9,8</td><td>"AB'yi %45 destekliyor" dediğinizde gerçek %35 ile %55 arasında olabilir: hemen hiçbir şey söylemiyor.</td></tr>
+          <tr><td>400</td><td>20</td><td>±4,9</td><td>%40 ile %50 arası: kaba bir fikir.</td></tr>
+          <tr><td>1.000</td><td>32</td><td>±3,1</td><td>%42 ile %48 arası: ulusal anketlerin standardı.</td></tr>
+          <tr><td>4.000</td><td>63</td><td>±1,5</td><td>%43,5 ile %46,5 arası: 3.000 görüşme daha, kazanç yalnız 1,6 puan.</td></tr>
+        </tbody></table></div>
+        <p><strong>Neden önemli?</strong> Başta eklediğiniz her görüşme çok kazandırır, sonra kazanç hızla azalır; masraf ise her görüşmede aynı artar. Bu yüzden Türkiye'de de dünyada da ulusal kamuoyu anketleri 1.000 ile 1.500 kişide durur: 1.000 kişi 85 milyonu ±3 puanla temsil eder, 4.000 kişi için dört kat bütçe gerekir ama hata payı yalnız yarıya iner. Seçim gibi kıl payı sonuçlarda ±1 isteniyorsa bedeli budur: yaklaşık 9.600 görüşme.</p>
       </div>
       <div class="sekil-kart" style="cursor:default">
         <div class="sk-bas">Kural 2: Evren büyüse de gereken sayı değişmez<small>Mahalle, il, ülke</small></div>
@@ -1055,7 +1065,7 @@ details.ayrinti[open] summary { margin-bottom: .6rem; }
         <p>"Evrenin %10'u alınmalı" diye bir kural yoktur. Hata payı örneklemin <em>mutlak</em> büyüklüğüne bağlıdır, evrene oranına değil. Çorbanın tadına bakmak için kazanın büyüklüğü değil, iyi karıştırılmış olması önemlidir. Yalnız evren küçükse (birkaç bin) sonlu evren düzeltmesi sayıyı biraz düşürür.</p>
       </div>
     </div>
-    <div class="odak-surum"><div class="g">İki kural</div><ul><li><strong>Kare kök yasası:</strong> hata payını yarıya indirmek için 4 kat kişi. n = 100: ±9,8; 400: ±4,9; 1.000: ±3,1; 4.000: ±1,5.</li><li><strong>Evren büyüklüğü önemsiz:</strong> ±3 için mahalle 880, Van 1.067, Türkiye 1.068. "%10 kuralı" yoktur.</li></ul></div>
+    <div class="odak-surum"><div class="g">İki kural</div><ul><li><strong>Kare kök yasası:</strong> hata payı n ile değil √n ile küçülür. 4 kat kişi = yarı hata payı; 2 kat kişi = yüzde 30 daha az hata. n = 100: ±9,8; 400: ±4,9; 1.000: ±3,1; 4.000: ±1,5.</li><li>Ulusal anketler 1.000-1.500'de durur: sonrası pahalı, kazancı küçük. ±1 için 9.600 görüşme.</li><li><strong>Evren büyüklüğü önemsiz:</strong> ±3 için mahalle 880, Van 1.067, Türkiye 1.068. "%10 kuralı" yoktur.</li></ul></div>
 
     <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Nüfusu yazın: kaç anket gerekir?</h4>
     <p>Araştıracağınız yerin nüfusunu (evren büyüklüğü N) yazın; %95 güven düzeyinde, en kötü durum varsayımıyla (p = 0,5) farklı hata payları için gereken anket sayısını görün. Hazır düğmelerle il, üniversite ya da mahalle ölçeğini deneyin.</p>
@@ -1083,21 +1093,19 @@ details.ayrinti[open] summary { margin-bottom: .6rem; }
     </div>
     <div class="odak-surum"><div class="g">Üç durum</div><ul><li>Olasılıklı: formül.</li><li>Olasılıksız: formül yok; benzer çalışmalar, kararın önemi, kaynaklar; nitelde doygunluk.</li><li>Evren benzerse az, çok farklıysa çok kişi.</li></ul></div>
 
-    <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Simülasyon: aynı anketi 500 kez yapsaydık</h4>
-    <p>Diyelim Türkiye'de 18 yaş üstü nüfusun AB üyeliğine desteği gerçekte %<span id="as-p-txt">45</span>. Bunu bilmiyorsunuz; n kişilik bir anketle tahmin edeceksiniz. Aynı anketi 500 kez tekrarlasaydık tahminler nasıl dağılırdı, kaçı hedeflediğiniz hata payının içinde kalırdı ve bütçe ne olurdu? n'i değiştirin.</p>
-<div class="widget" id="w-as">
+    <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Simülasyon: aynı anketi 100 kez yapsaydık</h4>
+    <p>Diyelim gerçekte Türkiye'de 18 yaş üstü nüfusun %<span id="as-p-txt">45</span>'i AB üyeliğini destekliyor. Siz bunu bilmiyorsunuz; n kişilik bir anketle tahmin edeceksiniz. Aynı anketi 100 ayrı ekip aynı anda yapsaydı her biri biraz farklı bir sayı bulurdu. Aşağıda her nokta bir ekibin bulduğu sayı; yeşil şerit sizin kabul ettiğiniz hata payı. n'i büyütün, noktaların nasıl toplandığına bakın.</p>
+    <div class="widget" id="w-as">
       <div class="controls">
-        <label>Gerçek oran p: <input type="range" id="as-p" min="5" max="95" value="45" oninput="anketSim()"></label><span class="val" id="as-p-val">45%</span>
-        <label>Örneklem hacmi n: <input type="range" id="as-n" min="50" max="4000" step="50" value="400" oninput="anketSim()"></label><span class="val" id="as-n-val">400</span>
-        <label>Hedef hata payı ±: <input type="range" id="as-e" min="1" max="10" step="0.5" value="3" oninput="anketSim()"></label><span class="val" id="as-e-val">3</span>
-        <label>Anket başına maliyet (TL): <input type="number" id="as-m" value="350" min="0" step="50" oninput="anketSim()" style="width:90px;font-size:13px;padding:3px 6px;border:1px solid var(--border);border-radius:6px"></label>
+        <label>Gerçek oran: <input type="range" id="as-p" min="5" max="95" value="45" oninput="anketSim()"></label><span class="val" id="as-p-val">45%</span>
+        <label>Anket büyüklüğü n: <input type="range" id="as-n" min="50" max="4000" step="50" value="400" oninput="anketSim()"></label><span class="val" id="as-n-val">400</span>
+        <label>Kabul edilen hata payı ±: <input type="range" id="as-e" min="1" max="10" step="0.5" value="3" oninput="anketSim()"></label><span class="val" id="as-e-val">3</span>
         <button onclick="anketSim(true)">↻ Yeniden çek</button>
       </div>
-      <div class="grid2">
-        <div><div class="cap">500 tekrarda tahmin edilen oranların dağılımı; yeşil bant hedef hata payı</div><div class="chart-wrap-sm"><canvas id="ch-as"></canvas></div></div>
-        <div><div class="stat-grid" id="as-stat" style="margin-top:0"></div><div class="ev-aciklama" id="as-aciklama" style="margin-top:.6rem"></div></div>
-      </div>
+      <div class="as-wrap"><svg id="as-svg" viewBox="0 0 600 150" role="img" aria-label="100 anketin bulduğu oranlar"></svg></div>
+      <div class="sonuc-buyuk" style="margin-top:.6rem"><span class="deger" id="as-sonuc"></span><span class="acik" id="as-aciklama"></span></div>
     </div>
+    <div class="odak-surum"><div class="g">Simülasyon: 100 ekip, 100 sonuç</div><ul><li>Her nokta bir ekibin bulduğu oran; yeşil şerit kabul edilen hata payı.</li><li>n küçükken noktalar dağınık, çoğu şeridin dışında; n büyüdükçe toplanır.</li><li>%95 güven: 100 ekipten en az 95'i şeridin içinde.</li></ul></div>
     <details class="ayrinti">
       <summary>Ayrıntılı hesaplayıcı: güven düzeyi, beklenen oran, tasarım etkisi ve yanıt oranı</summary>
       <p>Ulusal anketler çoğunlukla küme örneklemesiyle yapılır; aynı mahalledeki kişiler birbirine benzediği için 20 kişilik bir küme 20 bağımsız gözlem kadar bilgi vermez. Bu kayıp <strong>tasarım etkisi</strong> (deff) ile düzeltilir: deff = 1,5 ise gereken sayı 1,5 ile çarpılır. Yanıt vermeyenler için de sahaya daha çok adres çıkarılır. Aşağıdaki hesaplayıcı bu adımları gösterir.</p>
@@ -1888,19 +1896,26 @@ function senGit(d){ seni = Math.max(0, Math.min(SEN.length - 1, seni + d)); senK
 // ---------- 10. kaç anket simülasyonu ----------
 function anketSim(yeni){
   if (yeni) rng = mkRng(Math.floor(Math.random() * 1e9));
-  const p = +$('as-p').value / 100, n = +$('as-n').value, e = +$('as-e').value, m = +$('as-m').value || 0, K = 500;
+  const p = +$('as-p').value / 100, n = +$('as-n').value, e = +$('as-e').value, K = 100;
   $('as-p-val').textContent = fmt(100 * p, 0) + '%'; $('as-n-val').textContent = fmt(n); $('as-e-val').textContent = e; $('as-p-txt').textContent = fmt(100 * p, 0);
   const tah = []; for (let r = 0; r < K; r++){ let s = 0; for (let i = 0; i < n; i++) if (rng() < p) s++; tah.push(100 * s / n); }
-  const icinde = tah.filter(t => Math.abs(t - 100 * p) <= e).length;
+  const P = 100 * p, icinde = tah.filter(t => Math.abs(t - P) <= e).length;
   const se = 100 * Math.sqrt(p * (1 - p) / n), hp = 1.96 * se;
-  const lo = Math.max(0, 100 * p - 4 * Math.max(se, 1.2)), hi = Math.min(100, 100 * p + 4 * Math.max(se, 1.2));
-  const h = hist(tah, 40, lo, hi);
-  const renk = h.lab.map(x => Math.abs(x - 100 * p) <= e ? C3 : C1);
-  chart('ch-as', { type: 'bar', data: { labels: h.lab.map(v => fmt(v, 1)), datasets: [{ data: h.c, backgroundColor: renk, borderWidth: 0, barPercentage: 1, categoryPercentage: 1 }] },
-    options: { plugins: { legend: { display: false }, tooltip: { enabled: false } }, scales: { x: { ticks: { maxTicksLimit: 9 }, grid: { display: false }, title: { display: true, text: 'Tahmin edilen oran (%)' } }, y: { display: false } } } });
-  stats('as-stat', [["Hedef içinde kalan", fmt(100 * icinde / K, 0) + '%', icinde / K >= .95 ? C3 : C1], ["Kuramsal hata payı (%95)", '±' + fmt(hp, 1), NAVY], ["En düşük tahmin", fmt(Math.min(...tah), 1) + '%', GRAYC], ["En yüksek tahmin", fmt(Math.max(...tah), 1) + '%', GRAYC], ["Saha maliyeti", fmt(n * m) + ' TL', C2]]);
+  const yar = Math.max(12, Math.ceil(Math.max(e, 3 * se) * 1.3)); const lo = Math.max(0, P - yar), hi = Math.min(100, P + yar);
+  const W = 600, L = 30, R = 570, X = v => L + (R - L) * (v - lo) / (hi - lo);
+  // noktaları kutulara yığ (aynı yere düşenler üst üste)
+  const kutu = {}; let out = '';
+  out += `<rect x="${X(Math.max(lo, P - e)).toFixed(1)}" y="18" width="${(X(Math.min(hi, P + e)) - X(Math.max(lo, P - e))).toFixed(1)}" height="104" fill="#1D9E75" opacity=".18"/>`;
+  out += `<line x1="${X(P).toFixed(1)}" y1="14" x2="${X(P).toFixed(1)}" y2="126" stroke="#1E2D5E" stroke-width="1.5" stroke-dasharray="4 3"/>`;
+  out += `<text x="${X(P).toFixed(1)}" y="11" font-size="10.5" font-weight="700" fill="#1E2D5E" text-anchor="middle">gerçek oran %${fmt(P, 0)}</text>`;
+  out += `<line x1="${L}" y1="126" x2="${R}" y2="126" stroke="#cfd6e4"/>`;
+  for (let v = Math.ceil(lo); v <= hi; v++) if (v % (yar > 20 ? 10 : 5) === 0) out += `<line x1="${X(v).toFixed(1)}" y1="126" x2="${X(v).toFixed(1)}" y2="131" stroke="#9aa3b5"/><text x="${X(v).toFixed(1)}" y="143" font-size="10" fill="#6b7280" text-anchor="middle">%${v}</text>`;
+  const adim = (hi - lo) / 60;
+  tah.forEach(t => { const k = Math.round((t - lo) / adim); const kat = (kutu[k] = (kutu[k] || 0) + 1); const cx = L + (R - L) * (k * adim) / (hi - lo), cy = 120 - (kat - 1) * 9; const ic = Math.abs(t - P) <= e; if (cy > 20) out += `<circle cx="${cx.toFixed(1)}" cy="${cy}" r="4" fill="${ic ? '#1D9E75' : '#D85A30'}" stroke="#fff" stroke-width=".8"/>`; });
+  $('as-svg').innerHTML = out;
   const gerekli = Math.ceil(1.96 * 1.96 * p * (1 - p) / ((e / 100) ** 2));
-  $('as-aciklama').innerHTML = icinde / K >= .95 ? `<b>n = ${fmt(n)} yeterli.</b> 500 tekrarın %${fmt(100 * icinde / K, 0)}'i ±${e} puanın içinde kaldı; %95 güven için gereken en küçük hacim ${fmt(gerekli)}. Daha fazla anket ${fmt(gerekli)}'in üstünde kesinliği az, maliyeti çok artırır.` : `<b>n = ${fmt(n)} yetersiz.</b> 500 tekrarın yalnız %${fmt(100 * icinde / K, 0)}'i ±${e} puanın içinde; tek bir anket yapsaydınız gerçek değerden ${fmt(e)} puandan fazla sapma olasılığı %${fmt(100 - 100 * icinde / K, 0)}. %95 güven için en az <b>${fmt(gerekli)}</b> kişi gerekir (maliyet ${fmt(gerekli * m)} TL). Hata payı yalnız rassal çekimde geçerlidir; kotada bu dağılım bile hesaplanamaz.`;
+  $('as-sonuc').textContent = `${icinde} / 100`;
+  $('as-aciklama').innerHTML = `ekip ±${e} puanın içinde kaldı (yeşil noktalar); ${100 - icinde} ekip dışarıda (turuncu). ` + (icinde >= 95 ? `<b>n = ${fmt(n)} bu hata payı için yeterli.</b> Gereken en küçük anket ${fmt(gerekli)}; daha fazlası maliyeti çok, kesinliği az artırır.` : `<b>n = ${fmt(n)} yetmiyor:</b> %95 güven için 100 ekipten en az 95'i içeride kalmalı. ±${e} puan için gereken anket yaklaşık ${fmt(gerekli)}.`);
 }
 
 // ---------- kurulum ----------

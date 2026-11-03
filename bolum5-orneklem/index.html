@@ -955,28 +955,13 @@ details.ayrinti[open] summary { margin-bottom: .6rem; }
     </tbody></table></div>
     </details>
 
-    <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Kaç kişi?</h4>
-    <p>Formül yoktur; ölçüt <strong>doygunluktur</strong>: yeni görüşme yeni bilgi getirmeyince durulur. Doygunluk çalışmaları kaba bir başlangıç verir: derinlemesine görüşmede 12 ile 20 kişi, odak grupta 4 ile 6 grup (Guest vd., 2006; Hennink ve Kaiser, 2022). Yöntem seçiminde iki temel biçim:</p>
-    <div class="table-scroll"><table><thead><tr><th></th><th>Yüz yüze görüşme</th><th>Odak grup</th></tr></thead><tbody>
-      <tr><td>Katılımcı</td><td>1 kişi</td><td>6-8 kişi, homojen grup</td></tr>
-      <tr><td>Süre</td><td>45-90 dakika</td><td>90-120 dakika</td></tr>
-      <tr><td>Veri</td><td>Kişisel deneyim, gerekçe, süreç</td><td>Ortak algı, tartışma, tepki</td></tr>
-      <tr><td>Uygun konu</td><td>Hassas, kişisel, karmaşık</td><td>Toplumsal, tartışmalı, keşif</td></tr>
-      <tr><td>Uygun değil</td><td>Çok sayıda kişi, kısa süre</td><td>Hassas konu, güç farkı olan katılımcılar</td></tr>
-      <tr><td>Kaç tane?</td><td>Homojen grupta 9-17 görüşme; alt grup başına 6-12</td><td>Katman başına 3-4 grup</td></tr>
-    </tbody></table></div>
-
-<div class="widget" id="w-nt">
-      <div class="hesap">
-        <label>Yöntem <select id="nt-yontem" onchange="nitelKac()"><option value="gorusme">Yüz yüze derinlemesine görüşme</option><option value="odak">Odak grup görüşmesi</option></select></label>
-        <label>Katman (alt grup) sayısı <input type="number" id="nt-katman" value="1" min="1" max="12" step="1" oninput="nitelKac()"></label>
-        <label>Evren ne kadar benzer? <select id="nt-homojen" onchange="nitelKac()"><option value="h">Homojen (benzer deneyim, dar konu)</option><option value="k" selected>Karışık</option><option value="f">Heterojen (farklı deneyimler, geniş konu)</option></select></label>
-        <label>Çalışma düzeyi <select id="nt-duzey" onchange="nitelKac()"><option value="ders">Ders ödevi</option><option value="yl" selected>Yüksek lisans tezi</option><option value="dr">Doktora tezi ya da makale</option></select></label>
-      </div>
-      <div class="adimlar" id="nt-adimlar"></div>
-      <div class="sonuc-buyuk"><span class="deger" id="nt-sonuc"></span><span class="acik" id="nt-acik"></span></div>
+    <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Kaç kişiyle görüşmeli?</h4>
+    <p>Nitel çalışmada formül yoktur; ölçüt <strong>doygunluktur</strong>: yeni görüşme yeni bir şey söylemiyorsa yeter. Pratikte başlangıç planı şöyle:</p>
+    <div class="grid2">
+      <div class="card"><span class="tag" style="background:var(--c5)">Yüz yüze görüşme</span><h4>Tek kişiyle, 45-90 dakika</h4>Kişisel deneyim, gerekçe, hassas konular için. <b>Kaç kişi?</b> 12 ile 20 arası. <b>Örnek:</b> Van'daki Suriyeli ailelerin uyum deneyimi için 15 aile ile görüşme; 10. görüşmeden sonra yeni tema çıkmıyorsa durun.</div>
+      <div class="card"><span class="tag" style="background:var(--c5)">Odak grup</span><h4>6-8 kişilik grupla, 90-120 dakika</h4>Ortak algı, tartışma, tepki için; hassas konularda uygun değil. <b>Kaç grup?</b> 4 ile 6 arası. <b>Örnek:</b> gençlerin NATO algısı için 4 grup: kadın-erkek × iktidar-muhalefet seçmeni.</div>
     </div>
-    <div class="odak-surum"><div class="g">Kaç kişi?</div><ul><li>Formül yok; ölçüt <strong>doygunluk</strong>.</li><li>Başlangıç: 12-20 görüşme, 4-6 odak grup.</li><li>Yüz yüze: kişisel, hassas konu. Odak grup: ortak algı, tartışma.</li></ul></div>
+    <div class="odak-surum"><div class="g">Kaç kişiyle görüşmeli?</div><ul><li>Formül yok; ölçüt <strong>doygunluk</strong>.</li><li>Yüz yüze: 12-20 kişi, 45-90 dk. Odak grup: 4-6 grup, 6-8 kişi, 90-120 dk.</li></ul></div>
   </div>
 </div>
 
@@ -1383,7 +1368,7 @@ function nufusKac(){ if (!$('nk-N')) return;
 function nkSimule(){ if (!$('nk-N')) return; const N = Math.max(0, Math.floor(+$('nk-N').value || 0)); if (!N) return; const n3 = Math.min(nkHesap(N, .03, 1).n, N); const s = $('as-n'); s.value = Math.min(+s.max, Math.max(+s.min, Math.round(n3 / 50) * 50)); $('as-e').value = 3; anketSim(); $('w-as').scrollIntoView({ behavior: 'smooth', block: 'center' }); }
 
 // ---------- 12b. nitel çalışmada kaç kişi? (kılavuz) ----------
-function nitelKac(){
+function nitelKac(){ if (!$('nt-yontem')) return;
   const y = $('nt-yontem').value, k = Math.max(1, Math.min(12, Math.floor(+$('nt-katman').value || 1))), h = $('nt-homojen').value, d = $('nt-duzey').value;
   const hAd = h === 'h' ? 'homojen' : h === 'k' ? 'karışık' : 'heterojen';
   const ad = []; let alt, ust, birim, acik;

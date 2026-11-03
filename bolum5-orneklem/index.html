@@ -737,66 +737,36 @@ details.ayrinti[open] summary { margin-bottom: .6rem; }
         <li>Hepsinde olasılık eşit; fark <strong>nasıl seçildiğinde</strong>.</li>
       </ul>
     </div>
-    <h4 style="margin:1.2rem 0 .5rem;color:var(--navy)">Tarif kartları: ne gerekir, nasıl yapılır, ne elde edilir, bedeli ne?</h4>
+    <h4 style="margin:1.2rem 0 .5rem;color:var(--navy)">Tarif kartları: aynı örnek, beş yol</h4>
+    <p>Bölümde 500 öğrenci var, 50 kişiyle görüşeceksiniz. Beş yöntem bu işi nasıl yapar?</p>
     <div class="grid2">
-      <div class="card tarif"><span class="tag" style="background:var(--c3)">Basit rassal</span><h4>İyi karıştırılmış çorbadan bir kaşık</h4>
-        <div class="tr"><b>Ne gerekir</b>Tam hane listesi (100 adres).</div>
-        <div class="tr"><b>Nasıl yapılır</b>Her haneye rassal bir sayı verilir, en küçük 20'si alınır (Excel'de S_SAYI_ÜRET). Akıldan uydurulan sayılar rassal değildir.</div>
-        <div class="tr"><b>Ne elde edilir</b>Her hanenin olasılığı 20/100 = 0,20. Göçmen payı ortalamada %30'u tutar; tek çekimde 4 de çıkabilir 9 da. Bu sapma hata payıdır.</div>
-        <div class="tr"><b>Bedeli</b>20 hane 4 mahalleye dağılır: en çok yol, en çok anketör saati.</div>
-        <div class="ek ek-ornek"><b>Örnek</b>Dışişleri meslek memurlarına çevrimiçi anket: 2.400 kişilik tam liste var, ulaşım maliyeti yok. Basit rassal çekim için ideal durum.</div></div>
-      <div class="card tarif"><span class="tag" style="background:var(--c3)">Sistematik</span><h4>Listeden her beşinci kapı</h4>
-        <div class="tr"><b>Ne gerekir</b>Tam liste; listede gizli bir döngü olmaması.</div>
-        <div class="tr"><b>Nasıl yapılır</b>F = N/n = 100/20 = 5. 1 ile 5 arasında rassal başlangıç (diyelim 3); sonra 3, 8, 13, 18, ... numaralı haneler.</div>
-        <div class="tr"><b>Ne elde edilir</b>Her hanenin olasılığı yine 0,20; örneklem listeye eşit yayılır. Liste mahalle sırasındaysa her mahalleden 5 hane düşer: kendiliğinden katmanlama.</div>
-        <div class="tr"><b>Bedeli</b>Listede her 5. adres köşe dairesiyse (döngü) yanlılık doğar; liste önce karıştırılır.</div>
-        <div class="ek ek-sayi"><b>Sayı</b>N = 24.000 öğrenci, n = 400: F = 60. Başlangıç 17 ise 17, 77, 137, ... Basit rassal ile aynı sonucu çok daha hızlı verir.</div></div>
-      <div class="card tarif"><span class="tag" style="background:var(--c3)">Katmanlı (katmanlama; tabakalı)</span><h4>Her tencereden ayrı kaşık</h4>
-        <div class="tr"><b>Ne gerekir</b>Tam liste + her hanenin katman bilgisi (yerli/göçmen; ya da mahalle, kır/kent).</div>
-        <div class="tr"><b>Nasıl yapılır</b>Evren kendi içinde homojen katmanlara bölünür: 70 yerli, 30 göçmen. Her katmana nüfusla orantılı pay: 14 yerli, 6 göçmen hane; her katman içinde rassal çekim.</div>
-        <div class="tr"><b>Ne elde edilir</b>Göçmen payı tam olarak %30; hata payı basit rassaldan düşük. Olasılık her katmanda 0,20: eşit ve bilinir. Pay eşit (10/10) verilirse sonra ağırlıklandırma gerekir.</div>
-        <div class="tr"><b>Bedeli</b>Katman bilgisi liste düzeyinde yoksa uygulanamaz; yol maliyeti basit rassal kadar yüksek.</div>
-        <div class="ek ek-ornek"><b>Örnek</b>Ulusal ankette Tunceli'ye orantılı pay 2-3 görüşme düşer; Doğu Anadolu'yu ayrı raporlamak isteyen araştırmacı küçük bölgelere orantısız fazla pay verir, sonra ağırlıkla düzeltir. Kota ile karıştırmayın: burada son seçim rassal.</div></div>
-      <div class="card tarif"><span class="tag" style="background:var(--c3)">Küme</span><h4>Yalnız bir tencereyi açmak</h4>
-        <div class="tr"><b>Ne gerekir</b>Hane listesi gerekmez; mahalle listesi yeter (alan çerçevesi).</div>
-        <div class="tr"><b>Nasıl yapılır</b>4 mahalleden 1'i rassal seçilir, içindeki 25 hanenin hepsiyle görüşülür. Mahalleler farklı büyüklükteyse büyüklüğe orantılı olasılıkla seçilir.</div>
-        <div class="tr"><b>Ne elde edilir</b>Olasılık 1/4, her hane için eşit. Ama örneklem tek mahalleye sıkışır: göçmenin yoğun olduğu mahalle çıkarsa %60, hiç olmadığı mahalle çıkarsa %0 göçmen payı görürsünüz.</div>
-        <div class="tr"><b>Bedeli</b>Yol en az, hata payı en çok: tasarım etkisi (9. bölüm). Maliyet ile kesinlik arasında takas.</div>
-        <div class="ek ek-sayi"><b>Sayı</b>30 bin nüfuslu mahalle ile bin nüfuslu mahalleye eşit şans verilirse küçük mahalledeki hane 30 kat fazla olasılıkla seçilir. Büyüklüğe orantılı seçim bunu düzeltir: P(mahalle) × P(hane | mahalle) her hane için sabit kalır.</div></div>
-      <div class="card tarif"><span class="tag" style="background:var(--c4)">Çok aşamalı</span><h4>İki tencere seç, her birinden iki kepçe</h4>
-        <div class="tr"><b>Ne gerekir</b>Mahalle listesi; sonra yalnız seçilen mahallelerde sokak ve hane listesi (sahada sayılabilir).</div>
-        <div class="tr"><b>Nasıl yapılır</b>1. aşama: 4 mahalleden 2'si rassal. 2. aşama: her mahallede 5 sokaktan 2'si rassal. 3. aşama: her sokaktaki 5 haneden 5'i (hepsi) ya da daha büyük sokakta rassal birkaçı.</div>
-        <div class="tr"><b>Ne elde edilir</b>Olasılık 2/4 × 2/5 × 5/5 = 0,20, eşit. Tek kümeye göre çeşitlilik çok daha iyi, basit rassala göre yol çok daha kısa.</div>
-        <div class="tr"><b>Bedeli</b>Hâlâ bir miktar tasarım etkisi; hacim deff ile büyütülür. Ulusal anketlerin standardı budur (7. bölüm).</div>
-        <div class="ek ek-ornek"><b>Örnek</b>Dünya Değerler Araştırması, Avrupa Sosyal Araştırması ve TÜİK hanehalkı anketleri hep bu mantıkla kurulur: bölge → yerleşim → mahalle → hane → kişi.</div></div>
-      <div class="card tarif"><span class="tag" style="background:var(--c1)">Gelişigüzel (karşılaştırma)</span><h4>Anketör bir köşeye durur, geçeni çevirir</h4>
-        <div class="tr"><b>Ne gerekir</b>Hiçbir şey: liste de, mahalle bilgisi de gerekmez.</div>
-        <div class="tr"><b>Nasıl yapılır</b>Anketör merkezde bir noktada durur, önünden geçen ilk 20 kişiyle görüşür.</div>
-        <div class="tr"><b>Ne elde edilir</b>Uzak mahallelerdeki hanelerin olasılığı sıfır, yakındakilerin olasılığı hesaplanamaz. Durulan yer göçmen yoğun bölgeyse göçmen aşırı, değilse eksik temsil edilir.</div>
-        <div class="tr"><b>Bedeli</b>En ucuz; ama bulgu yalnız görüşülenleri temsil eder, hata payı yazılamaz.</div>
-        <div class="ek ek-tartis"><b>Tartışalım</b>Belediye "merkezde 20 kişiyle görüştük, uyum sorunu yok" dedi. Hangi mahalleler hiç konuşmadı? Bu rapora dayanarak alınacak karar kimi gözden kaçırır?</div></div>
+      <div class="card tarif"><span class="tag" style="background:var(--c3)">Basit rassal</span><h4>Listeden kura</h4>
+        <div class="tr"><b>Ne gerekir</b>500 öğrencinin tam listesi.</div>
+        <div class="tr"><b>Nasıl yapılır</b>Excel'de her satıra rassal sayı ver, sırala, ilk 50'yi al.</div>
+        <div class="tr"><b>Ne elde edilir</b>50 kişi; herkesin şansı 50/500 = 0,10. Sınıflara dağılım şansa kalır: 4. sınıftan 9 kişi beklersiniz, 5 de çıkabilir 13 de.</div>
+        <div class="tr"><b>Bedeli</b>Liste şart. 50 kişi her yere dağılır, ulaşmak zaman alır.</div></div>
+      <div class="card tarif"><span class="tag" style="background:var(--c3)">Sistematik</span><h4>Her onuncu kişi</h4>
+        <div class="tr"><b>Ne gerekir</b>Aynı tam liste.</div>
+        <div class="tr"><b>Nasıl yapılır</b>F = 500 / 50 = 10. 1 ile 10 arasında kura, diyelim 7. Listede 7, 17, 27 ... 497. kişi.</div>
+        <div class="tr"><b>Ne elde edilir</b>Basit rassalla aynı 50 kişi kalitesi, dakikalar içinde. Liste sınıf sırasındaysa her sınıftan payı kadar düşer.</div>
+        <div class="tr"><b>Bedeli</b>Liste her 10 kişide bir tekrarlayan bir düzen taşıyorsa (her sınıfın başında sınıf başkanı) yanlılık; önce karıştırın.</div></div>
+      <div class="card tarif"><span class="tag" style="background:var(--c3)">Katmanlı</span><h4>Her sınıftan ayrı kura</h4>
+        <div class="tr"><b>Ne gerekir</b>Tam liste + her öğrencinin sınıfı.</div>
+        <div class="tr"><b>Nasıl yapılır</b>Sınıf büyüklükleri 160, 140, 110, 90. Paylar: 16, 14, 11, 9. Her sınıfın listesinde ayrı kura.</div>
+        <div class="tr"><b>Ne elde edilir</b>Her sınıf tam payıyla içeride; şansa kalmaz. Hata payı basit rassaldan düşük.</div>
+        <div class="tr"><b>Bedeli</b>Katman bilgisi listede yoksa yapılamaz. Yol maliyeti basit rassal kadar.</div></div>
+      <div class="card tarif"><span class="tag" style="background:var(--c3)">Küme</span><h4>Sınıfı seç, hepsiyle görüş</h4>
+        <div class="tr"><b>Ne gerekir</b>Öğrenci listesi gerekmez; şubelerin listesi yeter (20 şube, her biri 25 kişi).</div>
+        <div class="tr"><b>Nasıl yapılır</b>20 şubeden kurayla 2'sini seç, o şubelerdeki 50 öğrencinin hepsiyle görüş.</div>
+        <div class="tr"><b>Ne elde edilir</b>50 kişi, iki derslikte: en az yol.</div>
+        <div class="tr"><b>Bedeli</b>Aynı şubenin öğrencileri birbirine benzer; 50 kişi 50 kişilik bilgi vermez, belki 30. Hata payı büyür.</div></div>
+      <div class="card tarif"><span class="tag" style="background:var(--c3)">Çok aşamalı</span><h4>Önce şube, sonra kura</h4>
+        <div class="tr"><b>Ne gerekir</b>Şube listesi; seçilen şubelerde öğrenci listesi (sınıfta sayılabilir).</div>
+        <div class="tr"><b>Nasıl yapılır</b>1. aşama: 20 şubeden 5'i kurayla. 2. aşama: her şubede 25 öğrenciden 10'u kurayla.</div>
+        <div class="tr"><b>Ne elde edilir</b>50 kişi, 5 derslikte; küme kadar ucuz değil ama çok daha çeşitli. Olasılık 5/20 × 10/25 = 0,10, herkese eşit.</div>
+        <div class="tr"><b>Bedeli</b>Hâlâ biraz tasarım etkisi; ulusal anketler bu yüzden kişi sayısını 1,5 ile çarpar.</div></div>
     </div>
-    <h4 style="margin:1.2rem 0 .5rem;color:var(--navy)">Karşılaştırma</h4>
-    <div class="table-scroll"><table><thead><tr><th>Yöntem</th><th>Ne gerekir</th><th>Seçilme olasılığı</th><th>Yol / maliyet</th><th>Hata payı</th><th>Göçmen payı (evren %30)</th></tr></thead><tbody>
-      <tr><td>Basit rassal</td><td>Tam liste</td><td>0,20, eşit</td><td>En yüksek</td><td>Ölçüt</td><td>Ortalamada %30, çekimden çekime oynar</td></tr>
-      <tr><td>Sistematik</td><td>Tam liste</td><td>0,20, eşit</td><td>En yüksek</td><td>Basit rassal gibi</td><td>Ortalamada %30</td></tr>
-      <tr><td>Katmanlı</td><td>Tam liste + katman bilgisi</td><td>0,20, eşit</td><td>En yüksek</td><td>En düşük</td><td>Tam %30</td></tr>
-      <tr><td>Küme</td><td>Mahalle listesi</td><td>0,25, eşit</td><td>En düşük</td><td>En yüksek</td><td>%0 ile %60 arası, mahalleye bağlı</td></tr>
-      <tr><td>Çok aşamalı</td><td>Mahalle listesi + seçilen mahallelerde sayım</td><td>0,20, eşit</td><td>Düşük</td><td>Orta</td><td>%30'a yakın, biraz oynar</td></tr>
-      <tr><td>Gelişigüzel</td><td>Hiçbir şey</td><td>Hesaplanamaz</td><td>En düşük</td><td>Yazılamaz</td><td>Durulan yere bağlı</td></tr>
-    </tbody></table></div>
-    <div class="soru-kutu"><div class="im">?</div><div><b>Siz olsanız?</b> Bütçe 10 görüşmeye indi: hangi yöntem ne kaybeder? Hane listesi alınamadı, yalnız mahalle listesi var: hangi yöntemler kalır? Anket yüz yüze değil telefonla yapılacak: yol maliyeti kalkınca tercih değişir mi?
-      <details class="yanit"><summary>Yanıt</summary><p><strong>10 görüşme:</strong> basit rassal ve sistematikte hata payı büyür (n yarıya inince hata payı yaklaşık 1,4 kat artar); katmanlıda 7 yerli, 3 göçmen düşer, göçmen katmanı için neredeyse hiç bilgi kalmaz; kümede tek mahallenin 10 hanesi, zaten dar olan çeşitlilik daha da daralır. <strong>Yalnız mahalle listesi:</strong> basit rassal, sistematik ve katmanlı uygulanamaz (hane listesi yok); küme ve çok aşamalı kalır, çünkü hane listesi yalnız seçilen mahallelerde sahada çıkarılır. <strong>Telefon:</strong> yol maliyeti kalkınca kümelemenin tek üstünlüğü kaybolur; telefon numarası listesi varsa basit rassal ya da katmanlı seçilir. Çerçeve değişir: telefonu olmayan haneler evrenden düşer, bunu raporda yazmak gerekir.</p></details>
-    </div></div>
-    <div class="odak-surum">
-      <div class="g">Siz olsanız?</div>
-      <ul>
-        <li>Bütçe <strong>10 görüşmeye</strong> indi: basit/sistematik hata payı 1,4 kat; katmanlıda göçmen katmanı 3 kişi; küme daha da dar.</li>
-        <li>Yalnız <strong>mahalle listesi</strong>: küme ve çok aşamalı kalır.</li>
-        <li><strong>Telefon</strong>: yol maliyeti kalkar, kümelemenin gerekçesi kalmaz; çerçeve telefonu olanlarla sınırlanır.</li>
-      </ul>
-      <div class="ek ek-ornek"><b>Örnek</b>BM üye devletlerinin oylama davranışı: bölgesel gruplar (Afrika, Asya-Pasifik, Doğu Avrupa, GRULAC, WEOG) katman; her gruptan rassal ülke seçilir. Küme burada anlamsız, çünkü yol maliyeti yok.</div>
-    </div>
+    <div class="odak-surum"><div class="g">Beş tarif, tek örnek: 500 öğrenciden 50</div><ul><li><strong>Basit rassal:</strong> listeden kura, 0,10.</li><li><strong>Sistematik:</strong> F = 10, başlangıç 7: 7, 17, 27 ...</li><li><strong>Katmanlı:</strong> 160/140/110/90 → 16/14/11/9, her sınıfta kura.</li><li><strong>Küme:</strong> 20 şubeden 2, hepsiyle; ucuz, hata payı büyük.</li><li><strong>Çok aşamalı:</strong> 20 şubeden 5, her birinde 25'ten 10; 5/20 × 10/25 = 0,10.</li></ul></div>
   </div>
 </div>
 

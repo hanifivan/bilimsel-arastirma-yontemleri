@@ -413,6 +413,22 @@ details.ayrinti[open] summary { margin-bottom: .6rem; }
 .as-wrap { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: .4rem; }
 .as-wrap svg { width: 100%; height: auto; display: block; }
 
+.sema { margin: .8rem 0; }
+.sema-kok { display: inline-block; background: var(--navy); color: #fff; font-weight: 800; letter-spacing: .04em; padding: .5rem 1.1rem; border-radius: 8px; margin-bottom: .2rem; }
+.sema-dallar { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: .8rem; border-top: 3px solid var(--navy); padding-top: .8rem; }
+.sema-dal { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: .7rem .9rem; border-top: 5px solid var(--teal); }
+.sema-dal.d-a { border-top-color: #D85A30; }
+.sema-dal.d-b { border-top-color: #1D9E75; }
+.sema-dal.d-c { border-top-color: #378ADD; }
+.sema-dal .sd-bas { font-weight: 800; font-size: 15px; color: var(--navy); margin-bottom: .5rem; }
+.sema-dal .sd-bas a { color: inherit; text-decoration: none; border-bottom: 1px dotted; }
+.sema-dal .sd-bas small { display: block; font-weight: 500; font-size: 12px; color: var(--gray); margin-top: .2rem; line-height: 1.45; }
+.sema-dal ol, .sema-dal ul { margin: 0; padding-left: 1.2rem; font-size: 13px; line-height: 1.5; }
+.sema-dal li { margin: .25rem 0; }
+.sema-dal li b { color: var(--navy); }
+.sema-dal li span { display: block; font-size: 12px; color: #555; }
+.sema-dal .sd-alt { font-weight: 700; font-size: 12.5px; color: var(--teal); margin: .5rem 0 .15rem; }
+
 </style>
 </head>
 <body>
@@ -420,6 +436,7 @@ details.ayrinti[open] summary { margin-bottom: .6rem; }
 
 <nav id="sidebar">
   <div class="logo">Bilimsel Araştırma Yöntemleri<small>5. Bölüm: Örneklem Nasıl Seçilir?</small></div>
+  <a href="#sema">0. Yöntemler Şeması</a>
   <div class="section-label">Kısım 1 · Tanımlar ve genel anlatım</div>
   <a href="#s1">1. Neden Örneklem?</a>
   <a href="#s2">2. Bilimsel Gelişim</a>
@@ -454,6 +471,48 @@ details.ayrinti[open] summary { margin-bottom: .6rem; }
     <a class="badge" href="#s14" style="background:var(--c2);text-decoration:none">3 · Örnekler</a>
   </div>
   <p style="margin:.6rem auto 0;font-size:13px">Ana kaynaklar: ders sunumu (Van, 2019) ve Erdoğan ile Uyan-Semerci (2021), Toplumsal Araştırma Yöntemleri İçin Bir Rehber, 5. Bölüm</p>
+</div>
+
+<!-- 0 şema -->
+<div class="section anchor" id="sema">
+  <div class="section-header"><span class="num">0</span> Bir Bakışta: Örnekleme Yöntemleri Şeması</div>
+  <div class="section-body">
+    <p>Bu bölümde geçen bütün yöntemler tek ağaçta. Her dal ilgili başlığa bağlıdır; okumaya buradan başlayıp istediğiniz dala gidebilirsiniz.</p>
+    <div class="sema">
+      <div class="sema-kok">ÖRNEKLEME YÖNTEMLERİ</div>
+      <div class="sema-dallar">
+        <div class="sema-dal d-a">
+          <div class="sd-bas"><a href="#s7">A. Olasılıklı olmayan</a><small>Seçilme olasılığı hesaplanamaz ya da eşit değil. Hata payı ve anlamlılık testi yok.</small></div>
+          <ol>
+            <li><b>Gelişigüzel / kolayda</b><span>elinin altındakiler</span></li>
+            <li><b>Amaçlı (kasıtlı)</b><span>araştırmacı soruya uygun vakayı bilerek seçer</span></li>
+            <li><b>Kartopu</b><span>ulaşılması zor kitle; görüşülen kişi yenisini gösterir</span></li>
+            <li><b>Kotalı</b><span>evren cinsiyet, yaş, bölge kotalarına bölünür; anketör kotayı kendi doldurur</span></li>
+          </ol>
+        </div>
+        <div class="sema-dal d-b">
+          <div class="sd-bas"><a href="#s8">B. Olasılıklı</a><small>Seçilme olasılığı hesaplanabilir ve eşit. MLT çalışır, hata payı hesaplanır.</small></div>
+          <ol>
+            <li><b>Basit rassal</b><span>tam çerçeve + kura; ideal yöntem</span></li>
+            <li><b>Sistematik rassal</b><span>F = N/n; rassal başlangıç, her F. birim</span></li>
+            <li><b>Katmanlama</b><span>benzer katmanlar, her katmandan payı kadar; hata payı düşer</span></li>
+            <li><b>Kümeleme</b><span>karışık kümeler (mahalle, okul); önce küme, sonra içinden birim</span></li>
+            <li><b><a href="#s9">Çok aşamalı</a></b><span>katman + küme birlikte: bölge, il, mahalle, hane, kişi; ulusal anketlerin standardı</span></li>
+          </ol>
+        </div>
+        <div class="sema-dal d-c">
+          <div class="sd-bas"><a href="#s12">C. Nitel çalışmalarda</a><small>Genelleme amacı yok, MLT gerekmez. Yöntem ne olursa olsun amaçlı ve seçici; ölçüt, vakanın neden alındığının açıklanabilmesi.</small></div>
+          <div class="sd-alt">Benzerlik arayan (Patton, 2002)</div>
+          <ul><li>Önemliler</li><li>İstisnalar</li><li>Tipik örnekler</li><li>Homojen gruplar</li><li>İstisnai örnekler</li><li>Kartopu</li></ul>
+          <div class="sd-alt">Farklılık arayan</div>
+          <ul><li>Yoğunluk örneklemi (iki aşırı uç)</li><li>Maksimum farklılık</li><li>Kritik vaka</li></ul>
+          <div class="sd-alt">Ek yöntemler</div>
+          <ul><li>Kuram bazlı (temellendirilmiş kuram)</li><li>Ardıl / mütekaip (sequential)</li></ul>
+        </div>
+      </div>
+    </div>
+    <div class="odak-surum"><div class="g">Şema</div><ul><li><strong>Olasılıklı olmayan:</strong> gelişigüzel, amaçlı, kartopu, kotalı.</li><li><strong>Olasılıklı:</strong> basit rassal, sistematik, katmanlama, kümeleme, çok aşamalı.</li><li><strong>Nitel:</strong> hepsi amaçlı; benzerlik arayan, farklılık arayan, kuram bazlı, ardıl.</li></ul></div>
+  </div>
 </div>
 
 <!-- 1 -->

@@ -399,7 +399,6 @@
     <span class="badge" style="background:var(--c2)">Hacim</span>
     <span class="badge" style="background:var(--c5)">Nitel</span>
   </div>
-  <p style="margin:1.4rem auto 0;font-size:13px">Bu not Van Yüzüncü Yıl Üniversitesi · Uluslararası İlişkiler Bölümü, Bilimsel Araştırma Yöntemleri dersi (lisans ve yüksek lisans) için hazırlanmıştır.</p>
   <p style="margin:.6rem auto 0;font-size:13px">Ana kaynaklar: ders sunumu (Van, 2019) ve Erdoğan ile Uyan-Semerci (2021), Toplumsal Araştırma Yöntemleri İçin Bir Rehber, 5. Bölüm</p>
 </div>
 
@@ -1536,14 +1535,20 @@ document.addEventListener('keydown', e => {
 const GB_ADRES = 'hanifivan@yyu.edu.tr';
 function gbBaglanti(bolumAd){
   const konu = `Örneklem ders notu, ${bolumAd}`;
-  const govde = `Bölüm: ${bolumAd}\nSorun yaşadığım yer (paragraf, kart ya da düğme adı):\n\nNe oldu, ne bekliyordum:\n\nTarayıcı ve cihaz (ör. Chrome, telefon):\n\nAd soyad (isteğe bağlı):\n`;
+  const govde = `Bölüm: ${bolumAd}
+
+Bu not hakkındaki görüşleriniz (beğendiğiniz, anlaşılmayan ya da eksik bulduğunuz yerler):
+
+
+Ad soyad (isteğe bağlı):
+`;
   return `mailto:${GB_ADRES}?subject=${encodeURIComponent(konu)}&body=${encodeURIComponent(govde)}`;
 }
 document.querySelectorAll('#main .section').forEach(sec => {
   const hdr = sec.querySelector('.section-header'); const ad = hdr.innerText.replace(/^\S+\s*/, '').trim();
-  hdr.insertAdjacentHTML('beforeend', `<a class="gb" href="${gbBaglanti(ad)}" title="Bu bölümle ilgili bir sorunu ya da öneriyi e-postayla bildirin">✉ Geri bildirim</a>`);
+  hdr.insertAdjacentHTML('beforeend', `<a class="gb" href="${gbBaglanti(ad)}" title="Bu not hakkındaki görüşlerinizi yazabilirsiniz">✉ Geri bildirim</a>`);
 });
-document.querySelector('footer').insertAdjacentHTML('afterend', `<div class="gb-alt">Notta hata, anlaşılmayan yer ya da öneri için: <a href="${gbBaglanti('genel')}">${GB_ADRES}</a> (her bölüm başlığındaki ✉ düğmesi konuyu hazır getirir)</div>`);
+document.querySelector('footer').insertAdjacentHTML('afterend', `<div class="gb-alt">Bu not hakkındaki görüşlerinizi yazabilirsiniz: <a href="${gbBaglanti('genel')}">${GB_ADRES}</a> (her bölüm başlığındaki ✉ düğmesi konuyu hazır getirir)</div>`);
 // odakta da aynı düğme, o bölümün adıyla
 const _odakAcEski = odakAc;
 odakAc = function(el){ _odakAcEski(el); const bas = $('odak').querySelector('.odak-bas'); let a = bas.querySelector('.gb'); if (!a) { a = document.createElement('a'); a.className = 'gb'; a.textContent = '✉ Geri bildirim'; bas.appendChild(a); } a.href = gbBaglanti(bas.querySelector('.ad').textContent.trim()); };

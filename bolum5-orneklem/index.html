@@ -405,6 +405,11 @@ details.yanit p { margin: .4rem 0 0; color: #2b2550; }
 #sekil-buyuk .sb-nav { display: flex; justify-content: space-between; margin-top: 1rem; }
 #sekil-buyuk .sb-nav button { border: 1px solid var(--border); background: #f4f6fa; color: var(--navy); border-radius: 999px; padding: .4rem 1rem; cursor: pointer; font-weight: 600; }
 
+details.ayrinti { border: 1px solid var(--border); border-radius: 10px; padding: .6rem 1rem; margin: 1rem 0; background: #fbfcfe; }
+details.ayrinti summary { cursor: pointer; font-weight: 700; color: var(--navy); font-size: 14px; }
+details.ayrinti[open] summary { margin-bottom: .6rem; }
+.sekil-kart svg.sekil[style] { max-width: 420px; }
+
 </style>
 </head>
 <body>
@@ -1033,38 +1038,28 @@ details.yanit p { margin: .4rem 0 0; color: #2b2550; }
 <div class="section anchor" id="s10" data-odak="1">
   <div class="section-header"><span class="num">10</span> Örneklem Hacmi: Kaç Kişi Yeter?</div>
   <div class="section-body">
-    <div class="kitap-tanim kt-k2">
-      <div class="kt-bas">Hacim nasıl belirlenir?</div>
-      <dl>
-        <dt>Hata payından hacme</dt>
-        <dd>Hacim, hata payı formülünden geriye doğru düşünülür: istediğiniz hata payı ve güven düzeyi için n büyütülür. Örneğin 2.300 kişilik bir anket %95 güvenle ±2,06 puan hata payı verir.</dd>
-        <dt>Hacmi etkileyen ölçütler</dt>
-        <dd>Olasılıklı yöntemde hacim duyarlılık, hata payı ve maliyete göre belirlenir; olasılıksız yöntemde "kesin bir kural yoktur". Belirleyiciler: evrenin homojenliği, kararın önemi, maliyet-zaman dengesi, araştırmanın yapısı, benzer çalışmalar, kaynak kısıtları (Şeniş, 2002). Aşağıdaki kartlar bu altı ölçüttür.</dd>
-        <dt>Cochran formülü, sonlu evren düzeltmesi, tasarım etkisi</dt>
-        <dd>Aşağıdaki hesaplayıcılar bu formülleri kullanır. Hata payı formülünün oran için n'ye göre çözülmüş biçimidir (n₀ = z² p(1 − p) / e²) ve ulusal anket uygulamasında standarttır (Cochran, 1977; Kish, 1965).</dd>
-      </dl>
+    <p>Kaç kişiyle görüşmeniz gerektiğini üç şey belirler: ne kadar <strong>hata payı</strong> kabul ettiğiniz, ne kadar <strong>güven</strong> istediğiniz ve <strong>bütçeniz</strong>. Evrenin büyüklüğü, şaşırtıcı biçimde, neredeyse hiç önemli değildir. Bu bölümde önce bu iki kuralı şekille görüyor, sonra kendi nüfusunuz için sayıyı hesaplıyorsunuz.</p>
+    <div class="odak-surum"><div class="g">Kaç kişi yeter?</div><ul><li>Üç belirleyici: <strong>hata payı</strong>, <strong>güven düzeyi</strong>, <strong>bütçe</strong>.</li><li>Evrenin büyüklüğü neredeyse önemsiz.</li></ul></div>
+
+    <div class="grid2">
+      <div class="sekil-kart" style="cursor:default">
+        <div class="sk-bas">Kural 1: Hata payını yarıya indirmek dört kat kişi ister<small>Kare kök yasası</small></div>
+        <svg viewBox="0 0 360 200" class="sekil" role="img" style="max-width:420px"><line x1="20" y1="160" x2="350" y2="160" stroke="#cfd6e4"/><rect x="20" y="26.4" width="54" height="133.6" rx="5" fill="#028090"/><text x="47" y="20.4" font-size="12" font-weight="700" fill="#1E2D5E" text-anchor="middle">±9,8</text><text x="47" y="177" font-size="11" fill="#6b7280" text-anchor="middle">n = 100</text><rect x="109" y="93.2" width="54" height="66.8" rx="5" fill="#028090"/><text x="136" y="87.2" font-size="12" font-weight="700" fill="#1E2D5E" text-anchor="middle">±4,9</text><text x="136" y="177" font-size="11" fill="#6b7280" text-anchor="middle">n = 400</text><rect x="197" y="117.7" width="54" height="42.3" rx="5" fill="#028090"/><text x="224" y="111.7" font-size="12" font-weight="700" fill="#1E2D5E" text-anchor="middle">±3,1</text><text x="224" y="177" font-size="11" fill="#6b7280" text-anchor="middle">n = 1.000</text><rect x="286" y="139.5" width="54" height="20.5" rx="5" fill="#028090"/><text x="313" y="133.5" font-size="12" font-weight="700" fill="#1E2D5E" text-anchor="middle">±1,5</text><text x="313" y="177" font-size="11" fill="#6b7280" text-anchor="middle">n = 4.000</text><text x="180" y="194" font-size="10.5" fill="#6b7280" text-anchor="middle">hata payı (puan), %95 güven, p = 0,5</text></svg>
+        <div class="sk-not">hata payı = 1,96 × √(0,25 / n)</div>
+        <p>100 kişiden 400 kişiye çıkınca hata payı ±9,8'den ±4,9'a iner; 1.000'den 4.000'e çıkınca ±3,1'den ±1,5'e. Her seferinde dört kat görüşme, yarı hata payı. Eğri 1.000 civarında yatıklaşır: ulusal anketlerin çoğu bu yüzden 1.000 ile 1.500 kişidir; daha fazlası pahalı, kazancı küçüktür.</p>
+      </div>
+      <div class="sekil-kart" style="cursor:default">
+        <div class="sk-bas">Kural 2: Evren büyüse de gereken sayı değişmez<small>Mahalle, il, ülke</small></div>
+        <svg viewBox="0 0 360 200" class="sekil" role="img" style="max-width:420px"><line x1="20" y1="160" x2="350" y2="160" stroke="#cfd6e4"/><rect x="20" y="50.0" width="54" height="110.0" rx="5" fill="#1E2D5E"/><text x="47" y="44.0" font-size="12" font-weight="700" fill="#1E2D5E" text-anchor="middle">880</text><text x="47" y="177" font-size="11" fill="#6b7280" text-anchor="middle">Mahalle</text><rect x="153" y="26.6" width="54" height="133.4" rx="5" fill="#1E2D5E"/><text x="180" y="20.6" font-size="12" font-weight="700" fill="#1E2D5E" text-anchor="middle">1.067</text><text x="180" y="177" font-size="11" fill="#6b7280" text-anchor="middle">Van ili</text><rect x="286" y="26.5" width="54" height="133.5" rx="5" fill="#1E2D5E"/><text x="313" y="20.5" font-size="12" font-weight="700" fill="#1E2D5E" text-anchor="middle">1.068</text><text x="313" y="177" font-size="11" fill="#6b7280" text-anchor="middle">Türkiye</text><text x="180" y="194" font-size="10.5" fill="#6b7280" text-anchor="middle">±3 puan için gereken anket; evren 5 bin, 1,1 milyon, 85 milyon</text></svg>
+        <div class="sk-not">±3 puan için: 5 binlik mahalle 880, Van 1.067, Türkiye 1.068</div>
+        <p>"Evrenin %10'u alınmalı" diye bir kural yoktur. Hata payı örneklemin <em>mutlak</em> büyüklüğüne bağlıdır, evrene oranına değil. Çorbanın tadına bakmak için kazanın büyüklüğü değil, iyi karıştırılmış olması önemlidir. Yalnız evren küçükse (birkaç bin) sonlu evren düzeltmesi sayıyı biraz düşürür.</p>
+      </div>
     </div>
-    <div class="odak-surum">
-      <div class="g">Hacim nasıl belirlenir?</div>
-      <ul>
-        <li>Hacim, hata payı formülünden geriye doğru düşünülür.</li>
-        <li>Olasılıklıda duyarlılık, hata payı, maliyet; olasılıksızda kesin kural yok; altı ölçüt.</li>
-        <li>Cochran formülü, sonlu evren düzeltmesi, deff: hesaplayıcılarda.</li>
-      </ul>
-    </div>
-    <p>Olasılıklı yöntemde ve uygun çerçeve varsa gerekli hacim; istenen duyarlılık, hata payı ve maliyet ölçütlerine göre hesaplanır. Olasılıksız yöntemde ise kesin bir kural yoktur; ders notunun saydığı beş ölçüt kaba bir yol gösterir.</p>
-    <div class="odak-surum"><div class="g">Kaç kişi yeter?</div><ul><li>Olasılıklı yöntemde ve uygun çerçeve varsa hacim; istenen <strong>duyarlılık, hata payı ve maliyet</strong> ölçütlerine göre hesaplanır.</li><li>Olasılıksız yöntemde kesin bir kural yoktur; ders notunun <strong>beş ölçütü</strong> kaba bir yol gösterir.</li></ul></div>
-    <div class="grid3">
-      <div class="card"><span class="tag" style="background:var(--c2)">Homojenlik</span>Evrenin bütün birimleri ilgilenilen değişkende yakın değer alıyorsa tek birim bile yeter; heterojenlik arttıkça hacim büyümelidir. Katmanlamanın gücü buradan gelir.<div class="ek ek-ornek"><b>Örnek</b>Diplomatların AB algısı: meslek memurları görece homojen bir evren; 2.400 kişiden 200 kişi yeterli olabilir. Türkiye seçmeni ise çok heterojen; 1.500 kişinin altına inilmez.</div></div>
-      <div class="card"><span class="tag" style="background:var(--c2)">Kararın önemi</span>Kritik kararlar için çok ve ayrıntılı bilgi gerekir; büyük hacim. Ama hacim arttıkça maliyet, süre ve nitelikli personel ihtiyacı da artar.<div class="ek ek-tartis"><b>Tartışalım</b>Bir bakanlık "sığınmacı politikasına halk desteği" için anket yaptırıyor; karar milyarlarca liralık bütçeyi etkileyecek. ±3 puan yeter mi, ±1 gerekir mi? ±1 için n = 9.600. Kim öder?</div></div>
-      <div class="card"><span class="tag" style="background:var(--c2)">Araştırmanın yapısı</span>Nitel çalışmalar küçük, nicel çalışmalar büyük hacimle yürür.</div>
-      <div class="card"><span class="tag" style="background:var(--c2)">Benzer çalışmalar</span>Güvenilir benzer çalışmaların hacimleri kaba bir fikir verir; özellikle olasılıksız yöntemlerde.</div>
-      <div class="card"><span class="tag" style="background:var(--c2)">Kaynak kısıtları</span>Zaman, para ve iyi yetişmiş anketör bulma. 1980'lerde ABD'de iyi seçilmiş 1.500 kişi 200 milyonluk nüfus için doğru tahmin üretmişti (Ferber vd.).</div>
-      <div class="card"><span class="tag" style="background:var(--c1)">Yaygın yanılgı</span>"Evrenin %10'u ya da %20'si alınmalı" kuralı yoktur. Hata payı evrenin oranına değil, örneklemin <em>mutlak</em> büyüklüğüne bağlıdır; sonlu evren düzeltmesi yalnız küçük evrenlerde fark yaratır.<div class="ek ek-sayi"><b>Sayı</b>1.000 kişilik örneklem Van için de (1,1 milyon), Türkiye için de (85 milyon), Çin için de (1,4 milyar) yaklaşık aynı hata payını verir: ±3,1. Çorbayı tatmak için kazanın büyüklüğü değil, karıştırılmış olması önemlidir.</div></div>
-    </div>
+    <div class="odak-surum"><div class="g">İki kural</div><ul><li><strong>Kare kök yasası:</strong> hata payını yarıya indirmek için 4 kat kişi. n = 100: ±9,8; 400: ±4,9; 1.000: ±3,1; 4.000: ±1,5.</li><li><strong>Evren büyüklüğü önemsiz:</strong> ±3 için mahalle 880, Van 1.067, Türkiye 1.068. "%10 kuralı" yoktur.</li></ul></div>
+
     <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Nüfusu yazın: kaç anket gerekir?</h4>
     <p>Araştıracağınız yerin nüfusunu (evren büyüklüğü N) yazın; %95 güven düzeyinde, en kötü durum varsayımıyla (p = 0,5) farklı hata payları için gereken anket sayısını görün. Hazır düğmelerle il, üniversite ya da mahalle ölçeğini deneyin.</p>
-    <div class="widget" id="w-nk">
+<div class="widget" id="w-nk">
       <div class="ornekler" style="margin-bottom:.6rem"><span class="cap" style="display:inline">Hazır örnekler: </span>
         <button onclick="nkOrnek(1100000,'Van ili (yaklaşık 1,1 milyon)')">Van ili</button>
         <button onclick="nkOrnek(85000000,'Türkiye (yaklaşık 85 milyon)')">Türkiye</button>
@@ -1080,9 +1075,34 @@ details.yanit p { margin: .4rem 0 0; color: #2b2550; }
       <div class="sonuc-buyuk"><span class="deger" id="nk-sonuc"></span><span class="acik" id="nk-acik"></span></div>
       <p style="margin:.6rem 0 0;font-size:13px"><button onclick="nkSimule()">Bu n ile simülasyonu çalıştır</button> <span style="color:var(--gray)">(±3 puan için gereken n'yi aşağıdaki "aynı araştırmayı 500 kez yapsaydık" kutusuna taşır)</span></p>
     </div>
-    <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Hacim hesaplayıcı (oran tahmini için, Cochran)</h4>
+    <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Hacmi büyütmeden önce: olasılıksız yöntemde kural yok</h4>
+    <div class="grid3">
+      <div class="card"><span class="tag" style="background:var(--c2)">Olasılıklı yöntemde</span>Sayı formülden gelir: hata payı, güven düzeyi ve bütçe. Hesaplayıcı yukarıda.</div>
+      <div class="card"><span class="tag" style="background:var(--c2)">Olasılıksız yöntemde</span>Formül yoktur, çünkü hata payı hesaplanamaz. Benzer çalışmaların hacmi, kararın önemi ve kaynaklar kaba bir yol gösterir; nitel çalışmada ölçüt doygunluktur (12. bölüm).</div>
+      <div class="card"><span class="tag" style="background:var(--c2)">Evren benzerse</span>Birimler ilgilenilen değişkende birbirine yakınsa az kişi yeter (diplomatların AB algısı: 2.400 kişiden 200); çok farklıysa (Türkiye seçmeni) 1.500'ün altına inilmez.</div>
+    </div>
+    <div class="odak-surum"><div class="g">Üç durum</div><ul><li>Olasılıklı: formül.</li><li>Olasılıksız: formül yok; benzer çalışmalar, kararın önemi, kaynaklar; nitelde doygunluk.</li><li>Evren benzerse az, çok farklıysa çok kişi.</li></ul></div>
+
+    <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Simülasyon: aynı anketi 500 kez yapsaydık</h4>
+    <p>Diyelim Türkiye'de 18 yaş üstü nüfusun AB üyeliğine desteği gerçekte %<span id="as-p-txt">45</span>. Bunu bilmiyorsunuz; n kişilik bir anketle tahmin edeceksiniz. Aynı anketi 500 kez tekrarlasaydık tahminler nasıl dağılırdı, kaçı hedeflediğiniz hata payının içinde kalırdı ve bütçe ne olurdu? n'i değiştirin.</p>
+<div class="widget" id="w-as">
+      <div class="controls">
+        <label>Gerçek oran p: <input type="range" id="as-p" min="5" max="95" value="45" oninput="anketSim()"></label><span class="val" id="as-p-val">45%</span>
+        <label>Örneklem hacmi n: <input type="range" id="as-n" min="50" max="4000" step="50" value="400" oninput="anketSim()"></label><span class="val" id="as-n-val">400</span>
+        <label>Hedef hata payı ±: <input type="range" id="as-e" min="1" max="10" step="0.5" value="3" oninput="anketSim()"></label><span class="val" id="as-e-val">3</span>
+        <label>Anket başına maliyet (TL): <input type="number" id="as-m" value="350" min="0" step="50" oninput="anketSim()" style="width:90px;font-size:13px;padding:3px 6px;border:1px solid var(--border);border-radius:6px"></label>
+        <button onclick="anketSim(true)">↻ Yeniden çek</button>
+      </div>
+      <div class="grid2">
+        <div><div class="cap">500 tekrarda tahmin edilen oranların dağılımı; yeşil bant hedef hata payı</div><div class="chart-wrap-sm"><canvas id="ch-as"></canvas></div></div>
+        <div><div class="stat-grid" id="as-stat" style="margin-top:0"></div><div class="ev-aciklama" id="as-aciklama" style="margin-top:.6rem"></div></div>
+      </div>
+    </div>
+    <details class="ayrinti">
+      <summary>Ayrıntılı hesaplayıcı: güven düzeyi, beklenen oran, tasarım etkisi ve yanıt oranı</summary>
+      <p>Ulusal anketler çoğunlukla küme örneklemesiyle yapılır; aynı mahalledeki kişiler birbirine benzediği için 20 kişilik bir küme 20 bağımsız gözlem kadar bilgi vermez. Bu kayıp <strong>tasarım etkisi</strong> (deff) ile düzeltilir: deff = 1,5 ise gereken sayı 1,5 ile çarpılır. Yanıt vermeyenler için de sahaya daha çok adres çıkarılır. Aşağıdaki hesaplayıcı bu adımları gösterir.</p>
     <div class="formula">n₀ = z² · p(1 − p) / e² &nbsp;&nbsp;&nbsp; n = n₀ / (1 + (n₀ − 1)/N) &nbsp;&nbsp;&nbsp; n<sub>tasarım</sub> = n × deff &nbsp;&nbsp;&nbsp; n<sub>saha</sub> = n<sub>tasarım</sub> / yanıt oranı</div>
-    <div class="widget" id="w-hc">
+<div class="widget" id="w-hc">
 <div class="ornekler" style="margin-bottom:.6rem"><span class="cap" style="display:inline">Hazır örnekler: </span>
       <button onclick="hacimOrnek('kutu51')">Rehber Kutu 5.1 (N = 24.118.789 hane, e = 2,06)</button>
       <button onclick="hacimOrnek('ulusal')">Ulusal anket (±3, deff 1,5, yanıt %60)</button>
@@ -1100,25 +1120,9 @@ details.yanit p { margin: .4rem 0 0; color: #2b2550; }
     <div class="adimlar" id="hc-adimlar"></div>
     <div class="sonuc-buyuk"><span class="deger" id="hc-sonuc"></span><span class="acik" id="hc-acik"></span></div>
 </div>
-    <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Kaç anket? Simülasyon: aynı araştırmayı 500 kez yapsaydık</h4>
-    <p>Diyelim Türkiye'de 18 yaş üstü nüfusun AB üyeliğine desteği gerçekte %<span id="as-p-txt">45</span>. Bunu bilmiyorsunuz; n kişilik bir anketle tahmin edeceksiniz. Aynı anketi 500 kez tekrarlasaydık tahminler nasıl dağılırdı, kaçı hedeflediğiniz hata payının içinde kalırdı ve bütçe ne olurdu? n'i değiştirin.</p>
-    <div class="widget" id="w-as">
-      <div class="controls">
-        <label>Gerçek oran p: <input type="range" id="as-p" min="5" max="95" value="45" oninput="anketSim()"></label><span class="val" id="as-p-val">45%</span>
-        <label>Örneklem hacmi n: <input type="range" id="as-n" min="50" max="4000" step="50" value="400" oninput="anketSim()"></label><span class="val" id="as-n-val">400</span>
-        <label>Hedef hata payı ±: <input type="range" id="as-e" min="1" max="10" step="0.5" value="3" oninput="anketSim()"></label><span class="val" id="as-e-val">3</span>
-        <label>Anket başına maliyet (TL): <input type="number" id="as-m" value="350" min="0" step="50" oninput="anketSim()" style="width:90px;font-size:13px;padding:3px 6px;border:1px solid var(--border);border-radius:6px"></label>
-        <button onclick="anketSim(true)">↻ Yeniden çek</button>
-      </div>
-      <div class="grid2">
-        <div><div class="cap">500 tekrarda tahmin edilen oranların dağılımı; yeşil bant hedef hata payı</div><div class="chart-wrap-sm"><canvas id="ch-as"></canvas></div></div>
-        <div><div class="stat-grid" id="as-stat" style="margin-top:0"></div><div class="ev-aciklama" id="as-aciklama" style="margin-top:.6rem"></div></div>
-      </div>
-    </div>
-    <div class="info-box"><strong>Tasarım etkisi (deff).</strong> Küme örneklemesinde aynı mahalledeki kişiler birbirine benzer; 20 kişilik bir küme 20 bağımsız gözlem kadar bilgi vermez. Kish'in formülü deff ≈ 1 + (b − 1)ρ: b küme başına görüşme, ρ küme içi korelasyon. b = 20 ve ρ = 0,05 için deff = 1,95; yani 1.000 kişilik kümeli örneklem yaklaşık 513 kişilik basit rassal örneklem kadar kesindir (etkin hacim n/deff). Ulusal anket künyelerinde "±2,6" gibi değerler çoğunlukla bu düzeltmeyle verilir.</div>
-    <div class="odak-surum"><div class="g">Tasarım etkisi (deff)</div><ul><li>Küme örneklemesinde aynı mahalledeki kişiler birbirine benzer; 20 kişilik bir küme <strong>20 bağımsız gözlem kadar bilgi vermez</strong>.</li><li>Kish: <strong>deff ≈ 1 + (b − 1)ρ</strong>; b küme başına görüşme, ρ küme içi korelasyon.</li><li>b = 20, ρ = 0,05 → deff = 1,95: 1.000 kişilik kümeli örneklem ≈ 513 kişilik basit rassal örneklem (etkin hacim n / deff).</li><li>Ulusal künyelerdeki "±2,6" gibi değerler çoğunlukla bu düzeltmeyle verilir.</li></ul><div class="ek ek-tartis"><b>Tartışalım</b>Siyasi tercih mahalleye göre kümelenir (ρ yüksek), boy uzunluğu kümelenmez (ρ ≈ 0). Aynı tasarım iki değişken için farklı deff verir. Künyede tek hata payı yazmak ne kadar doğru?</div></div>
-    <div class="warn-box"><strong>Raporlama (ders notu).</strong> Araştırmacılar raporlarında kullandıkları yöntemi tanımlamada sık sık başarısız olur; sonuçları tartışmak verinin nasıl toplandığından daha ilgi çekicidir. Oysa örneklemin nasıl seçildiğini bilmeden bulguların genellenebilirliğine karar verilemez. Aynı konudaki araştırmaların birbirinden farklı sonuçlar vermesi çoğu kez örneklem kararlarındaki farklardan kaynaklanır (Kitson vd., 1982).</div>
-    <div class="odak-surum"><div class="g">Raporlama (ders notu)</div><ul><li>Araştırmacılar raporlarında yöntemi tanımlamada sık sık <strong>başarısız olur</strong>; sonuçları tartışmak verinin nasıl toplandığından daha ilgi çekicidir.</li><li>Oysa örneklemin nasıl seçildiğini bilmeden bulguların <strong>genellenebilirliğine</strong> karar verilemez.</li><li>Aynı konudaki araştırmaların farklı sonuçlar vermesi çoğu kez <strong>örneklem kararlarındaki farklardan</strong> kaynaklanır (Kitson vd., 1982).</li></ul><div class="ek ek-ornek"><b>Örnek</b>İki anket aynı hafta Türkiye'de AB desteğini %42 ve %55 buluyor. Biri kentsel 18-35 yaş internet paneli, öteki ulusal hane anketi. Fark "kamuoyu değişti" değil, "iki farklı evren ölçüldü"dür.</div></div>
+    </details>
+    <div class="warn-box"><strong>Raporda ne yazılır?</strong> Evren, çerçeve, yöntem, görüşme sayısı, güven düzeyi ve hata payı. Örnek: "Türkiye'de 18 yaş üstü nüfus; TÜİK adres çerçevesi; çok aşamalı katmanlı rassal örneklem; 1.535 görüşme; %95 güvenle ±2,6 puan." Örneklemin nasıl seçildiği yazılmazsa bulgunun kime genellenebileceği bilinemez; aynı konudaki araştırmaların farklı sonuç vermesi çoğu kez örneklem kararlarındaki farklardan kaynaklanır (Kitson vd., 1982).</div>
+    <div class="odak-surum"><div class="g">Raporda ne yazılır?</div><ul><li>Evren, çerçeve, yöntem, görüşme sayısı, güven düzeyi, hata payı.</li><li>Örnek künye: 18 yaş üstü; TÜİK adres çerçevesi; çok aşamalı katmanlı rassal; 1.535 görüşme; %95, ±2,6.</li><li>Yazılmazsa genellenebilirlik bilinemez (Kitson vd., 1982).</li></ul></div>
   </div>
 </div>
 

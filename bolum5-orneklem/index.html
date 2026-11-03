@@ -701,8 +701,15 @@ details.ayrinti[open] summary { margin-bottom: .6rem; }
       <tr><td><strong>1.000</strong></td><td><strong>±3</strong></td><td><strong>42 ile 48 arasında (ulusal anket standardı)</strong></td></tr>
       <tr><td>4.000</td><td>±1,5</td><td>43,5 ile 46,5 arasında</td></tr>
     </tbody></table></div>
-    <div class="mini-kutu"><b>Formülü merak edene:</b> hata payı = 1,96 × √(0,25 / n). 1,96 çan eğrisinin %95'ini kapsayan genişliktir, 0,25 en kötü durum (0,5 × 0,5), n kişi sayısı. n = 1.000: 0,25 / 1.000 = 0,00025; karekökü 0,0158; 1,96 ile çarpınca 0,031, yani ±3,1.</div>
-    <div class="odak-surum"><div class="g">Hata payı</div><ul><li>Anketin "artı eksi" aralığı; yalnız kişi sayısına bağlı.</li><li>100 kişi ±10, 400 kişi ±5, <strong>1.000 kişi ±3</strong>, 4.000 kişi ±1,5.</li><li>Formül: 1,96 × √(0,25 / n).</li></ul></div>
+    <p style="margin-top:.8rem"><strong>Bu sayılar nereden geliyor?</strong> Hepsi tek formülden: hata payı = 1,96 × √(0,25 / n). İki sabit var: 1,96, çan eğrisinin %95'ini kapsayan genişlik; 0,25, "evet" oranı bilinmediğinde alınan en kötü durum (0,5 × 0,5). Üç adım: 0,25'i n'e böl, karekökünü al, 1,96 ile çarp.</p>
+    <div class="table-scroll"><table><thead><tr><th>n</th><th>1. adım: 0,25 / n</th><th>2. adım: karekök</th><th>3. adım: × 1,96</th><th>Hata payı</th></tr></thead><tbody>
+      <tr><td>100</td><td>0,0025</td><td>0,050</td><td>0,098</td><td>±9,8 (yuvarlak ±10)</td></tr>
+      <tr><td>400</td><td>0,000625</td><td>0,025</td><td>0,049</td><td>±4,9 (±5)</td></tr>
+      <tr><td>1.000</td><td>0,00025</td><td>0,0158</td><td>0,031</td><td>±3,1 (±3)</td></tr>
+      <tr><td>4.000</td><td>0,0000625</td><td>0,0079</td><td>0,0155</td><td>±1,55 (±1,5)</td></tr>
+    </tbody></table></div>
+    <div class="mini-kutu"><b>Gizli varsayımlar:</b> güven düzeyi %95; "evet" oranı %50 civarı (oran %10 ya da %90 olsaydı hata payı küçülürdü); basit rassal örneklem (küme örneklemesinde sayılar 1,2 ile 1,5 kat büyür).</div>
+    <div class="odak-surum"><div class="g">Hata payı</div><ul><li>Anketin "artı eksi" aralığı; yalnız kişi sayısına bağlı.</li><li>100 kişi ±10, 400 kişi ±5, <strong>1.000 kişi ±3</strong>, 4.000 kişi ±1,5.</li><li>Formül: 1,96 × √(0,25 / n); üç adım: böl, karekök, çarp.</li></ul></div>
     <div class="warn-box"><strong>Tek koşul: rassal çekim.</strong> MLT yalnız örneklem kurayla çekildiğinde çalışır. Kurayla çekilmemiş bir örneklem için hata payı hesaplanamaz; hesaplanırsa anlamsızdır. Bu yüzden sıradaki soru "olasılıklı mı, değil mi?" (5. bölüm).</div>
     <div class="odak-surum"><div class="g">Tek koşul</div><ul><li>MLT yalnız <strong>rassal</strong> çekimde çalışır.</li><li>Kurasız örneklemde hata payı hesaplanamaz.</li></ul></div>
   </div>

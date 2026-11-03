@@ -693,21 +693,16 @@ details.ayrinti[open] summary { margin-bottom: .6rem; }
     </div>
     <div class="odak-surum"><div class="g">MLT ne diyor?</div><ul><li>Rassal örneklemlerin sonuçları <strong>çan eğrisi</strong> gibi dağılır, evren ne olursa olsun.</li><li>Eğrinin ortası <strong>gerçek değerdir</strong>.</li><li>Genişliği <strong>√n</strong> ile daralır: 4 kat kişi, yarı genişlik.</li></ul></div>
 
-    <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Hata payı: eğri ne kadar geniş?</h4>
-    <p>Hata payı, çan eğrisinin genişliğidir. 3. şekilde 1.000 ekibin %95'i 42 ile 48 arasında kaldı; demek ki 1.000 kişilik anketin hata payı ±3'tür. Bunu her n için hesaplayan formül:</p>
-    <div class="formula">hata payı = 1,96 × √( 0,25 / n )</div>
-    <div class="mini-kutu"><b>İki sabit, bir değişken.</b> 1,96: çan eğrisinin %95'ini kapsayan genişlik (güven düzeyi %95). 0,25: "evet" oranı bilinmediği için alınan en kötü durum (0,5 × 0,5). n: kişi sayısı, tek değişken. <b>Örnek, n = 1.000:</b> 0,25 / 1.000 = 0,00025; karekökü 0,0158; 1,96 ile çarpınca 0,031, yani <b>±3,1 puan</b>. n = 100 için aynı hesap ±9,8 verir.</div>
-<div class="widget" id="w-hp">
-<div class="hesap">
-      <label>Güven düzeyi <select id="hp-z" onchange="hataPayi()"><option value="80">%80 (z = 1,28)</option><option value="85">%85 (z = 1,44)</option><option value="90">%90 (z = 1,65)</option><option value="95" selected>%95 (z = 1,96)</option><option value="99">%99 (z = 2,58)</option></select></label>
-      <label>Örneklem hacmi n <input type="number" id="hp-n" value="1000" min="10" step="10" oninput="hataPayi()"></label>
-      <label>Beklenen oran p (en kötü durum 0,5) <input type="number" id="hp-p" value="0.5" min="0.01" max="0.99" step="0.01" oninput="hataPayi()"></label>
-    </div>
-    <div class="sonuc-buyuk"><span class="deger" id="hp-sonuc">±3,1 puan</span><span class="acik" id="hp-acik"></span></div>
-    <div class="chart-wrap-sm" style="margin-top:.8rem"><canvas id="ch-hp"></canvas></div>
-    <div class="cap">Hata payının örneklem hacmiyle değişimi (p = 0,5). Eğri 1.000-1.500 civarında yatıklaşır: bu yüzden ulusal anketler genellikle bu hacimdedir.</div>
-</div>
-    <div class="odak-surum"><div class="g">Hata payı</div><ul><li>hata payı = 1,96 × √(0,25 / n); 1,96 güven (%95), 0,25 en kötü durum.</li><li>n = 100: ±9,8. n = 1.000: ±3,1. n = 4.000: ±1,5.</li><li>n kök içinde: 4 kat kişi, yarı hata.</li></ul></div>
+    <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Hata payı</h4>
+    <p>Hata payı, anketin bulduğu sayının etrafındaki "artı eksi" aralığıdır. 1.000 kişilik anket %45 bulduysa gerçek oran %42 ile %48 arasındadır: hata payı ±3. Aralığın genişliği yalnız kaç kişiye sorduğunuza bağlıdır:</p>
+    <div class="table-scroll"><table><thead><tr><th>Kaç kişiye sordunuz?</th><th>Hata payı</th><th>%45 bulduysanız gerçek oran</th></tr></thead><tbody>
+      <tr><td>100</td><td>±10</td><td>35 ile 55 arasında (işe yaramaz)</td></tr>
+      <tr><td>400</td><td>±5</td><td>40 ile 50 arasında</td></tr>
+      <tr><td><strong>1.000</strong></td><td><strong>±3</strong></td><td><strong>42 ile 48 arasında (ulusal anket standardı)</strong></td></tr>
+      <tr><td>4.000</td><td>±1,5</td><td>43,5 ile 46,5 arasında</td></tr>
+    </tbody></table></div>
+    <div class="mini-kutu"><b>Formülü merak edene:</b> hata payı = 1,96 × √(0,25 / n). 1,96 çan eğrisinin %95'ini kapsayan genişliktir, 0,25 en kötü durum (0,5 × 0,5), n kişi sayısı. n = 1.000: 0,25 / 1.000 = 0,00025; karekökü 0,0158; 1,96 ile çarpınca 0,031, yani ±3,1.</div>
+    <div class="odak-surum"><div class="g">Hata payı</div><ul><li>Anketin "artı eksi" aralığı; yalnız kişi sayısına bağlı.</li><li>100 kişi ±10, 400 kişi ±5, <strong>1.000 kişi ±3</strong>, 4.000 kişi ±1,5.</li><li>Formül: 1,96 × √(0,25 / n).</li></ul></div>
     <div class="warn-box"><strong>Tek koşul: rassal çekim.</strong> MLT yalnız örneklem kurayla çekildiğinde çalışır. Kurayla çekilmemiş bir örneklem için hata payı hesaplanamaz; hesaplanırsa anlamsızdır. Bu yüzden sıradaki soru "olasılıklı mı, değil mi?" (5. bölüm).</div>
     <div class="odak-surum"><div class="g">Tek koşul</div><ul><li>MLT yalnız <strong>rassal</strong> çekimde çalışır.</li><li>Kurasız örneklemde hata payı hesaplanamaz.</li></ul></div>
   </div>
@@ -1479,7 +1474,7 @@ function mltCiz(yeni){ if (!$('ch-ort')) return;
 }
 
 // ---------- 5. hata payı ----------
-function hataPayi(){
+function hataPayi(){ if (!$('hp-n')) return;
   const z = D.z[$('hp-z').value], n = Math.max(1, +$('hp-n').value), p = Math.min(.99, Math.max(.01, +$('hp-p').value));
   const e = z * Math.sqrt(p * (1 - p) / n);
   $('hp-sonuc').textContent = '±' + fmt(100 * e, 1) + ' puan';

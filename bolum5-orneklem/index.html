@@ -855,22 +855,28 @@ details.ayrinti[open] summary { margin-bottom: .6rem; }
   <div class="section-body">
     <p class="neden">Herkese sorarsak sonuç kesindir ama zaman ve para yetmez; soru şu: kaç kişide durursak neredeyse aynı sonuca ulaşırız?</p>
     <p>Düşünce basit. Evrenin tamamına sorduğunuzda yanılma payı sıfırdır. Kişi sayısını azalttıkça yanılma payı büyür, ama hemen değil: ilk eklenen kişiler kesinliği çok artırır, sonrakiler gittikçe az. Bir noktadan sonra yeni kişi eklemek neredeyse hiçbir şey kazandırmaz, yalnız para ve zaman harcar. Örneklem hacmi kararı, o noktayı bulmaktır.</p>
-    <h4 style="margin:1rem 0 .4rem;color:var(--navy)">Formül</h4>
-    <div class="formula">n = 1,96² × 0,25 / e²</div>
-    <p><b>n</b> gereken kişi sayısı, <b>e</b> kabul ettiğiniz yanılma payı (ondalık: 3 puan için 0,03). 1,96 sayısı %95 güven düzeyine karşılık gelir; 0,25 "evet" oranını bilmediğimizde alınan en kötü durumdur (0,5 × 0,5). Sizin vereceğiniz tek karar e'dir.</p>
+    <h4 style="margin:1rem 0 .4rem;color:var(--navy)">Formül: kaç kişi gerekir?</h4>
+    <p>Gereken kişi sayısını veren formül şudur:</p>
+    <div class="formula">gereken kişi sayısı = 0,96 ÷ (yanılma payı)²</div>
+    <p>Formülde üç şey var:</p>
+    <ul style="margin:.2rem 0 .8rem 1.3rem;line-height:1.7">
+      <li><b>Yanılma payı:</b> sizin kararınız. "Bulduğum orandan 3 puan sapabilirim" diyorsanız yanılma payı 3 puan, formüle ondalık yazılır: 0,03.</li>
+      <li><b>Kare:</b> yanılma payının kendisiyle çarpımı: 0,03 × 0,03 = 0,0009. Yanılma payı yarıya inince karesi dörtte bire iner; bu yüzden kişi sayısı dört katına çıkar.</li>
+      <li><b>0,96:</b> sabit bir sayı; %95 güven düzeyi (1,96) ve "evet" oranını bilmediğimizde alınan en kötü durum (0,25) buradan gelir: 1,96 × 1,96 × 0,25 = 0,96. Siz hesaplamazsınız, yazarsınız.</li>
+    </ul>
+    <p><b>Hesap, 3 puan için:</b> 0,03 × 0,03 = 0,0009. Sonra 0,96 ÷ 0,0009 = 1.067. Demek ki 3 puan yanılma için 1.067 kişi gerekir.</p>
     <table class="hesap-tablo" style="width:auto;margin:.4rem 0 1rem"><tbody>
-      <tr><td>Yanılma payı 5 puan</td><td>n = 3,84 × 0,25 / 0,05² = 0,96 / 0,0025</td><td><b>= 385 kişi</b></td></tr>
-      <tr><td>Yanılma payı 3 puan</td><td>n = 3,84 × 0,25 / 0,03² = 0,96 / 0,0009</td><td><b>= 1.067 kişi</b></td></tr>
-      <tr><td>Yanılma payı 2 puan</td><td>n = 3,84 × 0,25 / 0,02² = 0,96 / 0,0004</td><td><b>= 2.401 kişi</b></td></tr>
-      <tr><td>Yanılma payı 1 puan</td><td>n = 3,84 × 0,25 / 0,01² = 0,96 / 0,0001</td><td><b>= 9.604 kişi</b></td></tr>
+      <tr><td>5 puan yanılma</td><td>0,05 × 0,05 = 0,0025 &nbsp;→&nbsp; 0,96 ÷ 0,0025</td><td><b>= 385 kişi</b></td></tr>
+      <tr><td>3 puan yanılma</td><td>0,03 × 0,03 = 0,0009 &nbsp;→&nbsp; 0,96 ÷ 0,0009</td><td><b>= 1.067 kişi</b></td></tr>
+      <tr><td>2 puan yanılma</td><td>0,02 × 0,02 = 0,0004 &nbsp;→&nbsp; 0,96 ÷ 0,0004</td><td><b>= 2.401 kişi</b></td></tr>
+      <tr><td>1 puan yanılma</td><td>0,01 × 0,01 = 0,0001 &nbsp;→&nbsp; 0,96 ÷ 0,0001</td><td><b>= 9.604 kişi</b></td></tr>
     </tbody></table>
-    <p>Formülde evrenin büyüklüğü yoktur. 5 binlik bir mahalle için de 85 milyonluk Türkiye için de 3 puan yanılma 1.067 kişi ister. Yanılmayı yarıya indirmek (3'ten 1,5'e) kişi sayısını 4'e katlar, çünkü e karesiyle bölüyor. Bu yüzden 1.000 civarında durulur: daha fazlası pahalı, kazancı küçük.</p>
-
+    <p>Formülde evrenin büyüklüğü yoktur: 5 binlik bir mahalle için de 85 milyonluk Türkiye için de 3 puan yanılma 1.067 kişi ister. Yanılmayı 3'ten 1'e indirmek kişi sayısını 9 katına çıkarır; bu yüzden kamuoyu anketleri 1.000 civarında durur, daha fazlası pahalı, kazancı küçüktür.</p>
     <h4 style="margin:1rem 0 .4rem;color:var(--navy)">Örnek</h4>
-    <p>Üniversitenizdeki 23 bin öğrencinin yüzde kaçı Erasmus'a gitmek istiyor? Herkese sorarsanız kesin cevabı alırsınız: 23 bin anket, aylar, büyük bütçe. Bunun yerine 3 puan yanılmayı kabul edersiniz: n = 0,96 / 0,0009 = 1.067, yuvarlak 1.000 kişi. Öğrenci işlerinin listesinden kurayla 1.000 öğrenci seçip sorarsınız. Sonuç %38 çıktı: gerçek oran 35 ile 41 arasında. 23 bin kişiye sorsaydınız belki %39 bulacaktınız; aradaki fark 22 bin anketi haklı çıkarmaz. Rapora yazılır: "n = 1.000, %95 güven, 3 puan yanılma payı".</p>
-    <p><b>Bütçe yetmezse:</b> 400 kişiye paranız var. Formülü tersten kullanın: e = 1,96 × √(0,25 / 400) = 0,049, yani 5 puan yanılma. Sonuç "33 ile 43 arasında" çıkar; daha kaba ama hâlâ kullanılır.</p>
-    <p><b>Daha emin olmak gerekirse:</b> bir ilacın yan etki oranı ya da bir aşının koruma düzeyi ölçülüyorsa 100'de 5 yanılma kabul edilemez, %99 güven istenir. Formülde 1,96 yerine 2,58 yazılır: n = 2,58² × 0,25 / 0,03² = 1.849 kişi, yani 1,7 kat. Erasmus anketinde %95 yeter.</p>
-    <div class="odak-surum"><div class="g">Örneklem hacmi</div><ul><li>Herkese sormak kesin ama pahalı; soru: kaç kişide durulur?</li><li><strong>n = 1,96² × 0,25 / e²</strong>: 5 puan 385, 3 puan 1.067, 2 puan 2.401, 1 puan 9.604. Evren büyüklüğü formülde yok.</li><li>Erasmus örneği: 3 puan → 1.000 kişi, sonuç %38, gerçek 35-41.</li><li>Bütçe 400 kişiyse 5 puan; sağlık araştırmasında %99 (2,58): 1.849 kişi.</li></ul></div>
+    <p>Üniversitenizdeki 23 bin öğrencinin yüzde kaçı Erasmus'a gitmek istiyor? Herkese sorarsanız kesin cevabı alırsınız: 23 bin anket, aylar, büyük bütçe. Bunun yerine 3 puan yanılmayı kabul edersiniz: 0,96 ÷ 0,0009 = 1.067, yuvarlak 1.000 kişi. Öğrenci işlerinin listesinden kurayla 1.000 öğrenci seçip sorarsınız. Sonuç %38 çıktı: gerçek oran 35 ile 41 arasında. 23 bin kişiye sorsaydınız belki %39 bulacaktınız; aradaki fark 22 bin anketi haklı çıkarmaz. Rapora yazılır: "n = 1.000, %95 güven, 3 puan yanılma payı".</p>
+    <p><b>Bütçe yetmezse:</b> 400 kişiye paranız var. 400 kişiyle yanılma payı 5 puana çıkar (tablodaki satır). Sonuç "33 ile 43 arasında" çıkar; daha kaba ama hâlâ kullanılır.</p>
+    <p><b>Daha emin olmak gerekirse:</b> bir ilacın yan etki oranı ya da bir aşının koruma düzeyi ölçülüyorsa 100'de 5 yanılma kabul edilemez, %99 güven istenir. Formüldeki sabit 0,96 yerine 1,66 olur (2,58 × 2,58 × 0,25) ve 3 puan için 1,66 ÷ 0,0009 = 1.849 kişi gerekir, yani 1,7 kat. Erasmus anketinde %95 yeter.</p>
+    <div class="odak-surum"><div class="g">Örneklem hacmi</div><ul><li>Herkese sormak kesin ama pahalı; soru: kaç kişide durulur?</li><li><strong>Kişi sayısı = 0,96 ÷ (yanılma payı)²</strong>: 5 puan 385, 3 puan 1.067, 2 puan 2.401, 1 puan 9.604. Evren büyüklüğü formülde yok.</li><li>Erasmus örneği: 3 puan → 1.000 kişi, sonuç %38, gerçek 35-41.</li><li>Bütçe 400 kişiyse 5 puan; sağlık araştırmasında %99 (2,58): 1.849 kişi.</li></ul></div>
   </div>
 </div>
 

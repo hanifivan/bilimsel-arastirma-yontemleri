@@ -1162,17 +1162,9 @@ details.ayrinti[open] summary { margin-bottom: .6rem; }
       <div class="mini-kutu"><b>Neden %95?</b> %100 imkânsızdır, herkese sormadan kesinlik yoktur. %90 "10'da 1 yanılma" demektir, fazla riskli. %99 için aynı hata payında 1,7 kat kişi gerekir, pahalı. Bilim dünyası "20'de 1 yanılma"yı kabul edilebilir saydığı için %95 standart oldu.</div>
     </div>
     <div class="sekil-kart" style="cursor:default; margin-top:.8rem">
-      <div class="sk-bas">Bütçe: formül ideal sayıyı, bütçe gerçek sayıyı verir</div>
-      <p>Bütçe ÷ bir görüşmenin maliyeti = yapabileceğiniz görüşme. Sonra o sayının hata payına bakın: yetmiyorsa ya para bulun ya daha büyük hata payını kabul edin.</p>
-<div class="widget" id="w-bt">
-        <div class="hesap">
-          <label>Toplam bütçe (TL) <input type="number" id="bt-butce" value="60000" min="1000" step="1000" oninput="butce()"></label>
-          <label>Bir görüşmenin maliyeti (TL) <input type="number" id="bt-maliyet" value="50" min="1" step="5" oninput="butce()"></label>
-          <label>İstediğiniz hata payı ± <input type="number" id="bt-hedef" value="3" min="1" max="10" step="0.5" oninput="butce()"></label>
-        </div>
-        <div class="adimlar" id="bt-adimlar"></div>
-        <div class="sonuc-buyuk"><span class="deger" id="bt-sonuc"></span><span class="acik" id="bt-acik"></span></div>
-      </div>
+      <div class="sk-bas">Bütçe: kaç görüşmeye paranız yeter?</div>
+      <div class="formula">görüşme sayısı = toplam bütçe ÷ bir görüşmenin maliyeti</div>
+      <p><strong>Örnek:</strong> Bütçeniz 60.000 TL, bir görüşme (anketör ücreti, yol, veri girişi) 50 TL. 60.000 ÷ 50 = 1.200 görüşme. 1.200 kişinin hata payı ±2,8: ±3 hedefiniz varsa bütçe yeter. Bütçeniz 20.000 TL olsaydı 400 görüşme çıkar, hata payı ±5 olurdu; ya 33.400 TL daha bulur ya ±5'i kabul edersiniz.</p>
     </div>
     <div class="odak-surum"><div class="g">Üç kavram</div><ul><li><strong>Hata payı:</strong> %45 ± 3, gerçek oran 42-48 arasında. Fark hata payından küçükse "kim önde" denemez.</li><li><strong>Güven düzeyi:</strong> 100 ankette 95'i aralığı yakalar. %100 imkânsız, %90 riskli, %99 pahalı.</li><li><strong>Bütçe:</strong> bütçe ÷ görüşme maliyeti = görüşme sayısı.</li></ul></div>
 
@@ -1913,7 +1905,7 @@ function anketSim(yeni){
 }
 
 // ---------- kurulum ----------
-zamanCiz(); EVREN = evrenUret('normal'); mltCiz(); hataPayi(); kdBasla(); senKur(); kota(); hacim(); butce(); nkOrnek(1100000, 'Van ili (yaklaşık 1,1 milyon)'); nitelKac(); anketSim(); yanitCiz(); kunye(); quizKur();
+zamanCiz(); EVREN = evrenUret('normal'); mltCiz(); hataPayi(); kdBasla(); senKur(); kota(); hacim(); nkOrnek(1100000, 'Van ili (yaklaşık 1,1 milyon)'); nitelKac(); anketSim(); yanitCiz(); kunye(); quizKur();
 window.addEventListener('resize', () => { evCiz(); });
 
 // sidebar etkin bölüm

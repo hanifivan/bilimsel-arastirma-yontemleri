@@ -1218,6 +1218,8 @@ Chart.defaults.font.family = '-apple-system, BlinkMacSystemFont, "Segoe UI", san
 Chart.defaults.font.size = 11;
 Chart.defaults.color = "#475569";
 Chart.defaults.animation = { duration: 250 };
+Chart.defaults.responsive = true;
+Chart.defaults.maintainAspectRatio = false;
 const $ = id => document.getElementById(id);
 const fmt = (v, d=0) => Number(v).toLocaleString("tr-TR", {minimumFractionDigits: d, maximumFractionDigits: d});
 const sum = a => a.reduce((s, v) => s + v, 0);

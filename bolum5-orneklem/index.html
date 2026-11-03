@@ -885,22 +885,14 @@ details.ayrinti[open] summary { margin-bottom: .6rem; }
     </div>
     <div class="odak-surum"><div class="g">İki kural</div><ul><li><strong>Kişiyi dörde katla, hatayı yarıya indir:</strong> 100 → ±10, 400 → ±5, 1.600 → ±2,5. 1.000'den sonra kazanç küçük.</li><li><strong>Kazan büyür, kaşık aynı kalır:</strong> mahalle, Van, Türkiye; ±3 için hep yaklaşık 1.000 kişi.</li></ul></div>
 
-    <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Kaç kişi gerekir? Tek tablo</h4>
-    <p>Hata payını seçin, gereken kişi sayısı belli olur. Evrenin büyüklüğü önemli değildir: aşağıdaki sayılar bir üniversite için de, Van için de, Türkiye için de aynıdır.</p>
-    <div class="grid2">
-      <div class="sekil-kart" style="cursor:default"><svg viewBox="0 0 360 176" class="sekil" role="img" style="max-width:480px"><line x1="20" y1="130" x2="350" y2="130" stroke="#cfd6e4"/><rect x="20" y="125.2" width="48" height="4.8" rx="5" fill="#378ADD"/><text x="44" y="119.2" font-size="12" font-weight="700" fill="#378ADD" text-anchor="middle">385</text><text x="44" y="148" font-size="12" fill="#6b7280" text-anchor="middle">±5</text><rect x="88" y="122.5" width="48" height="7.5" rx="5" fill="#378ADD"/><text x="112" y="116.5" font-size="12" font-weight="700" fill="#378ADD" text-anchor="middle">600</text><text x="112" y="148" font-size="12" fill="#6b7280" text-anchor="middle">±4</text><rect x="156" y="116.7" width="48" height="13.3" rx="5" fill="#1D9E75"/><text x="180" y="110.7" font-size="12" font-weight="700" fill="#1D9E75" text-anchor="middle">1.067</text><text x="180" y="148" font-size="12" fill="#6b7280" text-anchor="middle">±3</text><rect x="224" y="100.0" width="48" height="30.0" rx="5" fill="#378ADD"/><text x="248" y="94.0" font-size="12" font-weight="700" fill="#378ADD" text-anchor="middle">2.401</text><text x="248" y="148" font-size="12" fill="#6b7280" text-anchor="middle">±2</text><rect x="292" y="10.0" width="48" height="120.0" rx="5" fill="#EF9F27"/><text x="316" y="26" font-size="12" font-weight="700" fill="#fff" text-anchor="middle">9.604</text><text x="316" y="148" font-size="12" fill="#6b7280" text-anchor="middle">±1</text><text x="180" y="166" font-size="10.5" fill="#6b7280" text-anchor="middle">hata payı (puan) → gereken kişi sayısı, %95 güven</text></svg></div>
-      <div class="table-scroll"><table><thead><tr><th>Kabul ettiğiniz hata payı</th><th>Gereken kişi</th><th>Ne için yeter?</th></tr></thead><tbody>
-        <tr><td>±5 puan</td><td>385</td><td>Kaba soru: "destek çoğunlukta mı?"</td></tr>
-        <tr><td>±4 puan</td><td>600</td><td>Bölüm ya da kampüs anketi</td></tr>
-        <tr><td><strong>±3 puan</strong></td><td><strong>1.067</strong></td><td><strong>Kamuoyu anketlerinin standardı</strong></td></tr>
-        <tr><td>±2 puan</td><td>2.401</td><td>Alt grupları (bölge, yaş) ayrı raporlamak</td></tr>
-        <tr><td>±1 puan</td><td>9.604</td><td>Çok küçük farkları görmek; nadiren ödenir</td></tr>
-      </tbody></table></div>
+    <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Bir örnek</h4>
+    <div class="sekil-kart" style="cursor:default">
+      <p><b>Soru:</b> Üniversitenizdeki 23 bin öğrencinin yüzde kaçı Erasmus'a gitmek istiyor?</p>
+      <p><b>Karar:</b> ±3 puan yanılmayı kabul ediyorsunuz, %95 güven istiyorsunuz. Tablo "yaklaşık 1.000 kişi" diyor.</p>
+      <p><b>Uygulama:</b> Öğrenci işlerinden 23 bin kişilik listeyi alıp kurayla 1.000 öğrenci seçiyorsunuz, anket yapıyorsunuz. Sonuç: %38. Rapora şöyle yazıyorsunuz: "Öğrencilerin %38'i Erasmus'a gitmek istiyor (n = 1.000, %95 güven, ±3 puan)." Yani gerçek oran 35 ile 41 arasında.</p>
+      <p><b>Bütçe yetmeseydi:</b> 400 kişiyle yapsaydınız hata payı ±5 olurdu, sonuç "33 ile 43 arasında"; yine kullanılır, ama daha kaba. Okul 23 bin yerine 230 bin öğrencili olsaydı sayı yine 1.000 olurdu.</p>
     </div>
-    <div class="mini-kutu"><b>Örnek:</b> Van'da (1,1 milyon kişi) AB desteğini ±3 puanla ölçmek istiyorsunuz: 1.067 kişi. Aynı anketi Türkiye'de (85 milyon) yapsanız yine 1.067. Bütçeniz 600 kişiye yetiyorsa hata payını ±4 kabul edersiniz.</div>
-    <div class="mini-kutu"><b>Sahada iki ekleme:</b> (1) Mahalle mahalle gidiyorsanız (küme) aynı mahalleden gelenler birbirine benzer; sayıyı 1,5 ile çarpın: 1.067 → 1.600. (2) Herkes kapıyı açmaz; yanıt oranı %60 bekleniyorsa sahaya 1.600 / 0,6 = 2.670 adres çıkarın. Künyelerdeki "3.400 adres, 1.535 görüşme" farkı budur.</div>
-    <div class="warn-box"><strong>Raporda ne yazılır?</strong> Evren, çerçeve, yöntem, görüşme sayısı, güven düzeyi ve hata payı. Örnek: "Türkiye'de 18 yaş üstü nüfus; TÜİK adres çerçevesi; çok aşamalı katmanlı rassal örneklem; 1.535 görüşme; %95 güvenle ±2,6 puan." Bunlar yazılmazsa bulgunun kime genellenebileceği bilinemez.</div>
-    <div class="odak-surum"><div class="g">Kaç kişi gerekir?</div><ul><li>±5: 385 · ±4: 600 · <strong>±3: 1.067</strong> · ±2: 2.401 · ±1: 9.604; evren büyüklüğü fark etmez.</li><li>Küme: × 1,5. Yanıt oranı %60: ÷ 0,6. 1.067 → 1.600 → 2.670 adres.</li><li>Raporda: evren, çerçeve, yöntem, görüşme sayısı, güven düzeyi, hata payı.</li></ul></div>
+    <div class="odak-surum"><div class="g">Bir örnek</div><ul><li>23 bin öğrenci, Erasmus sorusu, ±3 ve %95: <strong>1.000 kişi</strong>.</li><li>Listeden kura, anket, sonuç %38: rapora "n = 1.000, %95, ±3", gerçek oran 35-41.</li><li>400 kişi olsaydı ±5; evren 230 bin olsaydı yine 1.000.</li></ul></div>
   </div>
 </div>
 

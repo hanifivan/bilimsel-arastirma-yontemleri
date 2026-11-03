@@ -365,6 +365,18 @@
 
 .ek-etiket { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #7a4a00; background: #FDF3E7; border: 1px solid #f0d9b8; border-radius: 999px; padding: 1px 8px; margin-right: .5rem; vertical-align: middle; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
 
+.ev2-wrap { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: .4rem; }
+.ev2-wrap svg { width: 100%; max-width: 640px; height: auto; display: block; margin: 0 auto; }
+.ev2-lejant { display: flex; gap: 1rem; flex-wrap: wrap; font-size: 12px; color: var(--gray); margin: .5rem 0; }
+.ev2-lejant i { display: inline-block; width: 12px; height: 12px; border-radius: 50%; margin-right: 5px; vertical-align: -1px; }
+.ev2-aciklama { font-size: 13.5px; line-height: 1.65; background: #F3F9FA; border-left: 4px solid var(--teal); border-radius: 6px; padding: .6rem .9rem; }
+.ev2-sonuc { display: block; margin-top: .3rem; font-weight: 700; color: var(--navy); }
+details.yanit { margin-top: .5rem; border-top: 1px dashed #c9c3ee; padding-top: .4rem; }
+details.yanit summary { cursor: pointer; font-weight: 700; color: #4b3fb0; font-size: 12.5px; list-style: none; }
+details.yanit summary::before { content: "▸ "; }
+details.yanit[open] summary::before { content: "▾ "; }
+details.yanit p { margin: .4rem 0 0; color: #2b2550; }
+
 </style>
 </head>
 <body>
@@ -456,7 +468,9 @@
       <div class="step"><span class="n">2</span><b>Seçim yöntemi</b>Çerçeveden birimler nasıl seçilecek: olasılıklı mı, olasılıksız mı? (6-9. bölümler)<div class="ek ek-ornek"><b>Örnek</b>1936'da Literary Digest 2,4 milyon yanıtla yanıldı, Gallup 50 bin kişiyle bildi. Fark hacimde değil, seçim biçimindeydi (2. bölüm).</div></div>
       <div class="step"><span class="n">3</span><b>Örneklem hacmi</b>Kaç birim yeter? Hata payı, maliyet ve karar önemi arasında denge. (10. bölüm)<div class="ek ek-sayi"><b>Sayı</b>%95 güven düzeyinde n = 1.000 için hata payı ±3,1 puan, n = 4.000 için ±1,5 puan. Hata payını yarıya indirmek dört kat örneklem ister.</div></div>
     </div>
-    <div class="soru-kutu"><div class="im">?</div><div><b>Hazırlık soruları.</b> Bulgularınızı Türkiye'ye genellemek istiyorsanız nasıl bir örneklem düşünürsünüz? Türkiye istatistiksel olarak kaç bölgeye ayrılır? Takip ettiğiniz araştırma raporları örneklemlerini ayrıntılı paylaşıyor mu? Bulgulara güvenmek için örneklem tasarımını bilmek ister miydiniz?</div></div>
+    <div class="soru-kutu"><div class="im">?</div><div><b>Hazırlık soruları.</b> Bulgularınızı Türkiye'ye genellemek istiyorsanız nasıl bir örneklem düşünürsünüz? Türkiye istatistiksel olarak kaç bölgeye ayrılır? Takip ettiğiniz araştırma raporları örneklemlerini ayrıntılı paylaşıyor mu? Bulgulara güvenmek için örneklem tasarımını bilmek ister miydiniz?
+      <details class="yanit"><summary>Yanıt</summary><p>Türkiye'ye genelleme için olasılıklı ve çok aşamalı bir tasarım gerekir: 26 İBBS-2 bölgesi katman, bölgelerde yerleşim yerleri ve mahalleler küme, mahallede haneler rassal, hanede kişi rassal (Kish tablosu). Türkiye istatistiksel olarak düzey 1'de 12 bölgeye, düzey 2'de 26 alt bölgeye, düzey 3'te 81 ile ayrılır. Raporların çoğu örneklemi bir iki cümleyle geçer; oysa bulgunun kime genellenebileceği yalnız tasarımdan anlaşılır, bu yüzden tasarımı bilmek istemek zorundasınız.</p></details>
+    </div></div>
     <div class="odak-surum">
       <div class="g">Hazırlık soruları</div>
       <ul>
@@ -564,7 +578,9 @@
       <div class="g" style="font-family:'Cambria Math',Cambria,serif;font-weight:400;color:var(--teal)">parametre ≈ istatistik ± hata payı</div>
       <div class="ek ek-tartis"><b>Tartışalım</b>Bir haber "ankete göre seçmenlerin %58'i destekliyor" diyor; hata payı yazmıyor. Eksik olan ne? Hangi soruyu sormalısınız: kaç kişi, nasıl seçildi, ne zaman?</div>
     </div>
-    <div class="soru-kutu"><div class="im">?</div><div><b>Kendi konunuzu düşünün.</b> Araştırmanızın evreni kimlerden oluşuyor? Bu kişilerin erişebileceğiniz bir listesi var mı? Evrenin büyüklüğüne ve coğrafi dağılımına dair bilgiye ulaşabiliyor musunuz?</div></div>
+    <div class="soru-kutu"><div class="im">?</div><div><b>Kendi konunuzu düşünün.</b> Araştırmanızın evreni kimlerden oluşuyor? Bu kişilerin erişebileceğiniz bir listesi var mı? Evrenin büyüklüğüne ve coğrafi dağılımına dair bilgiye ulaşabiliyor musunuz?
+      <details class="yanit"><summary>Yanıt</summary><p>Evreni üç ölçütle yazın: kim (örneğin 18 yaş üstü Afganistan uyruklular), nerede (Van il sınırları), ne zaman (2026 bahar). Liste varsa (öğrenci kayıtları, seçmen kütüğü, dernek üye listesi) olasılıklı çekim mümkündür; yoksa mahalle ya da kurum düzeyinde alan çerçevesi kurulur. Büyüklük için TÜİK ADNKS, Göç İdaresi il toplamları ve YÖK istatistikleri kullanılır; mahalle dağılımı çoğu zaman yoktur, muhtarlık ve STK bilgisiyle tahmin edilir ve bu tahmin raporda belirtilir.</p></details>
+    </div></div>
     <div class="odak-surum">
       <div class="g">Kendi konunuzu düşünün</div>
       <ul>
@@ -597,7 +613,9 @@
     <div class="odak-surum"><div class="g">Liste yoksa alan çerçevesi</div><ul><li>Çerçeve, iyi tanımlanmış doğal ve yapay sınırlara sahip <strong>coğrafi alanlardan</strong> (mahalle, köy, blok) kurulur.</li><li>Önce alanlar seçilir, sonra yalnız seçilen alanlardaki birimler listelenir.</li><li>Bu, küme ve çok aşamalı örneklemenin temelidir (8. ve 9. bölümler).</li></ul><div class="ek ek-ornek"><b>Örnek</b>UNHCR'ın mülteci kamplarındaki anketlerinde kamp blokları, Afrika'daki Demografi ve Sağlık Araştırmalarında (DHS) sayım alanları alan çerçevesi olarak kullanılır. Liste yok, harita var.</div></div>
     <div class="warn-box"><strong>Dışlama kararı açıkça yazılır.</strong> Uzun bir anketin bilişsel yükü nedeniyle 80 yaş üstünü, Türkçe anket yapıldığı için Türkçe bilmeyenleri, giriş zorluğu nedeniyle hastaneleri ve güvenlikli siteleri çerçeve dışında tutabilirsiniz. Sorun olmaz; ama bulgularınızı bu kişilere genelleyemezsiniz ve bunu raporda belirtmeniz gerekir.</div>
     <div class="odak-surum"><div class="g">Dışlama kararı açıkça yazılır</div><ul><li>Bilişsel yük nedeniyle <strong>80 yaş üstü</strong>, Türkçe anket nedeniyle <strong>Türkçe bilmeyenler</strong>, giriş zorluğu nedeniyle <strong>hastaneler ve güvenlikli siteler</strong> dışarıda bırakılabilir.</li><li>Sorun olmaz; ama bulgular bu kişilere <strong>genellenemez</strong>.</li><li>Dışlama raporun yöntem bölümünde <strong>açıkça yazılır</strong>.</li></ul><div class="ek ek-tartis"><b>Tartışalım</b>Suriyelilerle anketi Türkçe yaparsanız kimler dışarıda kalır? Dışarıda kalanlar uyum düzeyi açısından içeride kalanlardan farklı mı? Bu dışlama bulgunuzu hangi yöne çarpıtır?</div></div>
-    <div class="soru-kutu"><div class="im">?</div><div><b>Denizli'ye zorunlu göçle gelmiş kişilerle</b> anket yapmak istiyorsunuz. Bu kişilerin bir listesi var mı? Adana'daki mevsimlik tarım işçilerinin, sokakta çalışan çocukların, düzensiz göçmenlerin? Oysa üniversitenizdeki öğrencilerin, kütüphanedeki kitapların, Türkiye'deki köylerin listesi var. Fark ne anlama geliyor?</div></div>
+    <div class="soru-kutu"><div class="im">?</div><div><b>Denizli'ye zorunlu göçle gelmiş kişilerle</b> anket yapmak istiyorsunuz. Bu kişilerin bir listesi var mı? Adana'daki mevsimlik tarım işçilerinin, sokakta çalışan çocukların, düzensiz göçmenlerin? Oysa üniversitenizdeki öğrencilerin, kütüphanedeki kitapların, Türkiye'deki köylerin listesi var. Fark ne anlama geliyor?
+      <details class="yanit"><summary>Yanıt</summary><p>Zorunlu göçle gelenler, mevsimlik tarım işçileri, sokakta çalışan çocuklar ve düzensiz göçmenler için liste yoktur; öğrenci, kitap ve köy için vardır. Liste varsa her birimin seçilme olasılığı hesaplanabilir, yani olasılıklı örnekleme ve hata payı mümkündür. Liste yoksa iki yol kalır: alan çerçevesi kurup (mahalle, tarla, kavşak) çok aşamalı çekim yapmak ya da kartopu ve amaçlı örneklemle yetinip bulguları genellemeden sunmak. Fark, bulgunun evrene mi yoksa yalnız görüşülenlere mi ait olacağıdır.</p></details>
+    </div></div>
     <div class="odak-surum"><div class="g">Liste var mı?</div><ul><li>Denizli'ye zorunlu göçle gelenler, Adana'daki mevsimlik tarım işçileri, sokakta çalışan çocuklar, düzensiz göçmenler: <strong>liste yok</strong>.</li><li>Üniversitenizdeki öğrenciler, kütüphanedeki kitaplar, Türkiye'deki köyler: <strong>liste var</strong>.</li><li>Fark, olasılıklı çekimin mümkün olup olmadığını belirler.</li></ul><div class="ek ek-ornek"><b>Örnek</b>Uluslararası ilişkilerde "liste var" durumları: BM üye devletleri (193), Avrupa Parlamentosu üyeleri, Türkiye'nin büyükelçilikleri, ikili anlaşmalar. Belge ve kurum evrenlerinde çerçeve genellikle hazırdır; kişi evrenlerinde değildir.</div></div>
   </div>
 </div>
@@ -668,7 +686,9 @@
 </div>
     <div class="info-box"><strong>Güven düzeyi ne demek?</strong> Yüz tahminin kaçında yanılmayı göze aldığınızın cevabıdır. %95 güven düzeyi yüz tahminden beşinin aralığın dışında kalmasını kabul etmek demektir. Güveni %99'a çıkarırsanız aynı n için hata payı büyür. Araştırma künyelerinde verilen hata payı bu formülle, <em>basit rassal örnekleme</em> varsayımıyla hesaplanır; olasılıksız örneklemlerde hesaplanamaz.</div>
     <div class="odak-surum"><div class="g">Güven düzeyi ne demek?</div><ul><li>Yüz tahminin kaçında <strong>yanılmayı göze aldığınızın</strong> cevabıdır: %95 güven, yüz tahminden beşinin aralık dışında kalmasını kabul etmektir.</li><li>Güveni %99'a çıkarırsanız aynı n için hata payı <strong>büyür</strong>.</li><li>Künyelerdeki hata payı bu formülle, <strong>basit rassal örnekleme</strong> varsayımıyla hesaplanır; olasılıksız örneklemlerde hesaplanamaz.</li></ul><div class="ek ek-sayi"><b>Sayı</b>n = 1.000, p = 0,5: %90 güvende ±2,6; %95'te ±3,1; %99'da ±4,1 puan. Aynı veriden üç farklı aralık; hangisini bildirdiğiniz yazılmalıdır.</div></div>
-    <div class="soru-kutu"><div class="im">?</div><div>Tahmin yaparken kendinize ne kadar güvenmek istersiniz? Güven düzeyiniz artınca hata payınız nasıl değişiyor? n'i 1.000'den 4.000'e çıkardığınızda kazancınız ne kadar?</div></div>
+    <div class="soru-kutu"><div class="im">?</div><div>Tahmin yaparken kendinize ne kadar güvenmek istersiniz? Güven düzeyiniz artınca hata payınız nasıl değişiyor? n'i 1.000'den 4.000'e çıkardığınızda kazancınız ne kadar?
+      <details class="yanit"><summary>Yanıt</summary><p>Sosyal araştırmalarda yerleşik ölçüt %95 güven düzeyidir. Güven düzeyi artınca z büyür ve hata payı genişler: n = 1.000 için %90'da ±2,6, %95'te ±3,1, %99'da ±4,1 puan. n'i 1.000'den 4.000'e çıkarmak hata payını ±3,1'den ±1,5'e indirir: dört kat maliyet, yarı hata payı. Çoğu karar için ±3 puan yeterlidir; ±1 gerekiyorsa 9.600 görüşme ve bunun bütçesi konuşulur.</p></details>
+    </div></div>
     <div class="odak-surum"><div class="g">Düşünün</div><ul><li>Tahmin yaparken kendinize <strong>ne kadar güvenmek</strong> istersiniz?</li><li>Güven düzeyiniz artınca hata payınız nasıl değişiyor?</li><li>n'i 1.000'den 4.000'e çıkardığınızda kazancınız ne kadar?</li></ul><div class="ek ek-sayi"><b>Sayı</b>n = 1.000 → ±3,1; n = 4.000 → ±1,5. Dört kat maliyet, 1,6 puan kazanç. Ulusal anketlerin 1.000-2.000 arasında kalmasının nedeni budur.</div></div>
   </div>
 </div>
@@ -729,7 +749,9 @@
     </div>
     <div class="info-box"><strong>Veri toplama yöntemi de seçimi etkiler (ders notu).</strong> Veri posta ya da telefonla toplanıyorsa basit ya da katmanlı rassal örnekleme tercih edilir. Yüz yüze görüşmede her görüşmenin ulaşım ve anketör maliyeti vardır; evren coğrafi olarak yayıldıkça katmanlı, kota ve özellikle küme örneklemesi, kapsanan alan büyüdükçe çok aşamalı küme örneklemesi tercih edilir (Gray, 2007).</div>
     <div class="odak-surum"><div class="g">Veri toplama yöntemi de seçimi etkiler (ders notu)</div><ul><li>Veri <strong>posta ya da telefonla</strong> toplanıyorsa basit ya da katmanlı rassal örnekleme tercih edilir.</li><li><strong>Yüz yüze</strong> görüşmede her görüşmenin ulaşım ve anketör maliyeti vardır; evren coğrafi olarak yayıldıkça katmanlı, kota ve özellikle <strong>küme</strong> örneklemesi tercih edilir.</li><li>Kapsanan alan büyüdükçe <strong>çok aşamalı küme</strong> örneklemesi tercih edilir (Gray, 2007).</li></ul><div class="ek ek-sayi"><b>Sayı</b>Yüz yüze ulusal ankette görüşme başına maliyet Türkiye'de 2025 itibarıyla birkaç yüz lira; 81 ile dağılmış basit rassal örneklemde ulaşım maliyeti bunu katlar. Küme örneklemesi yol maliyetini düşürür, karşılığında tasarım etkisi öder (10. bölüm).</div></div>
-    <div class="soru-kutu"><div class="im">?</div><div>Kendi çalıştığınız konuyu düşünün: olasılıklı olabilir mi? Yani evrendeki her birimin örnekleminize girme olasılığı hesaplanabilir ve eşit mi? Değilse, bunun bulgularınız için sonucu nedir?</div></div>
+    <div class="soru-kutu"><div class="im">?</div><div>Kendi çalıştığınız konuyu düşünün: olasılıklı olabilir mi? Yani evrendeki her birimin örnekleminize girme olasılığı hesaplanabilir ve eşit mi? Değilse, bunun bulgularınız için sonucu nedir?
+      <details class="yanit"><summary>Yanıt</summary><p>İki soru sorun: evrenin bir listesi ya da kurulabilir bir alan çerçevesi var mı, ve seçimi rassal bir kural mı yapıyor yoksa siz ya da anketör mü? İkisine de evet diyebiliyorsanız olasılıklı tasarım mümkündür. Değilse bulgular yalnız görüşülen kişileri anlatır: hata payı yazılamaz, "Türkiye'de", "gençler arasında" gibi genellemeler yapılamaz. Bu bir kusur değil sınırdır; raporun yöntem bölümünde açıkça yazılır ve çalışma keşif ya da pilot olarak sunulur.</p></details>
+    </div></div>
     <div class="odak-surum"><div class="g">Kendi konunuzu düşünün</div><ul><li>Olasılıklı olabilir mi? Evrendeki <strong>her birimin</strong> örnekleminize girme olasılığı hesaplanabilir ve eşit mi?</li><li>Değilse, bunun bulgularınız için <strong>sonucu</strong> nedir?</li></ul><div class="ek ek-tartis"><b>Tartışalım</b>Çoğu lisans ve yüksek lisans tezi gelişigüzel (kolayda) örneklemle yapılır ve yine de "anlamlılık testi" raporlar. Bu testler ne anlama gelir? Dürüst raporlama nasıl olmalı?</div></div>
   </div>
 </div>
@@ -779,7 +801,9 @@
     <div class="tab-pane" data-tab="olx-1">
       <p>Araştırmacı belirli bir yeri ya da grubu araştırma sorusuna uygun olarak <strong>kasıtla</strong> seçer: Romanların yoğun yaşadığı mahalleye gitmek, Suriyelilerin çok olduğu bilinen semtte anket yapmak, çalışkan öğrenciyi kütüphanede, fanatik taraftarı tribünde aramak. Hedefe çok daha hızlı ve ucuz ulaşılır.</p>
       <div class="warn-box"><strong>Yoğunlaşmayı yaratan başka etkenler.</strong> Daha fazla mal varlığı ve ilişkisi olan Suriyeliler müreffeh mahallelerde yerli nüfus arasında kaybolur, göze çarpmaz; daha kırılgan olanlar "çöküntü" mahallelerde çoğunluğu oluşturur ve göze çarpar. Sosyal uyumu çalışıyorsanız, gittiğiniz en dezavantajlı mahallelerdeki Suriyelilerin uyum derecesi gitmediğiniz mahallelerdekinden farklı olmaz mı? İstatistiksel anlamlılık zaten yok; çıkarımın kendisi de kusurlu olur.</div>
-      <div class="soru-kutu"><div class="im">?</div><div>Yaşadığınız şehirde Suriyeliler en fazla hangi mahallede yaşıyor? Peki nereden biliyorsunuz? Bu bilgi önyargılarınızdan ne kadar bağımsız?</div></div>
+      <div class="soru-kutu"><div class="im">?</div><div>Yaşadığınız şehirde Suriyeliler en fazla hangi mahallede yaşıyor? Peki nereden biliyorsunuz? Bu bilgi önyargılarınızdan ne kadar bağımsız?
+      <details class="yanit"><summary>Yanıt</summary><p>Çoğu kişi bu bilgiyi gözlemden, haberlerden ve duyumdan edinir; görünür olan mahalle yoksul ve kalabalık mahalledir, orta sınıf Suriyelilerin yaşadığı siteler görünmez. Resmî veri il toplamını verir, mahalle dağılımını vermez. Önyargıdan bağımsızlaşmanın yolu doğrulamadır: muhtarlık kayıtları, okul kayıtlarındaki yabancı öğrenci sayıları, belediye su ve çöp abonelikleri, STK saha bilgisi. Tek kaynağa dayanan "en çok şu mahallede" bilgisi amaçlı örneklemi sınıfsal olarak çarpıtır.</p></details>
+    </div></div>
     </div>
     <div class="tab-pane" data-tab="olx-2">
       <p>Ulaşılması zor gruplarda (düzensiz göçmenler, mevsimlik tarım işçileri, yerinden edilmiş kişiler) bir temas noktasıyla başlanır, onun tavsiyesiyle ikinciye geçilir ve hedeflenen sayıya ulaşılınca durulur. Örneklem kartopu gibi birikerek büyür. Avantajları: erişim, düşük maliyet, esneklik, hassas konularda güven ilişkisinin aktarılması ve daha içten yanıtlar.</p>
@@ -807,7 +831,9 @@
     </div>
     <div class="kaynak-kutu"><b>Gerçek künyelerden (Rehber, Örnek Kutusu 5.1-5.3, anonimleştirilmiş):</b> "NUTS-2 düzeyinde 26 il kent merkezi, n = 2.300, %95 güven ve ±2,06 aralık, basit rastgele örnekleme, il nüfuslarına göre kota, hane seçiminde rastgele yürüyüş." Bir başkası: "12 İBBS bölgesini temsil etmek üzere her bölgeden en az 2 il, internet kullanıcısı, n = 350, kotalı örneklem." Bu künyelerde çelişki var mı? "Basit rastgele" ile "kota" aynı tasarımda nasıl duruyor?</div>
     <div class="odak-surum"><div class="g">Gerçek künyeler (Rehber, anonimleştirilmiş)</div><ul><li>Künye 1: 26 il kent merkezi, n = 2.300, %95 güven ve ±2,06 aralık, <strong>basit rastgele örnekleme</strong>, il nüfuslarına göre <strong>kota</strong>, hane seçiminde rastgele yürüyüş.</li><li>Künye 2: 12 İBBS bölgesi, her bölgeden en az 2 il, internet kullanıcısı, n = 350, <strong>kotalı örneklem</strong>.</li><li>Bu künyelerde çelişki var mı? "Basit rastgele" ile "kota" aynı tasarımda nasıl duruyor?</li></ul><div class="ek ek-tartis"><b>Tartışalım</b>Künye 1'de hata payı ±2,06 basit rassal varsayımıyla hesaplanmış; ama tasarım kota ve rastgele yürüyüş. Bu hata payı gerçek mi? Künye 2'de "internet kullanıcısı" evreni kimi dışarıda bırakıyor?</div></div>
-    <div class="soru-kutu"><div class="im">?</div><div>Tüm bunların ışığında internet üzerinden paylaşılan anketler hangi örnekleme yöntemine girer? Ne gibi sakıncaları vardır? 437 bin katılımcı neyi kanıtlar?</div></div>
+    <div class="soru-kutu"><div class="im">?</div><div>Tüm bunların ışığında internet üzerinden paylaşılan anketler hangi örnekleme yöntemine girer? Ne gibi sakıncaları vardır? 437 bin katılımcı neyi kanıtlar?
+      <details class="yanit"><summary>Yanıt</summary><p>İnternet anketleri gelişigüzel örneklemin bir türüdür; literatürde "kendi kendini seçen" (self-selected) örneklem denir. Sakıncaları: çerçeve bilinmez (anketi kim gördü), katılımcı kendi karar verir (ilgili ve öfkeli olanlar daha çok katılır), aynı kişi birden çok oy verebilir, kullanıcı profili yaş ve eğitim bakımından nüfustan farklıdır. 437 bin katılımcı yalnız şunu kanıtlar: o hesabı takip edip o saatte oy veren kullanıcılar arasında çoğunluk soğanlı demiştir. Türkiye için hiçbir şey söylemez; 1936'da 2,4 milyon yanıt da aynı nedenle yanılmıştı.</p></details>
+    </div></div>
     <div class="odak-surum"><div class="g">Düşünün</div><ul><li>İnternet üzerinden paylaşılan anketler hangi örnekleme yöntemine girer?</li><li>Ne gibi sakıncaları vardır?</li><li>437 bin katılımcı neyi kanıtlar?</li></ul><div class="ek ek-ornek"><b>Örnek</b>X'te "Türkiye AB'ye girmeli mi?" anketi: katılanlar o hesabı takip eden, o saatte çevrimiçi olan ve oy vermek isteyenler. Takipçi kitlesi siyasi olarak homojense sonuç %90 "evet" ya da %90 "hayır" çıkabilir; ikisi de Türkiye hakkında bir şey söylemez.</div></div>
   </div>
 </div>
@@ -841,104 +867,99 @@
         <li><strong>Büyüklüğe orantılı olasılık:</strong> büyük küme büyüklüğü kadar yüksek olasılıkla seçilir; nihai olasılıklar eşitlenir.</li>
       </ul>
     </div>
-    <div class="kaynak-kutu senaryo"><b>Senaryo.</b> Van Büyükşehir Belediyesi, kentteki göçmen uyumunu ölçmek için bir hane anketi yaptıracak. Kentte 10 mahalle ve 2.000 hane var; 600'ü göçmen hane, ama göçmen haneler bazı mahallelerde yoğunlaşmış. Bütçe 200 yüz yüze görüşmeye yetiyor. Elinizde TÜİK'ten alınmış tam hane adres listesi var. Bulguları "Van'daki haneler" için genellemek istiyorsunuz. Hangi haneleri seçersiniz?</div>
+    <div class="kaynak-kutu senaryo"><b>Senaryo.</b> Bir ilçede 4 mahalle, her mahallede 25 hane: toplam <strong>100 hane</strong>. 30 hane göçmen (turuncu), 70 hane yerli (mavi); göçmen haneler bazı mahallelerde yoğun. Bütçe <strong>20 görüşmeye</strong> yetiyor ve elinizde bütün hanelerin listesi var. Soru: 100 haneden hangi 20'sini seçersiniz?</div>
     <div class="odak-surum">
-      <div class="g">Senaryo: Van'da göçmen uyum anketi</div>
+      <div class="g">Senaryo</div>
       <ul>
-        <li>Evren: <strong>10 mahalle, 2.000 hane</strong>; 600'ü göçmen hane, bazı mahallelerde yoğun.</li>
-        <li>Bütçe: <strong>200 yüz yüze görüşme</strong>.</li>
-        <li>Elinizde: TÜİK'ten <strong>tam hane adres listesi</strong> (çerçeve var).</li>
-        <li>Hedef: bulguları <strong>Van'daki hanelere genellemek</strong>.</li>
+        <li>4 mahalle × 25 hane = <strong>100 hane</strong>; 30 göçmen (turuncu), 70 yerli (mavi), göçmenler bazı mahallelerde yoğun.</li>
+        <li>Bütçe: <strong>20 görüşme</strong>. Elinizde tam hane listesi.</li>
+        <li>Soru: hangi 20 hane?</li>
       </ul>
-      <div class="g">Soru: 2.000 haneden hangi 200'ü seçersiniz?</div>
-      <div class="ek ek-tartis"><b>Tartışalım</b>Önce sınıfa sorun: "Belediye başkanı olsanız anketörleri nereye gönderirdiniz?" Verilen her yanıt aşağıdaki yöntemlerden birine düşer; çoğu da gelişigüzel ya da amaçlı çıkar.</div>
     </div>
-    <p>Aşağıdaki canlandırma senaryoyu 10'da 1 ölçekle gösterir: 200 hane, 60 göçmen hane (turuncu), 140 yerli hane (mavi), n = 20. Bir yöntem seçin; üç adımda izleyin: <strong>Evren</strong> → <strong>Seçim</strong> → <strong>Sonuç</strong>. Her yöntemin sonunda örneklemdeki göçmen payını evrendeki %30 ile karşılaştırın ve aşağıdaki tabloya işlenmesini izleyin.</p>
-    <div class="widget" id="w-ev">
-      <div class="ev-rehber" id="ev-rehber"></div>
+    <p>Aşağıdaki şekil her yöntemin aynı 100 haneden nasıl seçim yaptığını gösterir. Bir yönteme tıklayın; seçilen haneler koyu çerçeveyle işaretlenir, altındaki cümle ne olduğunu anlatır. "Yeniden çek" aynı yöntemle yeni bir rassal çekim yapar: seçilenler değişir, kural değişmez.</p>
+    <div class="widget" id="w-ev2">
       <div class="controls">
-        <button class="active" id="ym-basit" onclick="evYontem('basit')">Basit rassal</button>
-        <button id="ym-sistematik" onclick="evYontem('sistematik')">Sistematik</button>
-        <button id="ym-katmanli" onclick="evYontem('katmanli')">Katmanlı</button>
-        <button id="ym-kume" onclick="evYontem('kume')">Küme</button>
-        <button id="ym-cok" onclick="evYontem('cok')">Çok aşamalı</button>
-        <button id="ym-gelisiguzel" onclick="evYontem('gelisiguzel')">Gelişigüzel (karşılaştırma)</button>
+        <button class="active" id="ev2-basit" onclick="ev2Yontem('basit')">Basit rassal</button>
+        <button id="ev2-sistematik" onclick="ev2Yontem('sistematik')">Sistematik</button>
+        <button id="ev2-katmanli" onclick="ev2Yontem('katmanli')">Katmanlı</button>
+        <button id="ev2-kume" onclick="ev2Yontem('kume')">Küme</button>
+        <button id="ev2-cok" onclick="ev2Yontem('cok')">Çok aşamalı</button>
         <span class="sep"></span>
-        <button onclick="evAsamaGit(-1)">‹ Geri</button>
-        <button id="ev-ileri" onclick="evAsamaGit(1)">İleri ›</button>
-        <button onclick="evYeni()">↻ Yeni çekim</button>
+        <button onclick="ev2Yeni()">↻ Yeniden çek</button>
       </div>
-      <div class="ev-wrap"><canvas id="ev-canvas"></canvas></div>
-      <div class="ev-lejant"><span><i style="background:#378ADD"></i>Yerli hane (140)</span><span><i style="background:#EF9F27"></i>Göçmen hane (60)</span><span><i style="background:#1D9E75;outline:3px solid #1D9E75;outline-offset:1px"></i>Örnekleme seçilen hane</span><span><i style="background:#fff;border:2px dashed #7F77DD"></i>Seçilen mahalle</span><span><i style="background:#E24B4A"></i>Anketörün durduğu nokta (gelişigüzel)</span></div>
-      <div class="grid2" style="margin-top:.7rem">
-        <div class="ev-aciklama" id="ev-aciklama"></div>
-        <div>
-          <div class="cap">Örneklemde yerli / göçmen payı (evren: %70 / %30)</div>
-          <div class="ev-bar" id="ev-bar"></div>
-          <div class="stat-grid" id="ev-stat"></div>
-        </div>
-      </div>
+      <div class="ev2-wrap"><svg id="ev2-svg" viewBox="0 0 560 300" role="img" aria-label="Dört mahalle ve yüz hane; seçilen haneler işaretli"></svg></div>
+      <div class="ev2-lejant"><span><i style="background:#378ADD"></i>Yerli hane (70)</span><span><i style="background:#EF9F27"></i>Göçmen hane (30)</span><span><i style="background:#fff;outline:3px solid #1D9E75;outline-offset:-1px"></i>Seçilen hane</span><span><i style="background:#e9edf5;outline:2px dashed #1E2D5E;outline-offset:-1px"></i>Seçilen mahalle / sokak</span></div>
+      <div class="ev2-aciklama" id="ev2-aciklama"></div>
+    </div>
+    <div class="odak-surum">
+      <div class="g">Şekilde ne görülür?</div>
+      <ul>
+        <li><strong>Basit rassal:</strong> 100 haneden 20'si kura ile; her yere dağınık.</li>
+        <li><strong>Sistematik:</strong> F = 100/20 = 5; rassal başlangıç, her 5. hane; düzenli yayılır.</li>
+        <li><strong>Katmanlı:</strong> 70 yerliden 14, 30 göçmenden 6; göçmen payı tam %30.</li>
+        <li><strong>Küme:</strong> 4 mahalleden 1'i, içindeki 25 hanenin hepsi; yol kısa, tek mahalleye sıkışır.</li>
+        <li><strong>Çok aşamalı:</strong> 2 mahalle, her birinde 2 sokak, her sokaktan 5 hane; yol kısa, çeşitlilik daha iyi.</li>
+      </ul>
     </div>
     <h4 style="margin:1.2rem 0 .5rem;color:var(--navy)">Tarif kartları: ne gerekir, nasıl yapılır, ne elde edilir, bedeli ne?</h4>
     <div class="grid2">
       <div class="card tarif"><span class="tag" style="background:var(--c3)">Basit rassal</span><h4>İyi karıştırılmış çorbadan bir kaşık</h4>
-        <div class="tr"><b>Ne gerekir</b>Tam hane listesi (2.000 adres).</div>
-        <div class="tr"><b>Nasıl yapılır</b>Listeye rassal sayı verilir, en küçük 200'ü alınır (Excel'de S_SAYI_ÜRET). Eskiden rassal sayılar tablosu; akıldan uydurulan sayılar rassal değildir.</div>
-        <div class="tr"><b>Ne elde edilir</b>Her hanenin olasılığı 200/2.000 = 0,10. Göçmen payı ortalamada %30'u tutar; tek çekimde sapabilir, bu sapma hata payıdır.</div>
-        <div class="tr"><b>Bedeli</b>200 hane 10 mahalleye dağılır: en çok yol, en çok anketör saati.</div>
-        <button onclick="evGoster('basit')">▶ Canlandırmada göster</button>
+        <div class="tr"><b>Ne gerekir</b>Tam hane listesi (100 adres).</div>
+        <div class="tr"><b>Nasıl yapılır</b>Her haneye rassal bir sayı verilir, en küçük 20'si alınır (Excel'de S_SAYI_ÜRET). Akıldan uydurulan sayılar rassal değildir.</div>
+        <div class="tr"><b>Ne elde edilir</b>Her hanenin olasılığı 20/100 = 0,20. Göçmen payı ortalamada %30'u tutar; tek çekimde 4 de çıkabilir 9 da. Bu sapma hata payıdır.</div>
+        <div class="tr"><b>Bedeli</b>20 hane 4 mahalleye dağılır: en çok yol, en çok anketör saati.</div>
         <div class="ek ek-ornek"><b>Örnek</b>Dışişleri meslek memurlarına çevrimiçi anket: 2.400 kişilik tam liste var, ulaşım maliyeti yok. Basit rassal çekim için ideal durum.</div></div>
-      <div class="card tarif"><span class="tag" style="background:var(--c3)">Sistematik</span><h4>Listeden her onuncu kapı</h4>
+      <div class="card tarif"><span class="tag" style="background:var(--c3)">Sistematik</span><h4>Listeden her beşinci kapı</h4>
         <div class="tr"><b>Ne gerekir</b>Tam liste; listede gizli bir döngü olmaması.</div>
-        <div class="tr"><b>Nasıl yapılır</b>F = N/n = 2.000/200 = 10. 1 ile 10 arasında rassal başlangıç (diyelim 7); sonra 7, 17, 27, ... numaralı haneler.</div>
-        <div class="tr"><b>Ne elde edilir</b>Her hanenin olasılığı yine 0,10; örneklem listeye eşit yayılır. Liste mahalle sırasındaysa her mahalleden payı kadar düşer: kendiliğinden katmanlama.</div>
-        <div class="tr"><b>Bedeli</b>Listede her 10. adres köşe dairesiyse (döngü) yanlılık doğar; liste önce karıştırılır.</div>
-        <button onclick="evGoster('sistematik')">▶ Canlandırmada göster</button>
+        <div class="tr"><b>Nasıl yapılır</b>F = N/n = 100/20 = 5. 1 ile 5 arasında rassal başlangıç (diyelim 3); sonra 3, 8, 13, 18, ... numaralı haneler.</div>
+        <div class="tr"><b>Ne elde edilir</b>Her hanenin olasılığı yine 0,20; örneklem listeye eşit yayılır. Liste mahalle sırasındaysa her mahalleden 5 hane düşer: kendiliğinden katmanlama.</div>
+        <div class="tr"><b>Bedeli</b>Listede her 5. adres köşe dairesiyse (döngü) yanlılık doğar; liste önce karıştırılır.</div>
         <div class="ek ek-sayi"><b>Sayı</b>N = 24.000 öğrenci, n = 400: F = 60. Başlangıç 17 ise 17, 77, 137, ... Basit rassal ile aynı sonucu çok daha hızlı verir.</div></div>
       <div class="card tarif"><span class="tag" style="background:var(--c3)">Katmanlı (katmanlama; tabakalı)</span><h4>Her tencereden ayrı kaşık</h4>
         <div class="tr"><b>Ne gerekir</b>Tam liste + her hanenin katman bilgisi (yerli/göçmen; ya da mahalle, kır/kent).</div>
-        <div class="tr"><b>Nasıl yapılır</b>Evren kendi içinde homojen katmanlara bölünür: 1.400 yerli, 600 göçmen. Her katmana nüfusla orantılı pay: 140 yerli, 60 göçmen hane; her katman içinde rassal çekim.</div>
-        <div class="tr"><b>Ne elde edilir</b>Göçmen payı <strong>tam olarak</strong> %30; hata payı basit rassaldan düşük. Olasılık her katmanda 0,10: eşit ve bilinir. Pay eşit (100/100) verilirse sonra ağırlıklandırma gerekir.</div>
+        <div class="tr"><b>Nasıl yapılır</b>Evren kendi içinde homojen katmanlara bölünür: 70 yerli, 30 göçmen. Her katmana nüfusla orantılı pay: 14 yerli, 6 göçmen hane; her katman içinde rassal çekim.</div>
+        <div class="tr"><b>Ne elde edilir</b>Göçmen payı <strong>tam olarak</strong> %30; hata payı basit rassaldan düşük. Olasılık her katmanda 0,20: eşit ve bilinir. Pay eşit (10/10) verilirse sonra ağırlıklandırma gerekir.</div>
         <div class="tr"><b>Bedeli</b>Katman bilgisi liste düzeyinde yoksa uygulanamaz; yol maliyeti basit rassal kadar yüksek.</div>
-        <button onclick="evGoster('katmanli')">▶ Canlandırmada göster</button>
         <div class="ek ek-ornek"><b>Örnek</b>Ulusal ankette Tunceli'ye orantılı pay 2-3 görüşme düşer; Doğu Anadolu'yu ayrı raporlamak isteyen araştırmacı küçük bölgelere orantısız fazla pay verir, sonra ağırlıkla düzeltir. Kota ile karıştırmayın: burada son seçim rassal.</div></div>
-      <div class="card tarif"><span class="tag" style="background:var(--c3)">Küme</span><h4>Yalnız iki tencereyi açmak</h4>
+      <div class="card tarif"><span class="tag" style="background:var(--c3)">Küme</span><h4>Yalnız bir tencereyi açmak</h4>
         <div class="tr"><b>Ne gerekir</b>Hane listesi gerekmez; mahalle listesi yeter (alan çerçevesi).</div>
-        <div class="tr"><b>Nasıl yapılır</b>10 mahalleden 1'i rassal seçilir, içindeki 200 hanenin hepsiyle görüşülür. Mahalleler farklı büyüklükteyse büyüklüğe orantılı olasılıkla (PPS) seçilir.</div>
-        <div class="tr"><b>Ne elde edilir</b>Olasılık 1/10 = 0,10, yine eşit. Ama örneklem tek mahalleye sıkışır: göçmenin yoğun olduğu mahalle çıkarsa %60-75, seyrek olduğu çıkarsa %0-10 göçmen payı görürsünüz.</div>
+        <div class="tr"><b>Nasıl yapılır</b>4 mahalleden 1'i rassal seçilir, içindeki 25 hanenin hepsiyle görüşülür. Mahalleler farklı büyüklükteyse büyüklüğe orantılı olasılıkla seçilir.</div>
+        <div class="tr"><b>Ne elde edilir</b>Olasılık 1/4, her hane için eşit. Ama örneklem tek mahalleye sıkışır: göçmenin yoğun olduğu mahalle çıkarsa %60, hiç olmadığı mahalle çıkarsa %0 göçmen payı görürsünüz.</div>
         <div class="tr"><b>Bedeli</b>Yol en az, hata payı en çok: tasarım etkisi (10. bölüm). Maliyet ile kesinlik arasında takas.</div>
-        <button onclick="evGoster('kume')">▶ Canlandırmada göster</button>
-        <div class="ek ek-sayi"><b>Sayı</b>30 bin nüfuslu mahalle ile bin nüfuslu mahalleye eşit şans verilirse küçük mahalledeki hane 30 kat fazla olasılıkla seçilir. PPS bunu düzeltir: P(mahalle) × P(hane | mahalle) her hane için sabit kalır; buna kendinden ağırlıklı tasarım denir.</div></div>
-      <div class="card tarif"><span class="tag" style="background:var(--c4)">Çok aşamalı</span><h4>Dört tencere seç, her birinden beş kaşık</h4>
-        <div class="tr"><b>Ne gerekir</b>Mahalle listesi; sonra yalnız seçilen mahallelerde hane listesi (sahada sayılabilir).</div>
-        <div class="tr"><b>Nasıl yapılır</b>1. aşama: 10 mahalleden 4'ü rassal (PPS). 2. aşama: her seçilen mahalleden 50 hane rassal. İsteğe göre mahalleler önce katmanlanır (merkez/çevre).</div>
-        <div class="tr"><b>Ne elde edilir</b>Olasılık 4/10 × 50/200 = 0,10, eşit. Tek kümeye göre çeşitlilik çok daha iyi, basit rassala göre yol çok daha kısa.</div>
+        <div class="ek ek-sayi"><b>Sayı</b>30 bin nüfuslu mahalle ile bin nüfuslu mahalleye eşit şans verilirse küçük mahalledeki hane 30 kat fazla olasılıkla seçilir. Büyüklüğe orantılı seçim bunu düzeltir: P(mahalle) × P(hane | mahalle) her hane için sabit kalır.</div></div>
+      <div class="card tarif"><span class="tag" style="background:var(--c4)">Çok aşamalı</span><h4>İki tencere seç, her birinden iki kepçe</h4>
+        <div class="tr"><b>Ne gerekir</b>Mahalle listesi; sonra yalnız seçilen mahallelerde sokak ve hane listesi (sahada sayılabilir).</div>
+        <div class="tr"><b>Nasıl yapılır</b>1. aşama: 4 mahalleden 2'si rassal. 2. aşama: her mahallede 5 sokaktan 2'si rassal. 3. aşama: her sokaktaki 5 haneden 5'i (hepsi) ya da daha büyük sokakta rassal birkaçı.</div>
+        <div class="tr"><b>Ne elde edilir</b>Olasılık 2/4 × 2/5 × 5/5 = 0,20, eşit. Tek kümeye göre çeşitlilik çok daha iyi, basit rassala göre yol çok daha kısa.</div>
         <div class="tr"><b>Bedeli</b>Hâlâ bir miktar tasarım etkisi; hacim deff ile büyütülür. Ulusal anketlerin standardı budur (9. bölüm).</div>
-        <button onclick="evGoster('cok')">▶ Canlandırmada göster</button>
         <div class="ek ek-ornek"><b>Örnek</b>Dünya Değerler Araştırması, Avrupa Sosyal Araştırması ve TÜİK hanehalkı anketleri hep bu mantıkla kurulur: bölge → yerleşim → mahalle → hane → kişi.</div></div>
       <div class="card tarif"><span class="tag" style="background:var(--c1)">Gelişigüzel (karşılaştırma)</span><h4>Anketör bir köşeye durur, geçeni çevirir</h4>
         <div class="tr"><b>Ne gerekir</b>Hiçbir şey: liste de, mahalle bilgisi de gerekmez.</div>
-        <div class="tr"><b>Nasıl yapılır</b>Anketör merkezde bir noktada durur, önünden geçen ilk 200 kişiyle görüşür.</div>
+        <div class="tr"><b>Nasıl yapılır</b>Anketör merkezde bir noktada durur, önünden geçen ilk 20 kişiyle görüşür.</div>
         <div class="tr"><b>Ne elde edilir</b>Uzak mahallelerdeki hanelerin olasılığı sıfır, yakındakilerin olasılığı hesaplanamaz. Durulan yer göçmen yoğun bölgeyse göçmen aşırı, değilse eksik temsil edilir.</div>
-        <div class="tr"><b>Bedeli</b>En ucuz; ama bulgu yalnız görüşülenleri temsil eder, hata payı yazılamaz. Belediye kararı yanlış veriye dayanır.</div>
-        <button onclick="evGoster('gelisiguzel')">▶ Canlandırmada göster</button>
-        <div class="ek ek-tartis"><b>Tartışalım</b>Belediye "merkezde 200 kişiyle görüştük, uyum sorunu yok" dedi. Hangi mahalleler hiç konuşmadı? Bu rapora dayanarak alınacak karar kimi gözden kaçırır?</div></div>
+        <div class="tr"><b>Bedeli</b>En ucuz; ama bulgu yalnız görüşülenleri temsil eder, hata payı yazılamaz.</div>
+        <div class="ek ek-tartis"><b>Tartışalım</b>Belediye "merkezde 20 kişiyle görüştük, uyum sorunu yok" dedi. Hangi mahalleler hiç konuşmadı? Bu rapora dayanarak alınacak karar kimi gözden kaçırır?</div></div>
     </div>
-    <h4 style="margin:1.2rem 0 .5rem;color:var(--navy)">Karşılaştırma: canlandırmada çalıştırdıkça dolar</h4>
-    <div class="widget" id="w-evtab">
-      <div class="table-scroll"><table id="ev-tablo"></table></div>
-      <div class="cap">Göçmen payı sütunu son çekimin sonucudur; "Yeni çekim" ile değişir. Evrende göçmen payı %30.</div>
-    </div>
-    <div class="soru-kutu"><div class="im">?</div><div><b>Siz olsanız?</b> Belediye bütçeyi 100 görüşmeye indirdi: hangi yöntem ne kaybeder? TÜİK listesi alınamadı, yalnız mahalle listesi var: hangi yöntemler kalır? Anket yüz yüze değil telefonla yapılacak: yol maliyeti kalkınca tercih değişir mi? Kendi konunuzda evreniniz nasıl katmanlanabilir, olası kümeler neler? Katman kendi içinde <b>homojen</b>, küme kendi içinde <b>heterojen</b> olmalı.</div></div>
+    <h4 style="margin:1.2rem 0 .5rem;color:var(--navy)">Karşılaştırma</h4>
+    <div class="table-scroll"><table><thead><tr><th>Yöntem</th><th>Ne gerekir</th><th>Seçilme olasılığı</th><th>Yol / maliyet</th><th>Hata payı</th><th>Göçmen payı (evren %30)</th></tr></thead><tbody>
+      <tr><td>Basit rassal</td><td>Tam liste</td><td>0,20, eşit</td><td>En yüksek</td><td>Ölçüt</td><td>Ortalamada %30, çekimden çekime oynar</td></tr>
+      <tr><td>Sistematik</td><td>Tam liste</td><td>0,20, eşit</td><td>En yüksek</td><td>Basit rassal gibi</td><td>Ortalamada %30</td></tr>
+      <tr><td>Katmanlı</td><td>Tam liste + katman bilgisi</td><td>0,20, eşit</td><td>En yüksek</td><td>En düşük</td><td>Tam %30</td></tr>
+      <tr><td>Küme</td><td>Mahalle listesi</td><td>0,25, eşit</td><td>En düşük</td><td>En yüksek</td><td>%0 ile %60 arası, mahalleye bağlı</td></tr>
+      <tr><td>Çok aşamalı</td><td>Mahalle listesi + seçilen mahallelerde sayım</td><td>0,20, eşit</td><td>Düşük</td><td>Orta</td><td>%30'a yakın, biraz oynar</td></tr>
+      <tr><td>Gelişigüzel</td><td>Hiçbir şey</td><td>Hesaplanamaz</td><td>En düşük</td><td>Yazılamaz</td><td>Durulan yere bağlı</td></tr>
+    </tbody></table></div>
+    <div class="soru-kutu"><div class="im">?</div><div><b>Siz olsanız?</b> Bütçe 10 görüşmeye indi: hangi yöntem ne kaybeder? Hane listesi alınamadı, yalnız mahalle listesi var: hangi yöntemler kalır? Anket yüz yüze değil telefonla yapılacak: yol maliyeti kalkınca tercih değişir mi?
+      <details class="yanit"><summary>Yanıt</summary><p><strong>10 görüşme:</strong> basit rassal ve sistematikte hata payı büyür (n yarıya inince hata payı yaklaşık 1,4 kat artar); katmanlıda 7 yerli, 3 göçmen düşer, göçmen katmanı için neredeyse hiç bilgi kalmaz; kümede tek mahallenin 10 hanesi, zaten dar olan çeşitlilik daha da daralır. <strong>Yalnız mahalle listesi:</strong> basit rassal, sistematik ve katmanlı uygulanamaz (hane listesi yok); küme ve çok aşamalı kalır, çünkü hane listesi yalnız seçilen mahallelerde sahada çıkarılır. <strong>Telefon:</strong> yol maliyeti kalkınca kümelemenin tek üstünlüğü kaybolur; telefon numarası listesi varsa basit rassal ya da katmanlı seçilir. Çerçeve değişir: telefonu olmayan haneler evrenden düşer, bunu raporda yazmak gerekir.</p></details>
+    </div></div>
     <div class="odak-surum">
       <div class="g">Siz olsanız?</div>
       <ul>
-        <li>Bütçe <strong>100 görüşmeye</strong> indi: hangi yöntem ne kaybeder?</li>
-        <li>TÜİK listesi alınamadı, yalnız <strong>mahalle listesi</strong> var: hangi yöntemler kalır?</li>
-        <li>Anket yüz yüze değil <strong>telefonla</strong>: yol maliyeti kalkınca tercih değişir mi?</li>
-        <li>Kendi konunuzda evren nasıl <strong>katmanlanır</strong>, olası <strong>kümeler</strong> neler? Katman homojen, küme heterojen.</li>
+        <li>Bütçe <strong>10 görüşmeye</strong> indi: basit/sistematik hata payı 1,4 kat; katmanlıda göçmen katmanı 3 kişi; küme daha da dar.</li>
+        <li>Yalnız <strong>mahalle listesi</strong>: küme ve çok aşamalı kalır.</li>
+        <li><strong>Telefon</strong>: yol maliyeti kalkar, kümelemenin gerekçesi kalmaz; çerçeve telefonu olanlarla sınırlanır.</li>
       </ul>
-      <div class="ek ek-ornek"><b>Örnek</b>BM üye devletlerinin oylama davranışı: bölgesel gruplar (Afrika, Asya-Pasifik, Doğu Avrupa, GRULAC, WEOG) katman; her gruptan rassal ülke seçilir. Ülke içindeki yıllar küme olabilir.</div>
+      <div class="ek ek-ornek"><b>Örnek</b>BM üye devletlerinin oylama davranışı: bölgesel gruplar (Afrika, Asya-Pasifik, Doğu Avrupa, GRULAC, WEOG) katman; her gruptan rassal ülke seçilir. Küme burada anlamsız, çünkü yol maliyeti yok.</div>
     </div>
   </div>
 </div>
@@ -1032,7 +1053,7 @@
         <label>Nüfus N <input type="number" id="nk-N" value="1100000" min="2" step="1" oninput="nkAd='';nufusKac()"></label>
         <label>Beklenen yanıt oranı (%) <input type="number" id="nk-yanit" value="100" min="5" max="100" step="5" oninput="nufusKac()"></label>
       </div>
-      <div class="table-scroll"><table id="nk-tablo"><thead><tr><th>Hata payı (±)</th><th>Gereken anket (n)</th><th>Sahaya çıkılacak kişi</th><th>Evrenin yüzdesi</th></tr></thead><tbody></tbody></table></div>
+      <div class="table-scroll"><table id="nk-tablo"><thead><tr><th>Hata payı (±)</th><th>Gereken anket (n)</th><th>Evrenin yüzdesi</th></tr></thead><tbody></tbody></table></div>
       <div class="sonuc-buyuk"><span class="deger" id="nk-sonuc"></span><span class="acik" id="nk-acik"></span></div>
       <p style="margin:.6rem 0 0;font-size:13px"><button onclick="nkSimule()">Bu n ile simülasyonu çalıştır</button> <span style="color:var(--gray)">(±3 puan için gereken n'yi aşağıdaki "aynı araştırmayı 500 kez yapsaydık" kutusuna taşır)</span></p>
     </div>
@@ -1132,7 +1153,9 @@
         <div class="card"><h4>Sosyal medya ve "büyük veri"</h4>Twitter/X'teki milyonlarca ileti, Google aramaları, uygulama verileri. Hacim muazzam; ama çerçeve yok, kullanıcılar nüfusu temsil etmez, hesapların kaçının bot olduğu bilinmez ve platform algoritması neyin görüneceğini belirler. "Kimi temsil eder?" sorusu burada da geçerlidir: platform kullanıcılarının o anda aktif ve konuşan kesimini. Keşif ve hipotez üretimi için değerli, evren hakkında çıkarım için değil.<div class="ek ek-ornek"><b>Örnek</b>Rusya-Ukrayna savaşında Türkçe X iletilerinin %60'ı Rusya yanlısı çıktı diyelim. Bu, Türk kamuoyu değil; o platformda o konuda yazan hesaplar (botlar dahil). Aynı hafta ulusal anket farklı bir tablo verebilir.</div></div>
         <div class="card"><h4>Yapay zekâ ile "sentetik yanıtlayıcı"</h4>Argyle vd. (2023) büyük dil modellerine demografik profiller vererek "silikon örneklem" üretmeyi önerdi. Karşı bulgular hızla geldi: Bisbee vd. (2024) sentetik yanıtların çeşitliliğinin insan verisinden düşük, regresyon katsayılarının farklı ve sonuçların tekrarlanamaz olduğunu; Santurkar vd. (2023) modellerin 65 yaş üstü, dul ve dindar grupları kötü temsil ettiğini gösterdi. Sentetik veri bir anket değildir; pilot soru denemesi için araç, evren tahmini için kaynak değildir.<div class="ek ek-tartis"><b>Tartışalım</b>Dil modeline "Van'da yaşayan 45 yaşında bir çiftçi gibi yanıt ver" dediğinizde kim yanıt veriyor? Modelin eğitildiği internet metinleri o çiftçiyi ne kadar içeriyor? Santurkar vd. 65 yaş üstü ve dindar grupların en kötü temsil edildiğini buldu.</div></div>
       </div>
-      <div class="soru-kutu"><div class="im">?</div><div>Bir haber "X kullanıcılarının %70'i şu görüşte" diyor. Hangi evren? Hangi çerçeve? Seçilme olasılığı? Bu üç soruyu sorduğunuzda haber ne kadar bilgi veriyor?</div></div>
+      <div class="soru-kutu"><div class="im">?</div><div>Bir haber "X kullanıcılarının %70'i şu görüşte" diyor. Hangi evren? Hangi çerçeve? Seçilme olasılığı? Bu üç soruyu sorduğunuzda haber ne kadar bilgi veriyor?
+      <details class="yanit"><summary>Yanıt</summary><p>Evren belirsizdir: X kullanıcıları mı, Türkiye mi, o hesabın takipçileri mi? Çerçeve yoktur: anketi yalnız o gönderiyi gören hesaplar gördü, kimlerin gördüğü algoritmaya bağlıdır. Seçilme olasılığı hesaplanamaz: kullanıcı kendi seçti. Üç soru sorulunca haber şunu söyler: "bu gönderiye oy verenlerin %70'i şu görüşte"; bu bir kamuoyu bulgusu değil, bir etkileşim sayısıdır. Haberde hacim, yöntem ve hata payı yazmıyorsa bulgu olarak alıntılanmaz.</p></details>
+    </div></div>
     </div>
   </div>
 </div>
@@ -1220,7 +1243,9 @@
     <div class="ek ek-sayi" style="margin-top:.6rem"><b>Sayı</b>Guest, Bunce ve Johnson (2006): 60 görüşmede temaların %92'si ilk 12 görüşmede. Hennink ve Kaiser (2022) 23 doygunluk çalışmasını derledi: görüşmelerde 9 ile 17, odak gruplarda 4 ile 8 grup. Guest, Namey ve McKenna (2017): temaların %80'i 2 ile 3 odak grupta, %90'ı 3 ile 6 grupta. Krueger ve Casey (2015): grup başına 5 ile 8 kişi, katman başına 3 ile 4 grup.</div>
     <div class="info-box"><strong>Kaç vaka yeter?</strong> Nitel çalışmada ölçüt istatistiksel kesinlik değil <em>doygunluk</em>tur: yeni görüşmeler yeni tema üretmemeye başlayınca durulur. Small (2009) vaka seçimini örneklem mantığıyla değil, "ardışık vaka çalışması" mantığıyla kurmayı önerir (Meraklısına: Small, 2009; Patton, 2002).</div>
     <div class="odak-surum"><div class="g">Kaç vaka yeter?</div><ul><li>Nitel çalışmada ölçüt istatistiksel kesinlik değil <strong>doygunluktur</strong>: yeni görüşmeler yeni tema üretmemeye başlayınca durulur.</li><li>Small (2009) vaka seçimini örneklem mantığıyla değil, <strong>ardışık vaka çalışması</strong> mantığıyla kurmayı önerir.</li></ul><div class="ek ek-sayi"><b>Sayı</b>Guest, Bunce ve Johnson (2006) 60 görüşmelik bir çalışmada temaların %92'sinin ilk 12 görüşmede ortaya çıktığını buldu. Doygunluk için sık anılan eşik 12-20 görüşmedir; ama homojen gruplarda daha erken, heterojen gruplarda daha geç gelir.</div></div>
-    <div class="soru-kutu"><div class="im">?</div><div>Araştırma sorunuzun amacı ne? Genellemeyi hedefliyor mu? Hedefliyorsa 6-10. bölümlere dönün. Hedeflemiyorsa örnekleminiz benzerlik mi, farklılık mı gerektiriyor; yukarıdaki stratejilerden hangisi uygun?</div></div>
+    <div class="soru-kutu"><div class="im">?</div><div>Araştırma sorunuzun amacı ne? Genellemeyi hedefliyor mu? Hedefliyorsa 6-10. bölümlere dönün. Hedeflemiyorsa örnekleminiz benzerlik mi, farklılık mı gerektiriyor; yukarıdaki stratejilerden hangisi uygun?
+      <details class="yanit"><summary>Yanıt</summary><p>Araştırma sorusu "ne kadar", "yüzde kaç", "hangisi daha fazla" diye soruyorsa genelleme hedefi vardır ve 6-10. bölümlerdeki olasılıklı yöntemlere dönülür. "Nasıl", "neden", "ne anlama geliyor" diye soruyorsa genelleme hedefi yoktur. O zaman: tek bir deneyimi derinlemesine anlamak için benzerlik stratejileri (tipik örnek, homojen grup, kartopu); bir olgunun sınırlarını görmek için farklılık stratejileri (maksimum çeşitlilik, iki uç, kritik vaka). Hangisi seçilirse seçilsin gerekçesi ve seçim süreci raporda yazılır; "ulaşabildiklerimle görüştüm" gerekçe değildir.</p></details>
+    </div></div>
     <div class="odak-surum"><div class="g">Kendi sorunuza dönün</div><ul><li>Araştırma sorunuzun amacı ne? <strong>Genellemeyi</strong> hedefliyor mu?</li><li>Hedefliyorsa 6-10. bölümlere dönün.</li><li>Hedeflemiyorsa örnekleminiz <strong>benzerlik mi, farklılık mı</strong> gerektiriyor; hangi strateji uygun?</li></ul></div>
   </div>
 </div>
@@ -1323,7 +1348,9 @@
       <div class="card"><span class="tag" style="background:var(--c3)">Gençlerin İyi Olma Hali (Erdoğan, 2017)</span>Kentsel gençlik nüfusunu temsil eden 16 il, 1.209 genç, yüz yüze; "çok aşamalı katmanlı rassal örneklem". İBBS katmanları; İstanbul, Ankara ve İzmir kendi kendini temsil eden birimler. Anketler hanede yapıldı, sokakta anket yapılmadı.</div>
     </div>
     <div class="odak-surum"><div class="g">F. Çok aşamalı tasarım</div><ul><li>Üniversite: 7 × 7 × 4 × 2 × 10 = <strong>3.920</strong>.</li><li>İşe Yönelim: 26 NUTS-2, TÜİK adresleri, 3.400 adres → 1.535 hane, ±2,6.</li><li>Gençler ve Siyasi Katılım: 2.508 genç, 36 il, 203 mahalle/köy, ±2.</li><li>İyi Olma Hali: 16 il, 1.209 genç, İstanbul/Ankara/İzmir kendi kendini temsil eder; hanede anket.</li></ul></div>
-    <div class="soru-kutu"><div class="im">?</div><div><b>Kendi konunuz için.</b> Yukarıdaki örneklerden hangisi sizin araştırmanıza en çok benziyor? Evreninizin listesi var mı, yoksa alan çerçevesi mi kuracaksınız? Hangi katmanlar, hangi kümeler? Kaç kişi? Yanıtlarınızı 15. bölümdeki testten önce yazın.</div></div>
+    <div class="soru-kutu"><div class="im">?</div><div><b>Kendi konunuz için.</b> Yukarıdaki örneklerden hangisi sizin araştırmanıza en çok benziyor? Evreninizin listesi var mı, yoksa alan çerçevesi mi kuracaksınız? Hangi katmanlar, hangi kümeler? Kaç kişi? Yanıtlarınızı 15. bölümdeki testten önce yazın.
+      <details class="yanit"><summary>Yanıt</summary><p>Şablon: (1) Benzeyen örneği seçin: listesi olan bir kurum evreni için künye 4-6'daki çok aşamalı tasarım; listesi olmayan bir göçmen grubu için kota hesabı ya da kartopu örneği. (2) Çerçeve: liste varsa adını yazın (YÖK, YSK, dernek); yoksa alan çerçevesini tanımlayın (hangi mahalleler, hangi kurumlar). (3) Katman: kendi içinde benzer, aralarında farklı gruplar (bölge, cinsiyet, kent/kır); küme: coğrafi olarak bir arada duran karışık gruplar (mahalle, okul, köy). (4) Kaç kişi: 10. bölümdeki nüfus kutusuna evren büyüklüğünü yazın; nitel çalışmaysa 12. bölümdeki kılavuzu kullanın. Bu dört yanıt tezin yöntem bölümünün örneklem paragrafıdır.</p></details>
+    </div></div>
   </div>
 </div>
 
@@ -1593,7 +1620,7 @@ const EV = { N: 200, K: 10, n: 20, pts: [], yontem: 'basit', secili: [], kumeler
 const MAHALLE = ['Merkez', 'Sanayi', 'Kale', 'Üniversite', 'Bahçe', 'İstasyon', 'Çarşı', 'Yeni', 'Yayla', 'Göl'];
 const EV_AD = { basit: 'Basit rassal', sistematik: 'Sistematik', katmanli: 'Katmanlı', kume: 'Küme', cok: 'Çok aşamalı', gelisiguzel: 'Gelişigüzel' };
 const EV_BILGI = { basit: ['Evet, 0,10', 'Evet', 'Yüksek (10 mahalle)'], sistematik: ['Evet, 0,10', 'Evet', 'Yüksek (10 mahalle)'], katmanli: ['Evet, 0,10', 'Evet', 'Yüksek (10 mahalle)'], kume: ['Evet, 0,10', 'Evet (deff yüksek)', 'En düşük (1 mahalle)'], cok: ['Evet, 0,10', 'Evet (deff orta)', 'Düşük (4 mahalle)'], gelisiguzel: ['Hayır, bilinmez', 'Hayır', 'En düşük'] };
-function evKur(){
+function evKur(){ if (!$('ev-canvas')) return;
   EV.pts = []; const r = mkRng(Math.floor(Math.random() * 1e9));
   // 10 küme: 5 sütun x 2 satır; B payı kümeye göre değişir (yoğunlaşma)
   const bPay = [0.75, 0.6, 0.35, 0.2, 0.1, 0.5, 0.3, 0.15, 0.05, 0.0]; // ortalama 0.30
@@ -1637,7 +1664,7 @@ function evAsama(k){
 function evPay(){ const nB = EV.secili.filter(p => p.g === 'B').length; return EV.secili.length ? 100 * nB / EV.secili.length : 0; }
 function evAsamaGit(d){ const k = Math.max(0, Math.min(2, EV.asama + d)); if (k !== EV.asama) evAsama(k); }
 function evGoster(y){ evYontem(y); $('w-ev').scrollIntoView({ block: 'start', behavior: 'smooth' }); setTimeout(() => evAsama(1), 500); }
-function evTablo(kaydet = true){
+function evTablo(kaydet = true){ if (!$('ev-tablo')) return;
   if (kaydet) EV.sonuc[EV.yontem] = fmt(evPay(), 0);
   const sira = ['basit', 'sistematik', 'katmanli', 'kume', 'cok', 'gelisiguzel'];
   $('ev-tablo').innerHTML = `<tr><th>Yöntem</th><th>Olasılık eşit ve bilinir mi?</th><th>Göçmen payı (evren %30)</th><th>Genelleme</th><th>Yol maliyeti</th></tr>` +
@@ -1647,7 +1674,7 @@ function evAdim(){ clearInterval(EV.timer); EV.secili = []; EV.adimIdx = 0; evCi
 function evHepsi(){ clearInterval(EV.timer); EV.secili = EV.plan.slice(); EV.adimIdx = EV.plan.length; evCiz(); }
 function evYeni(){ EV.sonuc = {}; evKur(); evTablo(false); }
 function evCiz(){
-  const cv = $('ev-canvas'), W = cv.clientWidth, H = cv.clientHeight; if (!W) return;
+  const cv = $('ev-canvas'); if (!cv) return; const W = cv.clientWidth, H = cv.clientHeight; if (!W) return;
   const dpr = devicePixelRatio || 1; cv.width = W * dpr; cv.height = H * dpr; const g = cv.getContext('2d'); g.scale(dpr, dpr); g.clearRect(0, 0, W, H);
   // küme kutuları
   for (let k = 0; k < EV.K; k++){ const x = (k % 5) / 5 * W, y = Math.floor(k / 5) / 2 * H; g.fillStyle = k % 2 ? '#F7F9FB' : '#fff'; g.fillRect(x, y, W / 5, H / 2); g.strokeStyle = EV.kumeler.includes(k) ? C5 : '#E2E8F0'; g.lineWidth = EV.kumeler.includes(k) ? 3 : 1; g.setLineDash(EV.kumeler.includes(k) ? [6, 4] : []); g.strokeRect(x + 2, y + 2, W / 5 - 4, H / 2 - 4); g.setLineDash([]); g.fillStyle = '#94A3B8'; g.font = '11px sans-serif'; g.fillText(MAHALLE[k], x + 8, y + 16); }
@@ -1687,7 +1714,7 @@ function nkHesap(N, e, yan){ const z = 1.96, p = .5; const n0 = z * z * p * (1 -
 function nufusKac(){
   const N = Math.max(0, Math.floor(+$('nk-N').value || 0)), yan = Math.min(100, Math.max(5, +$('nk-yanit').value || 100)) / 100;
   if (!N) { $('nk-tablo').querySelector('tbody').innerHTML = ''; $('nk-sonuc').textContent = ''; $('nk-acik').textContent = 'Nüfusu yazın.'; return; }
-  const satir = [5, 4, 3, 2, 1].map(e => { const r = nkHesap(N, e / 100, yan); const nn = Math.min(r.n, N); return `<tr${e === 3 ? ' style="font-weight:700;background:#e6f3f5"' : ''}><td>±${e} puan</td><td>${fmt(nn)}</td><td>${fmt(Math.min(r.saha, N))}</td><td>%${fmt(100 * nn / N, nn / N < .01 ? 2 : 1)}</td></tr>`; });
+  const satir = [5, 4, 3, 2, 1].map(e => { const r = nkHesap(N, e / 100, yan); const nn = Math.min(r.n, N); return `<tr${e === 3 ? ' style="font-weight:700;background:#e6f3f5"' : ''}><td>±${e} puan</td><td>${fmt(nn)}</td><td>%${fmt(100 * nn / N, nn / N < .01 ? 2 : 1)}</td></tr>`; });
   $('nk-tablo').querySelector('tbody').innerHTML = satir.join('');
   const r3 = nkHesap(N, .03, yan), n3 = Math.min(r3.n, N);
   $('nk-sonuc').textContent = fmt(n3);
@@ -1721,6 +1748,53 @@ function nitelKac(){
   $('nt-adimlar').innerHTML = ad.map(([b, f, s]) => `<div class="adim"><b>${b}</b><span class="f">${f}</span><br>→ <strong>${s}</strong></div>`).join('');
   $('nt-sonuc').textContent = `${alt}-${ust}`;
   $('nt-acik').innerHTML = `${birim} (kılavuz, formül değil). ` + acik;
+}
+
+// ---------- 8b. olasılıklı yöntemler: basit görsel (4 mahalle, 100 hane, n = 20) ----------
+const EV2 = { yontem: 'basit', tohum: 1, haneler: [] };
+const EV2_MAH = ['A mahallesi', 'B mahallesi', 'C mahallesi', 'D mahallesi'];
+const EV2_GOC = [15, 10, 5, 0]; // mahalle başına göçmen hane
+function ev2Rnd(){ EV2.tohum = (EV2.tohum * 1103515245 + 12345) % 2147483648; return EV2.tohum / 2147483648; }
+function ev2Kur(){ if (!$('ev2-svg')) return;
+  // hane: m (mahalle 0-3), s (sokak = mahalle içindeki satır 0-4), k (sütun 0-4), g (göçmen mi), no (1-100 liste sırası: mahalle sırasıyla)
+  EV2.haneler = [];
+  for (let m = 0; m < 4; m++) for (let s = 0; s < 5; s++) for (let k = 0; k < 5; k++) {
+    const idx = s * 5 + k; EV2.haneler.push({ m, s, k, g: idx < EV2_GOC[m], no: m * 25 + idx + 1 });
+  }
+  // göçmen haneleri mahalle içinde karıştır (sabit tohum, her yüklemede aynı görünüm)
+  EV2.tohum = 7; for (let m = 0; m < 4; m++) { const h = EV2.haneler.filter(x => x.m === m); for (let i = h.length - 1; i > 0; i--) { const r = Math.floor(ev2Rnd() * (i + 1)); const t = h[i].g; h[i].g = h[r].g; h[r].g = t; } }
+  EV2.tohum = 11; ev2Ciz();
+}
+function ev2Yontem(y){ EV2.yontem = y; ['basit', 'sistematik', 'katmanli', 'kume', 'cok'].forEach(k => $('ev2-' + k).classList.toggle('active', k === y)); ev2Ciz(); }
+function ev2Yeni(){ EV2.tohum = Math.floor(Math.random() * 2147483647) || 3; ev2Ciz(); }
+function ev2Sec(){
+  const H = EV2.haneler, y = EV2.yontem; let secili = new Set(), mah = new Set(), sokak = new Set(), acik = '';
+  const rastgele = (dizi, n) => { const a = dizi.slice(); for (let i = a.length - 1; i > 0; i--) { const r = Math.floor(ev2Rnd() * (i + 1)); [a[i], a[r]] = [a[r], a[i]]; } return a.slice(0, n); };
+  if (y === 'basit') { rastgele(H, 20).forEach(h => secili.add(h.no)); acik = '<b>Basit rassal.</b> 100 hanenin tamamı listede; kura ile 20 hane çekildi. Her hanenin olasılığı 20/100 = 0,20. Seçilenler dört mahalleye dağınık düştü: yol uzun, ama hiçbir hane dışarıda kalmadı.'; }
+  else if (y === 'sistematik') { const F = 5, b = 1 + Math.floor(ev2Rnd() * F); for (let no = b; no <= 100; no += F) secili.add(no); acik = `<b>Sistematik.</b> F = 100/20 = 5. Rassal başlangıç ${b}; sonra ${b}, ${b + 5}, ${b + 10}, ... numaralı haneler. Liste mahalle sırasında olduğu için her mahalleden tam 5 hane düştü: düzenli yayılım, kendiliğinden katmanlama.`; }
+  else if (y === 'katmanli') { rastgele(H.filter(h => !h.g), 14).forEach(h => secili.add(h.no)); rastgele(H.filter(h => h.g), 6).forEach(h => secili.add(h.no)); acik = '<b>Katmanlı.</b> Evren iki katmana ayrıldı: 70 yerli, 30 göçmen. Her katmandan payı kadar rassal çekim: 14 yerli, 6 göçmen. Göçmen payı tam %30; basit rassalda şansa kalan şey burada garanti.'; }
+  else if (y === 'kume') { const m = Math.floor(ev2Rnd() * 4); mah.add(m); H.filter(h => h.m === m).forEach(h => secili.add(h.no)); const g = EV2_GOC[m]; acik = `<b>Küme.</b> 4 mahalleden biri kura ile seçildi: ${EV2_MAH[m]}. İçindeki 25 hanenin hepsiyle görüşüldü. Yol en kısa; ama örneklemde göçmen payı %${Math.round(100 * g / 25)} çıktı (evrende %30). Başka mahalle çıksa bambaşka sonuç: hata payı büyük.`; }
+  else { const ms = rastgele([0, 1, 2, 3], 2); ms.forEach(m => { mah.add(m); rastgele([0, 1, 2, 3, 4], 2).forEach(s => { sokak.add(m + '-' + s); H.filter(h => h.m === m && h.s === s).forEach(h => secili.add(h.no)); }); }); acik = `<b>Çok aşamalı.</b> 1. aşama: 4 mahalleden 2'si kura ile (${ms.map(m => EV2_MAH[m]).join(' ve ')}). 2. aşama: her mahallede 5 sokaktan 2'si kura ile. 3. aşama: seçilen sokaktaki 5 hanenin hepsi. Olasılık 2/4 × 2/5 × 1 = 0,20, eşit. Yol kısa, çeşitlilik tek kümeden iyi.`; }
+  const n = secili.size, gocmen = H.filter(h => secili.has(h.no) && h.g).length;
+  return { secili, mah, sokak, acik: acik + ` <span class="ev2-sonuc">Örneklem: ${n} hane, ${gocmen} göçmen (%${Math.round(100 * gocmen / n)}; evrende %30).</span>` };
+}
+function ev2Ciz(){
+  const svg = $('ev2-svg'); if (!svg) return; const t0 = EV2.tohum; const r = ev2Sec(); EV2.tohum = t0;
+  const X0 = [22, 312], Y0 = [36, 172], AD = 26, R = 8; let out = '';
+  for (let m = 0; m < 4; m++) {
+    const x0 = X0[m % 2], y0 = Y0[Math.floor(m / 2)];
+    const secMah = r.mah.has(m);
+    out += `<rect x="${x0 - 12}" y="${y0 - 26}" width="${AD * 4 + 60}" height="${AD * 4 + 46}" rx="8" fill="${secMah ? '#e9edf5' : '#fbfcfe'}" stroke="${secMah ? '#1E2D5E' : '#d7dde8'}" stroke-width="${secMah ? 2 : 1}" ${secMah ? 'stroke-dasharray="6 3"' : ''}/>`;
+    out += `<text x="${x0 - 6}" y="${y0 - 11}" font-size="10" font-weight="700" fill="#1E2D5E">${EV2_MAH[m]}: 25 hane, ${EV2_GOC[m]} göçmen</text>`;
+    for (let s = 0; s < 5; s++) {
+      if (r.sokak.has(m + '-' + s)) out += `<rect x="${x0 - 9}" y="${y0 + s * AD - 11}" width="${AD * 4 + 18}" height="24" rx="5" fill="#dfe6f3" stroke="#1E2D5E" stroke-width="1.2" stroke-dasharray="4 2"/>`;
+      for (let k = 0; k < 5; k++) {
+        const h = EV2.haneler[m * 25 + s * 5 + k], cx = x0 + k * AD, cy = y0 + s * AD, sec = r.secili.has(h.no);
+        out += `<circle cx="${cx}" cy="${cy}" r="${R}" fill="${h.g ? '#EF9F27' : '#378ADD'}" stroke="${sec ? '#1D9E75' : '#fff'}" stroke-width="${sec ? 3.5 : 1}" opacity="${sec || r.secili.size === 0 ? 1 : .35}"><title>Hane ${h.no}, ${EV2_MAH[h.m]}, ${h.g ? 'göçmen' : 'yerli'}${sec ? ', seçildi' : ''}</title></circle>`;
+      }
+    }
+  }
+  svg.innerHTML = out; $('ev2-aciklama').innerHTML = r.acik;
 }
 
 // ---------- 11. yanıt oranı grafiği ----------
@@ -1792,7 +1866,7 @@ function anketSim(yeni){
 }
 
 // ---------- kurulum ----------
-zamanCiz(); EVREN = evrenUret('normal'); mltCiz(); hataPayi(); kdBasla(); senKur(); kota(); evKur(); hacim(); nkOrnek(1100000, 'Van ili (yaklaşık 1,1 milyon)'); nitelKac(); anketSim(); yanitCiz(); kunye(); quizKur(); evTablo(false);
+zamanCiz(); EVREN = evrenUret('normal'); mltCiz(); hataPayi(); kdBasla(); senKur(); kota(); ev2Kur(); hacim(); nkOrnek(1100000, 'Van ili (yaklaşık 1,1 milyon)'); nitelKac(); anketSim(); yanitCiz(); kunye(); quizKur();
 window.addEventListener('resize', () => { evCiz(); });
 
 // sidebar etkin bölüm

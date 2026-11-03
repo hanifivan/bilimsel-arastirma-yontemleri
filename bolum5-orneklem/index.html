@@ -363,6 +363,8 @@
 .kitap-tanim dt .sayfa { font-weight: 400; font-size: 11.5px; color: var(--gray); margin-left: .4rem; }
 .kitap-tanim dd { margin: .15rem 0 0; font-size: 13.5px; line-height: 1.6; color: #2b2f3a; }
 
+.ek-etiket { display: inline-block; font-size: 10.5px; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: #7a4a00; background: #FDF3E7; border: 1px solid #f0d9b8; border-radius: 999px; padding: 1px 8px; margin-right: .5rem; vertical-align: middle; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; }
+
 </style>
 </head>
 <body>
@@ -612,6 +614,28 @@
 <div class="section anchor" id="s5" data-odak="1">
   <div class="section-header"><span class="num">5</span> Merkezi Limit Teoremi ve Hata Payı</div>
   <div class="section-body">
+    <div class="kitap-tanim kt-k2">
+      <div class="kt-bas">Kitabın formülü: hata payı hesaplama (Tablo 5.1)</div>
+      <dl>
+        <dt>Hata payı <span class="sayfa">s. 81</span></dt>
+        <dd>hata payı = z × σ / √n &nbsp; (n = örneklem büyüklüğü, σ = evren standart sapması, z = güven düzeyine karşılık gelen z değeri). Kitabın üç adımı: (1) evren standart sapmasını (σ) ve örneklem büyüklüğünü (n) alın; (2) örneklem büyüklüğünün karekökünü alıp σ'yı buna bölün; (3) sonucu istenen güven düzeyinin z değeriyle çarpın.</dd>
+        <dt>z tablosu <span class="sayfa">s. 81</span></dt>
+        <dd>%80 için 1,28; %85 için 1,44; %90 için 1,65; %95 için 1,96; %99 için 2,58.</dd>
+        <dt>Güven düzeyi ne demek <span class="sayfa">s. 81</span></dt>
+        <dd>"Yapacağınız yüz tahminin kaçında yanlış yapmayı göze alırsınız sorusuna verdiğiniz yanıta bağlı olur."</dd>
+        <dt>Oranlar için uyarlama <span class="sayfa">kitap dışı ek</span></dt>
+        <dd>Anketlerde çoğu soru oran verir (destekleyenlerin yüzdesi). Oran için σ yerine √(p(1 − p)) yazılır; aşağıdaki hesaplayıcı bu biçimi kullanır. p = 0,5 en kötü durumdur, hata payını en büyük yapar.</dd>
+      </dl>
+    </div>
+    <div class="odak-surum">
+      <div class="g">Kitabın formülü: hata payı hesaplama (Tablo 5.1)</div>
+      <ul>
+        <li><strong>hata payı = z × σ / √n</strong> (Tablo 5.1, s. 81).</li>
+        <li>Adımlar: σ ve n al; σ / √n; z ile çarp.</li>
+        <li>z: %80 1,28 · %85 1,44 · %90 1,65 · %95 1,96 · %99 2,58.</li>
+        <li>Oran için (kitap dışı ek): σ yerine √(p(1 − p)); p = 0,5 en kötü durum.</li>
+      </ul>
+    </div>
     <p>Küçük bir örneklemden koca bir evren hakkında konuşma hakkını bize <strong>Merkezi Limit Teoremi (MLT)</strong> verir. Rassal çekilen örneklemlerin ortalamaları, evrenin dağılımı ne olursa olsun, normal dağılır; bu ortalamaların ortalaması evren ortalamasına eşittir; yayılımları ise evren standart sapmasının √n'e bölümüdür (standart hata). Aşağıda bunu kendiniz deneyin: evren dağılımını değiştirin, örneklem hacmini artırın.</p>
     <div class="odak-surum"><div class="g">Merkezi Limit Teoremi (MLT)</div><ul><li>Rassal çekilen örneklemlerin <strong>ortalamaları normal dağılır</strong>, evrenin dağılımı ne olursa olsun.</li><li>Bu ortalamaların ortalaması <strong>evren ortalamasına</strong> eşittir.</li><li>Yayılımları evren standart sapmasının <strong>√n</strong>'e bölümüdür: <strong>standart hata</strong>.</li><li>Aşağıda kendiniz deneyin: evren dağılımını değiştirin, n'i artırın.</li></ul><div class="ek ek-sayi"><b>Sayı</b>Teorem 18. yüzyılda (de Moivre 1733, Laplace 1810) bulundu; sosyal araştırmaya uygulanması için yüz yıldan fazla beklendi. Bugün her hata payı hesabının arkasında bu teorem vardır.</div></div>
     <div class="widget" id="w-mlt">
@@ -661,6 +685,22 @@
 <div class="section anchor" id="s6" data-odak="1">
   <div class="section-header"><span class="num">6</span> Olasılıklı mı, Olasılıksız mı?</div>
   <div class="section-body">
+    <div class="kitap-tanim kt-k2">
+      <div class="kt-bas">Kitabın ayrımı</div>
+      <dl>
+        <dt>Olasılıklı yöntemler <span class="sayfa">s. 82</span></dt>
+        <dd>"Olasılıklı yöntemler, evrendeki her birimin örnekleme dahil olma olasılığının hesaplanabildiği ve eşit olduğu yöntemler olarak tanımlanır." Sınıfta 20 öğrenciden 5 kişi: olasılık 5/20 = 1/4. 20 milyon seçmenden 1.000 kişi: 1.000/20.000.000.</dd>
+        <dt>Olasılıklı olmayan yöntemler <span class="sayfa">s. 82-83</span></dt>
+        <dd>Seçilme olasılığı hesaplanamaz ya da eşit değildir; bu yüzden hata payı hesaplanamaz ve bulgular evrene genellenemez. Kitabın saydığı dört yöntem: gelişigüzel (kolayda), amaçlı, kartopu, kotalı (7. bölüm).</dd>
+      </dl>
+    </div>
+    <div class="odak-surum">
+      <div class="g">Kitabın ayrımı</div>
+      <ul>
+        <li><strong>Olasılıklı:</strong> her birimin seçilme olasılığı hesaplanabilir ve eşit (s. 82). n/N: 5/20, 1.000/20.000.000.</li>
+        <li><strong>Olasılıklı olmayan:</strong> olasılık hesaplanamaz; hata payı yok, genelleme yok (s. 82-83).</li>
+      </ul>
+    </div>
     <p>Bütün yöntemleri tek bir soruyla ayırırız: <strong>Evrendeki her birimin örnekleme girme olasılığı hesaplanabilir ve eşit (ya da bilinir) mi?</strong> Yanıt evetse yöntem olasılıklıdır; MLT çalışır, hata payı hesaplanır, genelleme yapılır. Yanıt hayırsa bulgular yalnız görüşülen kişileri temsil eder.</p>
     <div class="odak-surum"><div class="g">Tek soru</div><ul><li>Evrendeki <strong>her birimin</strong> örnekleme girme olasılığı <strong>hesaplanabilir ve eşit (ya da bilinir) mi</strong>?</li><li><strong>Evet:</strong> olasılıklı yöntem. MLT çalışır, hata payı hesaplanır, genelleme yapılır.</li><li><strong>Hayır:</strong> olasılıksız yöntem. Bulgular yalnız görüşülen kişileri temsil eder.</li></ul><div class="ek ek-tartis"><b>Tartışalım</b>"Eşit" şart mı, "bilinir" yeter mi? Büyüklüğe orantılı seçimde olasılıklar eşit değil ama bilinir; ağırlıklandırmayla düzeltilir. Kota örnekleminde ise olasılık hiç bilinmez. Fark neden önemli?</div></div>
     <div class="formula">20 kişilik sınıftan 5 kişi: her öğrencinin seçilme olasılığı 5/20 = 1/4 &nbsp;&nbsp;·&nbsp;&nbsp; 20 milyon seçmenden 1.000 kişi: 1.000 / 20.000.000 = 0,00005</div>
@@ -706,6 +746,28 @@
 <div class="section anchor" id="s7" data-odak="1">
   <div class="section-header"><span class="num">7</span> Olasılıksız Yöntemler: Kimi Temsil Eder?</div>
   <div class="section-body">
+    <div class="kitap-tanim kt-k2">
+      <div class="kt-bas">Kitabın tanımları: olasılıklı olmayan dört yöntem</div>
+      <dl>
+        <dt>Gelişigüzel (kolayda) örneklem <span class="sayfa">s. 83</span></dt>
+        <dd>"Basitçe elinin altında bulunan kişilerden oluşan örneklemle araştırma yapmaya bu ad verilir." Sınıftaki öğrencilerle yapılan anket kimi temsil eder? "Açıkça, anketimize katılan öğrenciler sadece kendilerini temsil ederler." (s. 83-84)</dd>
+        <dt>Amaçlı (kasıtlı) örneklem <span class="sayfa">s. 86</span></dt>
+        <dd>Araştırmacı "belirli bir bölgeyi ya da mekânı kendi araştırma sorusuna uygun olarak 'kasıtla' seçiyor"; kuramsal bilgisi ya da deneyimiyle soruya en uygun vakaları bulmaya çalışır. Romanların yoğun yaşadığı mahalleye gitmek gibi. Kitabın değerlendirmesi: nicel çalışmada "kullanılması tavsiye edilmeyen bir örneklem türü olarak bilinir" (s. 87).</dd>
+        <dt>Kartopu örneklemi <span class="sayfa">s. 87-88</span></dt>
+        <dd>Erişilmesi zor hedef kitlelerde "bir temas noktasıyla başlayıp, onun tavsiyesiyle ikinci bir temas noktasına geçip" öngörülen sayıya ulaşmak; adı "örneklemin tıpkı bir kartopu gibi birikerek büyümesi"nden gelir. Düzensiz göçmenler, mevsimlik tarım işçileri, yerinden edilmiş kişiler. Sakıncası: olasılıklı değildir, istatistiksel çıkarım yapılamaz; ilk temasın yönlendirmesi yanlılık üretir (s. 88-89).</dd>
+        <dt>Kotalı örneklem <span class="sayfa">s. 89</span></dt>
+        <dd>"Kota örnekleme yönteminde evren, elde bulunan çeşitli verilere göre tasnif edilir ... Daha sonra örneklem büyüklüğü bu kırılımlara, nüfuslarına orantılı olarak dağıtılır, böylelikle kotalar hesaplanmış olur." Gallup'un 1936 ve 1948 yöntemi; Türkiye'de yaygın; kitap olasılıklı olmayan yöntemler arasında sayar. Katmanlamadan farkı: kotada "birimlerin nasıl seçileceğine müdahale etmiyorsunuz", seçim anketöre kalır (s. 96).</dd>
+      </dl>
+    </div>
+    <div class="odak-surum">
+      <div class="g">Kitabın tanımları: olasılıklı olmayan dört yöntem</div>
+      <ul>
+        <li><strong>Gelişigüzel:</strong> elinin altındaki kişiler; yalnız kendilerini temsil ederler (s. 83).</li>
+        <li><strong>Amaçlı:</strong> bölge ya da mekân kasıtla seçilir; nicelde tavsiye edilmez (s. 86-87).</li>
+        <li><strong>Kartopu:</strong> temas noktasından temas noktasına birikerek büyür; çıkarım yok, yönlendirme yanlılığı (s. 87-89).</li>
+        <li><strong>Kotalı:</strong> evren tasnif edilir, hacim kırılımlara orantılı dağıtılır; son seçim anketörde (s. 89, 96).</li>
+      </ul>
+    </div>
     <p>Veri eksikliği, çerçeve yokluğu, maliyet ve zaman kısıtları araştırmacıları sık sık olasılıksız yöntemlere iter. Ders kitapları doğru yöntemi şüpheye yer bırakmadan anlatır; saha ise ideal tasarımı her zaman mümkün kılmaz. Önemli olan kısıtın farkında olmak ve bunu raporda açıkça yazmaktır.</p>
     <div class="odak-surum"><div class="g">Olasılıksız yöntemler neden bu kadar yaygın?</div><ul><li>Veri eksikliği, çerçeve yokluğu, <strong>maliyet ve zaman</strong> kısıtları araştırmacıları sık sık olasılıksız yöntemlere iter.</li><li>Ders kitapları doğru yöntemi şüpheye yer bırakmadan anlatır; <strong>saha</strong> ideal tasarımı her zaman mümkün kılmaz.</li><li>Önemli olan kısıtın farkında olmak ve bunu raporda <strong>açıkça yazmaktır</strong>.</li></ul><div class="ek ek-tartis"><b>Tartışalım</b>Rehber'in yazarları "örneklem tasarımı neredeyse bir sanattır" diyor. Sanat ile bilim arasındaki çizgi nerede: yaratıcı çözüm mü, kuralı esnetmek mi?</div></div>
     <div class="tabs" id="olx-tabs">
@@ -762,6 +824,31 @@
 <div class="section anchor" id="s8" data-odak="1">
   <div class="section-header"><span class="num">8</span> Olasılıklı Yöntemler: Siz Olsanız Nasıl Yapardınız?</div>
   <div class="section-body">
+    <div class="kitap-tanim kt-k2">
+      <div class="kt-bas">Kitabın tanımları ve formülleri: olasılıklı yöntemler</div>
+      <dl>
+        <dt>Basit rassal örnekleme <span class="sayfa">s. 93-94</span></dt>
+        <dd>İdeal dünyada tercih edilmesi gereken yöntem. "Evrenimizdeki bütün birimleri içeren tam bir örneklem çerçevemiz olduğunu varsayıyoruz": bütün isimler torbaya atılır, örneklem büyüklüğü kadar isim çekilir (bilgisayarda rassal sayı üreteciyle). Çerçeve tam değilse uygulanamaz.</dd>
+        <dt>Sistematik rassal örnekleme <span class="sayfa">s. 94-95</span></dt>
+        <dd>Basit rassalla "aynı sonuçları üretebiliyor", daha hızlıdır. Kitabın altı adımı: (1) evrenin büyüklüğünü (N) hesaplayın; (2) örneklem büyüklüğünü (n) hesaplayın; (3) her birimin temsil edeceği kişi sayısını bulun: <strong>F = N / n</strong> = nüfus büyüklüğü / örneklem büyüklüğü; (4) 1 ile F arasında rassal bir başlangıç seçin; (5) F ekleyerek ilerleyin, denk gelen her birimi alın; (6) örneklem hızla çekilmiş olur. Tam liste yoksa imkânsızdır.</dd>
+        <dt>Katmanlama (stratification) <span class="sayfa">s. 95-96</span></dt>
+        <dd>"Evreninizi, sizi ilgilendiren herhangi bir kriter/değişken bazında gruplayıp kendi içinde homojen alt gruplar oluşturabiliyorsanız" önce katmanlayıp sonra her katmanda rassal çekim "farklı grupların temsil edilmesini kolaylaştırır". Varsayım: katmanlar kendi içinde homojen. Doğru katmanlama hata payını azaltır. Kotadan farkı: her katmanda seçim rassaldır, MLT çalışır.</dd>
+        <dt>Kümeleme <span class="sayfa">s. 96-97</span></dt>
+        <dd>"Elimizdeki evreni, kendi içinde heterojen gruplara bölebiliyorsak, örneklemi kümelere ayırabiliyoruz": önce kümeler seçilir, sonra kümelerin içinden rassal örneklem çekilir. En tipik örnek mahalleler. Maliyeti düşürür, "buna karşılık hata payını da arttırdığını biliyoruz"; maliyet ile hata payı arasında tercih yapılır.</dd>
+        <dt>Büyüklüğe orantılı olasılıkla örnekleme <span class="sayfa">s. 97-98</span></dt>
+        <dd>Kümeler eşit büyüklükte değilse "daha büyük kümenin seçilme olasılığı, büyüklüğüne orantılı olarak daha yüksek olur." Y mahallesi 30 bin, Z mahallesi 1 bin kişiyse ve ikisine eşit şans verilirse Z'dekiler 30 kat aşırı temsil edilir; bu yüzden Y'nin seçilme olasılığı Z'nin 30 katı yapılır ki nihai birimlerin seçilme olasılığı eşit olsun.</dd>
+      </dl>
+    </div>
+    <div class="odak-surum">
+      <div class="g">Kitabın tanımları ve formülleri: olasılıklı yöntemler</div>
+      <ul>
+        <li><strong>Basit rassal:</strong> tam çerçeve, torbadan n isim (s. 93-94).</li>
+        <li><strong>Sistematik:</strong> <strong>F = N / n</strong>; 1-F arası rassal başlangıç, F ekleyerek ilerle (s. 94).</li>
+        <li><strong>Katmanlama:</strong> içi homojen alt gruplar, her katmanda rassal çekim; hata payını azaltır (s. 95-96).</li>
+        <li><strong>Kümeleme:</strong> içi heterojen gruplar, önce küme sonra birim; maliyet düşer, hata payı artar (s. 96-97).</li>
+        <li><strong>Büyüklüğe orantılı olasılık:</strong> büyük küme büyüklüğü kadar yüksek olasılıkla seçilir; nihai olasılıklar eşitlenir (s. 97-98).</li>
+      </ul>
+    </div>
     <div class="kaynak-kutu senaryo"><b>Senaryo.</b> Van Büyükşehir Belediyesi, kentteki göçmen uyumunu ölçmek için bir hane anketi yaptıracak. Kentte 10 mahalle ve 2.000 hane var; 600'ü göçmen hane, ama göçmen haneler bazı mahallelerde yoğunlaşmış. Bütçe 200 yüz yüze görüşmeye yetiyor. Elinizde TÜİK'ten alınmış tam hane adres listesi var. Bulguları "Van'daki haneler" için genellemek istiyorsunuz. Hangi haneleri seçersiniz?</div>
     <div class="odak-surum">
       <div class="g">Senaryo: Van'da göçmen uyum anketi</div>
@@ -868,6 +955,22 @@
 <div class="section anchor" id="s9" data-odak="1">
   <div class="section-header"><span class="num">9</span> Çok Aşamalı Tasarım ve Türkiye Uygulaması</div>
   <div class="section-body">
+    <div class="kitap-tanim kt-k2">
+      <div class="kt-bas">Kitabın tanımı ve hesabı: çok aşamalı örnekleme</div>
+      <dl>
+        <dt>Çok aşamalı örnekleme <span class="sayfa">s. 98</span></dt>
+        <dd>"Hem kritik grupların olmaları gerektiği kadar seçilme olasılığı vermek, hem de maliyetleri azaltmak amacıyla katmanlama ve kümelemeyi bir arada kullanarak daha etkin bir örnekleme yöntemi uygularız."</dd>
+        <dt>Kitabın üniversite hesabı <span class="sayfa">s. 98-99</span></dt>
+        <dd>23.000 öğrenci, konu gençlerin gelecekten umutları. Fakülteler ve bölümler katman, sınıflar katman, dersler küme (kendi içinde heterojen). Her fakülteden 7 bölüm, her bölümden 4 sınıf, her sınıftan 2 ders, her dersten 10 öğrenci: 7 × 7 × 4 × 2 × 10 = <strong>3.920 öğrenci</strong>. Kitap bu hesabın sınıf, bölüm ve fakülteler arasındaki öğrenci sayısı farkını işleme katmadığını belirtir; farkı büyüklüğe orantılı seçim giderir.</dd>
+      </dl>
+    </div>
+    <div class="odak-surum">
+      <div class="g">Kitabın tanımı ve hesabı: çok aşamalı örnekleme</div>
+      <ul>
+        <li><strong>Çok aşamalı:</strong> katmanlama + kümeleme bir arada (s. 98).</li>
+        <li>Üniversite: 7 fakülte × 7 bölüm × 4 sınıf × 2 ders × 10 öğrenci = <strong>3.920</strong> (s. 99).</li>
+      </ul>
+    </div>
     <p>Gerçek hayatta hem kritik grupların olmaları gerektiği kadar seçilme olasılığına sahip olması hem de maliyetin düşmesi için katmanlama ve kümeleme bir arada kullanılır. Rehber'in üniversite örneğini izleyelim: 23.000 öğrenci, konu gençlerin gelecekten umudu, zaman kısıtı var.</p>
     <div class="odak-surum"><div class="g">Katmanlama ve kümeleme bir arada</div><ul><li>Gerçek hayatta hem kritik grupların gerektiği kadar seçilme olasılığına sahip olması hem de maliyetin düşmesi için <strong>katmanlama ve kümeleme birlikte</strong> kullanılır.</li><li>Rehber'in üniversite örneği: <strong>23.000 öğrenci</strong>, konu gençlerin gelecekten umudu, zaman kısıtı var.</li></ul></div>
     <div class="steps">
@@ -894,6 +997,25 @@
 <div class="section anchor" id="s10" data-odak="1">
   <div class="section-header"><span class="num">10</span> Örneklem Hacmi: Kaç Kişi Yeter?</div>
   <div class="section-body">
+    <div class="kitap-tanim kt-k2">
+      <div class="kt-bas">Kitapta ve sunumda hacim</div>
+      <dl>
+        <dt>Kitabın yaklaşımı <span class="sayfa">s. 81</span></dt>
+        <dd>Kitap ayrı bir hacim formülü vermez; hacmi Tablo 5.1'deki hata payı formülünden geriye doğru düşünür: istediğiniz hata payı ve güven düzeyi için n büyütülür. Örnek Kutusu 5.1'de 2.300 kişilik anketin %95 güvenle ±2,06 hata payı verdiği aktarılır (s. 92).</dd>
+        <dt>Sunumun ölçütleri <span class="sayfa">sunum s. 16-25</span></dt>
+        <dd>Olasılıklı yöntemde hacim duyarlılık, hata payı ve maliyete göre belirlenir; olasılıksız yöntemde "kesin bir kural yoktur". Belirleyiciler: evrenin homojenliği, kararın önemi, maliyet-zaman dengesi, araştırmanın yapısı, benzer çalışmalar, kaynak kısıtları (Şeniş, 2002). Aşağıdaki kartlar bu altı ölçüttür.</dd>
+        <dt>Cochran formülü, sonlu evren düzeltmesi, tasarım etkisi <span class="sayfa">kitap dışı ek</span></dt>
+        <dd>Aşağıdaki hesaplayıcılar bu formülleri kullanır. Kitapta yer almazlar; Tablo 5.1'in oran için n'ye göre çözülmüş biçimidir (n₀ = z² p(1 − p) / e²) ve ulusal anket uygulamasında standarttır (Cochran, 1977; Kish, 1965).</dd>
+      </dl>
+    </div>
+    <div class="odak-surum">
+      <div class="g">Kitapta ve sunumda hacim</div>
+      <ul>
+        <li>Kitap hacmi Tablo 5.1'den geriye doğru düşünür; ayrı formül vermez.</li>
+        <li>Sunum: olasılıklıda duyarlılık, hata payı, maliyet; olasılıksızda kesin kural yok; altı ölçüt.</li>
+        <li>Cochran, sonlu evren düzeltmesi, deff: <strong>kitap dışı ek</strong>.</li>
+      </ul>
+    </div>
     <p>Olasılıklı yöntemde ve uygun çerçeve varsa gerekli hacim; istenen duyarlılık, hata payı ve maliyet ölçütlerine göre hesaplanır. Olasılıksız yöntemde ise kesin bir kural yoktur; ders notunun saydığı beş ölçüt kaba bir yol gösterir.</p>
     <div class="odak-surum"><div class="g">Kaç kişi yeter?</div><ul><li>Olasılıklı yöntemde ve uygun çerçeve varsa hacim; istenen <strong>duyarlılık, hata payı ve maliyet</strong> ölçütlerine göre hesaplanır.</li><li>Olasılıksız yöntemde kesin bir kural yoktur; ders notunun <strong>beş ölçütü</strong> kaba bir yol gösterir.</li></ul></div>
     <div class="grid3">
@@ -923,7 +1045,7 @@
       <p style="margin:.6rem 0 0;font-size:13px"><button onclick="nkSimule()">Bu n ile simülasyonu çalıştır</button> <span style="color:var(--gray)">(±3 puan için gereken n'yi aşağıdaki "aynı araştırmayı 500 kez yapsaydık" kutusuna taşır)</span></p>
     </div>
     <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Hacim hesaplayıcı (oran tahmini için, Cochran)</h4>
-    <div class="formula">n₀ = z² · p(1 − p) / e² &nbsp;&nbsp;&nbsp; n = n₀ / (1 + (n₀ − 1)/N) &nbsp;&nbsp;&nbsp; n<sub>tasarım</sub> = n × deff &nbsp;&nbsp;&nbsp; n<sub>saha</sub> = n<sub>tasarım</sub> / yanıt oranı</div>
+    <div class="formula"><span class="ek-etiket">kitap dışı ek</span>n₀ = z² · p(1 − p) / e² &nbsp;&nbsp;&nbsp; n = n₀ / (1 + (n₀ − 1)/N) &nbsp;&nbsp;&nbsp; n<sub>tasarım</sub> = n × deff &nbsp;&nbsp;&nbsp; n<sub>saha</sub> = n<sub>tasarım</sub> / yanıt oranı</div>
     <div class="widget" id="w-hc">
 <div class="ornekler" style="margin-bottom:.6rem"><span class="cap" style="display:inline">Hazır örnekler: </span>
       <button onclick="hacimOrnek('kutu51')">Rehber Kutu 5.1 (N = 24.118.789 hane, e = 2,06)</button>
@@ -1027,6 +1149,25 @@
 <div class="section anchor" id="s12" data-odak="1">
   <div class="section-header"><span class="num">12</span> Nitel Araştırmada Örneklem</div>
   <div class="section-body">
+    <div class="kitap-tanim kt-k2">
+      <div class="kt-bas">Kitabın tanımı: niteliksel çalışmalarda örneklem</div>
+      <dl>
+        <dt>Amaçlı örneklem <span class="sayfa">s. 102</span></dt>
+        <dd>"Niteliksel araştırmalarda örneklem yöntemi ne olursa olsun 'amaçlı' olarak tanımlanır." "MLT'ye ihtiyacınız yoksa, rassal olmayan örnekleme yöntemlerini de meşru olarak kullanabilirsiniz." Patton (2002) dokuz strateji sayar; ilk karar benzerlik mi, farklılık mı arandığıdır.</dd>
+        <dt>Kuram bazlı ve ardıl örnekleme <span class="sayfa">s. 104-105</span></dt>
+        <dd>Temellendirilmiş kuram geleneğinde hangi vakaların önemli olduğunu kuramsal çerçeve söyler; amaç "genellemek değil, yeniden inşa etmek". Ardıl (mütekaip) örneklemede ilk görüşmeler yeni sorular doğurur, sonraki vaka buna göre seçilir; seçim süreci belgelenmelidir.</dd>
+        <dt>Görüşme ve odak grup kartları, kılavuz hesaplayıcı <span class="sayfa">kitap dışı ek</span></dt>
+        <dd>Aşağıdaki veri toplama kartları ve "kaç kişi" kılavuzu kitapta yoktur; literatürdeki doygunluk çalışmalarına dayanır (Guest vd., 2006; Hennink ve Kaiser, 2022).</dd>
+      </dl>
+    </div>
+    <div class="odak-surum">
+      <div class="g">Kitabın tanımı: niteliksel çalışmalarda örneklem</div>
+      <ul>
+        <li>Nitelde örneklem yöntemi ne olursa olsun <strong>amaçlıdır</strong>; MLT gerekmiyorsa rassal olmayan yöntem meşrudur (s. 102).</li>
+        <li>Kuram bazlı: amaç yeniden inşa; ardıl: her görüşme sonrakini belirler, süreç belgelenir (s. 104-105).</li>
+        <li>Görüşme/odak grup kartları ve kılavuz hesaplayıcı: <strong>kitap dışı ek</strong>.</li>
+      </ul>
+    </div>
     <p>Buraya kadar ölçütümüz temsiliyetti. Ama araştırma sorunuz genelleme içermiyorsa? Evren parametrelerini tahmin etmek ya da hipotez test etmek gibi bir kaygı yoksa MLT'ye de ihtiyacınız yoktur; rassal olmayan örnekleme yöntemlerini meşru olarak kullanabilirsiniz. Bu özgürlük "örneklemsizlik" demek değildir: nitel çalışmanın başarısı örneklemin ne kadar iyi kurulduğuna bağlıdır ve her vakanın neden dahil edildiği açıklanabilmelidir.</p>
     <div class="odak-surum"><div class="g">Genelleme hedefi yoksa?</div><ul><li>Buraya kadar ölçütümüz <strong>temsiliyetti</strong>. Araştırma sorunuz genelleme içermiyorsa MLT'ye de ihtiyacınız yoktur.</li><li>Rassal olmayan yöntemler <strong>meşru</strong> olarak kullanılabilir.</li><li>Ama bu "örneklemsizlik" değildir: nitel çalışmanın başarısı örneklemin ne kadar iyi kurulduğuna bağlıdır; her vakanın <strong>neden dahil edildiği</strong> açıklanabilmelidir.</li></ul><div class="ek ek-ornek"><b>Örnek</b>Allison'ın Küba Füze Krizi çalışması tek vakadır ve genelleme iddiası yoktur; ama vakanın neden seçildiği (karar alma kuramlarını sınamak için kritik vaka) açıkça gerekçelendirilmiştir.</div></div>
     <div class="warn-box"><strong>Kolayda örneklem burada da sağlıksızdır.</strong> Öğrenciler, arkadaşlar, akrabalar gerçekliğin yanlı bir temsilini verir. Nitel araştırmada örneklem yöntemi ne olursa olsun <em>amaçlı</em> (seçici) olarak tanımlanır; araştırmacı kuramsal kaygılarla, zaman, mekân ya da güç ilişkileri gibi boyutlar üzerinden bilinçli seçim yapar.</p>
@@ -1060,7 +1201,7 @@
         <div class="card"><h4>Ardıl (sequential) örnekleme</h4>İlk görüşmeler yeni sorular doğurur; sonraki vaka bu sorulara göre seçilir. Sosyal sermayesi yüksek mültecilerle görüşmeler etnik ya da mezhepsel ayrımın önemine işaret ettiyse bir sonraki görüşme farklı etnisiteden biriyle yapılır. Seçim süreci mutlaka belgelenir; yoksa raporda örneklemin nasıl oluştuğu anlatılamaz.</div>
       </div>
     </div>
-    <h4 style="margin:1.4rem 0 .4rem;color:var(--navy)">Nitel veri nasıl toplanır? İki temel yöntem</h4>
+    <h4 style="margin:1.4rem 0 .4rem;color:var(--navy)">Nitel veri nasıl toplanır? İki temel yöntem <span class="ek-etiket">kitap dışı ek</span></h4>
     <p>Nitel araştırmada veri anket formuyla değil, çoğunlukla insanlarla konuşarak toplanır. Örneklem kararı vermeden önce hangi görüşme biçimini kullanacağınızı bilmeniz gerekir, çünkü kaç kişi gerektiği buna bağlıdır.</p>
     <div class="grid2">
       <div class="card"><span class="tag" style="background:var(--c5)">Yüz yüze (derinlemesine) görüşme</span><strong>Nedir?</strong> Araştırmacının tek bir kişiyle, genellikle 45 ile 90 dakika süren, açık uçlu sorularla yürüttüğü sohbet biçiminde görüşmedir. Amaç kişinin deneyimini, gerekçelerini ve anlam dünyasını kendi sözleriyle anlamaktır.<br><br><strong>Ne zaman?</strong> Konu kişisel, hassas ya da karmaşıksa (göç deneyimi, siyasi tercih gerekçesi, iş yerinde ayrımcılık); kişinin başkalarının yanında rahat konuşamayacağı durumlarda; bir sürecin adım adım anlatılması gerekiyorsa.<br><br><strong>Nasıl yapılır?</strong> Yarı yapılandırılmış bir görüşme rehberi hazırlanır: 6 ile 10 ana soru, her birinin altında sonda (derinleştirme) soruları. Görüşme izinle ses kaydına alınır, sonra yazıya dökülür (transkripsiyon). Görüşmeci az konuşur; "neden", "nasıl oldu", "bir örnek verir misiniz" diye derinleştirir. Katılımcıya bilgilendirilmiş onam formu imzalatılır; kimlik bilgisi kayıttan ayrı tutulur.<div class="ek ek-ornek"><b>Örnek</b>"Suriyeli üniversite öğrencilerinin Türkiye'de kalma kararı": 15 öğrenciyle birer saatlik görüşme; sorular aile, iş umudu, aidiyet ve dönüş planı üzerine.</div></div>
@@ -1075,7 +1216,7 @@
       <tr><td>Uygun değil</td><td>Çok sayıda kişi, kısa süre</td><td>Hassas konu, güç farkı olan katılımcılar</td></tr>
       <tr><td>Kaç tane?</td><td>Homojen grupta 9-17 görüşme; alt grup başına 6-12</td><td>Katman başına 3-4 grup</td></tr>
     </tbody></table></div>
-    <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Nitel çalışmada kaç kişi? Kılavuz hesaplayıcı</h4>
+    <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Nitel çalışmada kaç kişi? Kılavuz hesaplayıcı <span class="ek-etiket">kitap dışı ek</span></h4>
     <p>Nitel çalışmada hata payı formülü yoktur; ölçüt doygunluktur. Ama planlama için literatürdeki doygunluk çalışmalarına dayanan kılavuz sayılar vardır. Aşağıdaki kutu formül değil, başlangıç planı verir: sahada yeni tema çıkmamaya başlayınca durulur, çıkmaya devam ediyorsa plan büyütülür.</p>
     <div class="widget" id="w-nt">
       <div class="hesap">

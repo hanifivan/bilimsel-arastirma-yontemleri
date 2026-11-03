@@ -1,5 +1,5 @@
-# Araştırma Yöntemleri
+# Bilimsel Araştırma Yöntemleri
 
-Etkileşimli ders notları. Yayın: https://hanifivan.github.io/arastirma-yontemleri/
+Etkileşimli ders notları. Yayın: https://hanifivan.github.io/bilimsel-arastirma-yontemleri/
 
 - 5. Bölüm: Örneklem nasıl seçilir? (bolum5-orneklem/)

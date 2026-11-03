@@ -388,7 +388,7 @@
 <div id="main">
 
 <div class="hero">
-  <p style="margin:0 auto .6rem;font-size:14px;font-weight:600;letter-spacing:.02em;margin-bottom:1rem">Dr. M. Günay VAN</p>
+  <p style="margin:0 auto 1rem;font-size:14px;font-weight:600;letter-spacing:.02em">Dr. M. Günay VAN</p>
   <h1>Örneklem Nasıl Seçilir?</h1>
   <div class="sub">Bilimsel Araştırma Yöntemleri, 5. Bölüm: çerçeve, yöntem ve hacim kararları</div>
   <p>Ders notunun etkileşimli sürümü. Örneklem çekimini canlandırır, hata payını ve örneklem hacmini hesaplar, Merkezi Limit Teoremi'ni simülasyonla gösterir. Bütün hesaplar tarayıcıda çalışır.</p>
@@ -857,6 +857,24 @@
       <div class="card"><span class="tag" style="background:var(--c2)">Benzer çalışmalar</span>Güvenilir benzer çalışmaların hacimleri kaba bir fikir verir; özellikle olasılıksız yöntemlerde.</div>
       <div class="card"><span class="tag" style="background:var(--c2)">Kaynak kısıtları</span>Zaman, para ve iyi yetişmiş anketör bulma. 1980'lerde ABD'de iyi seçilmiş 1.500 kişi 200 milyonluk nüfus için doğru tahmin üretmişti (Ferber vd.).</div>
       <div class="card"><span class="tag" style="background:var(--c1)">Yaygın yanılgı</span>"Evrenin %10'u ya da %20'si alınmalı" kuralı yoktur. Hata payı evrenin oranına değil, örneklemin <em>mutlak</em> büyüklüğüne bağlıdır; sonlu evren düzeltmesi yalnız küçük evrenlerde fark yaratır.<div class="ek ek-sayi"><b>Sayı</b>1.000 kişilik örneklem Van için de (1,1 milyon), Türkiye için de (85 milyon), Çin için de (1,4 milyar) yaklaşık aynı hata payını verir: ±3,1. Çorbayı tatmak için kazanın büyüklüğü değil, karıştırılmış olması önemlidir.</div></div>
+    </div>
+    <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Nüfusu yazın: kaç anket gerekir?</h4>
+    <p>Araştıracağınız yerin nüfusunu (evren büyüklüğü N) yazın; %95 güven düzeyinde, en kötü durum varsayımıyla (p = 0,5) farklı hata payları için gereken anket sayısını görün. Hazır düğmelerle il, üniversite ya da mahalle ölçeğini deneyin.</p>
+    <div class="widget" id="w-nk">
+      <div class="ornekler" style="margin-bottom:.6rem"><span class="cap" style="display:inline">Hazır örnekler: </span>
+        <button onclick="nkOrnek(1100000,'Van ili (yaklaşık 1,1 milyon)')">Van ili</button>
+        <button onclick="nkOrnek(85000000,'Türkiye (yaklaşık 85 milyon)')">Türkiye</button>
+        <button onclick="nkOrnek(23000,'Bir üniversite (yaklaşık 23 bin öğrenci)')">Üniversite</button>
+        <button onclick="nkOrnek(5000,'Bir mahalle (5 bin kişi)')">Mahalle</button>
+        <button onclick="nkOrnek(400,'Bir lise (400 öğrenci)')">Lise</button>
+      </div>
+      <div class="hesap">
+        <label>Nüfus N <input type="number" id="nk-N" value="1100000" min="2" step="1" oninput="nkAd='';nufusKac()"></label>
+        <label>Beklenen yanıt oranı (%) <input type="number" id="nk-yanit" value="100" min="5" max="100" step="5" oninput="nufusKac()"></label>
+      </div>
+      <div class="table-scroll"><table id="nk-tablo"><thead><tr><th>Hata payı (±)</th><th>Gereken anket (n)</th><th>Sahaya çıkılacak kişi</th><th>Evrenin yüzdesi</th></tr></thead><tbody></tbody></table></div>
+      <div class="sonuc-buyuk"><span class="deger" id="nk-sonuc"></span><span class="acik" id="nk-acik"></span></div>
+      <p style="margin:.6rem 0 0;font-size:13px"><button onclick="nkSimule()">Bu n ile simülasyonu çalıştır</button> <span style="color:var(--gray)">(±3 puan için gereken n'yi aşağıdaki "aynı araştırmayı 500 kez yapsaydık" kutusuna taşır)</span></p>
     </div>
     <h4 style="margin:1.2rem 0 .4rem;color:var(--navy)">Hacim hesaplayıcı (oran tahmini için, Cochran)</h4>
     <div class="formula">n₀ = z² · p(1 − p) / e² &nbsp;&nbsp;&nbsp; n = n₀ / (1 + (n₀ − 1)/N) &nbsp;&nbsp;&nbsp; n<sub>tasarım</sub> = n × deff &nbsp;&nbsp;&nbsp; n<sub>saha</sub> = n<sub>tasarım</sub> / yanıt oranı</div>
@@ -1387,6 +1405,22 @@ function hacim(){
   $('hc-acik').innerHTML = `görüşme hedefi <b>${fmt(Math.ceil(n2))}</b>; %${$('hc-z').value} güvenle ±${fmt(100 * e, 2)} puan hata payı için. ${N && N <= 5000 ? 'Küçük evrende düzeltme belirgin: evrenin %' + fmt(100 * n1 / N, 0) + 'ı.' : 'Evrenin büyüklüğü sonucu neredeyse hiç etkilemiyor: hata payı mutlak hacme bağlıdır.'}`;
 }
 
+// ---------- 10b. nüfusu yazın, kaç anket? ----------
+let nkAd = '';
+function nkOrnek(N, ad){ $('nk-N').value = N; nkAd = ad; nufusKac(); }
+function nkHesap(N, e, yan){ const z = 1.96, p = .5; const n0 = z * z * p * (1 - p) / (e * e); const n = N ? n0 / (1 + (n0 - 1) / N) : n0; return { n: Math.ceil(n), saha: Math.ceil(n / yan) }; }
+function nufusKac(){
+  const N = Math.max(0, Math.floor(+$('nk-N').value || 0)), yan = Math.min(100, Math.max(5, +$('nk-yanit').value || 100)) / 100;
+  if (!N) { $('nk-tablo').querySelector('tbody').innerHTML = ''; $('nk-sonuc').textContent = ''; $('nk-acik').textContent = 'Nüfusu yazın.'; return; }
+  const satir = [5, 4, 3, 2, 1].map(e => { const r = nkHesap(N, e / 100, yan); const nn = Math.min(r.n, N); return `<tr${e === 3 ? ' style="font-weight:700;background:#e6f3f5"' : ''}><td>±${e} puan</td><td>${fmt(nn)}</td><td>${fmt(Math.min(r.saha, N))}</td><td>%${fmt(100 * nn / N, nn / N < .01 ? 2 : 1)}</td></tr>`; });
+  $('nk-tablo').querySelector('tbody').innerHTML = satir.join('');
+  const r3 = nkHesap(N, .03, yan), n3 = Math.min(r3.n, N);
+  $('nk-sonuc').textContent = fmt(n3);
+  const bas = nkAd ? nkAd + ': ' : 'N = ' + fmt(N) + ': ';
+  $('nk-acik').innerHTML = bas + `%95 güvenle ±3 puan hata payı için <b>${fmt(n3)}</b> tamamlanmış anket` + (yan < 1 ? `, yanıt oranı %${fmt(100 * yan, 0)} ise sahada <b>${fmt(Math.min(r3.saha, N))}</b> kişiye ulaşılmalı` : '') + '. ' + (N < 20000 ? 'Evren küçük olduğu için sonlu evren düzeltmesi gereken sayıyı belirgin biçimde düşürdü.' : 'Evren büyüdükçe gereken sayı değişmez: 1,1 milyonluk Van için de 85 milyonluk Türkiye için de yaklaşık 1.068 anket yeter.') + ' Basit rassal örnekleme ve p = 0,5 varsayımıyla; küme örneklemesinde tasarım etkisi için aşağıdaki ayrıntılı hesaplayıcıyı kullanın.';
+}
+function nkSimule(){ const N = Math.max(0, Math.floor(+$('nk-N').value || 0)); if (!N) return; const n3 = Math.min(nkHesap(N, .03, 1).n, N); const s = $('as-n'); s.value = Math.min(+s.max, Math.max(+s.min, Math.round(n3 / 50) * 50)); $('as-e').value = 3; anketSim(); $('w-as').scrollIntoView({ behavior: 'smooth', block: 'center' }); }
+
 // ---------- 11. yanıt oranı grafiği ----------
 function yanitCiz(){ chart('ch-yanit', { type: 'line', data: { labels: ['1997', '2000', '2003', '2006', '2009', '2012', '2016', '2017', '2018'], datasets: [{ data: [36, 28, 25, 21, 15, 9, 9, 7, 6], borderColor: C1, backgroundColor: C1 + '22', fill: true, tension: .3, pointRadius: 4, label: 'Yanıt oranı (%)' }] }, options: { plugins: { legend: { display: false } }, scales: { y: { beginAtZero: true, max: 40, title: { display: true, text: '%' } }, x: { grid: { display: false } } } } }); }
 
@@ -1456,7 +1490,7 @@ function anketSim(yeni){
 }
 
 // ---------- kurulum ----------
-zamanCiz(); EVREN = evrenUret('normal'); mltCiz(); hataPayi(); kdBasla(); senKur(); kota(); evKur(); hacim(); anketSim(); yanitCiz(); kunye(); quizKur(); evTablo(false);
+zamanCiz(); EVREN = evrenUret('normal'); mltCiz(); hataPayi(); kdBasla(); senKur(); kota(); evKur(); hacim(); nkOrnek(1100000, 'Van ili (yaklaşık 1,1 milyon)'); anketSim(); yanitCiz(); kunye(); quizKur(); evTablo(false);
 window.addEventListener('resize', () => { evCiz(); });
 
 // sidebar etkin bölüm

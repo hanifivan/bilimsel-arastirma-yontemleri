@@ -1092,7 +1092,22 @@ details.ayrinti[open] summary { margin-bottom: .6rem; }
       <div class="kt-bas">Çok aşamalı örnekleme: tanım ve hesap</div>
       <dl>
         <dt>Çok aşamalı örnekleme</dt>
-        <dd>"Hem kritik grupların olmaları gerektiği kadar seçilme olasılığı vermek, hem de maliyetleri azaltmak amacıyla katmanlama ve kümelemeyi bir arada kullanarak daha etkin bir örnekleme yöntemi uygularız."</dd>
+        <dd>"Hem kritik grupların olmaları gerektiği kadar seçilme olasılığı vermek, hem de maliyetleri azaltmak amacıyla katmanlama ve kümelemeyi bir arada kullanarak daha etkin bir örnekleme yöntemi uygularız."
+          <div class="mini-kutu"><b>Düz anlatımla:</b> Büyükten küçüğe, her basamakta kura. Bir adres bulur gibi düşünün: önce il, sonra mahalle, sonra ev, sonra evdeki kişi. Herkesin listesi yoktur; ama illerin listesi vardır, mahallelerin listesi vardır, bir mahallede evler sayılabilir, bir evde kişiler sorulabilir. Küçük listelerle büyük evren taranır.</div>
+          <div class="mini-kutu"><b>Nasıl?</b> 1.200 kişilik Türkiye anketi:<br>
+          1. 81 ilden kurayla 20 il.<br>
+          2. Her ilde kurayla 3 mahalle.<br>
+          3. Her mahallede kurayla 20 ev.<br>
+          4. Her evde kurayla 1 kişi.<br>
+          20 × 3 × 20 × 1 = 1.200 görüşme. Anketör hiçbir seçimi kendi yapmaz, hepsini kura yapar.</div>
+          <div class="mini-kutu"><b>Kuralar nasıl çekilir?</b> Her basamakta aynı mantık: listeyi numarala, rassal sayı üret, denk gelen satırı al. Fark, listenin nereden geldiğinde.<br>
+          <em>İl (masa başında):</em> 81 ilin nüfusu Excel'e yazılır. Büyük ile çok şans vermek için nüfuslar alt alta toplanır, 1 ile 85 milyon arasında rassal sayı üretilir, sayı hangi ilin aralığına düşerse o il seçilir. İstanbul 16 milyonluk aralık kapladığı için neredeyse kesin seçilir, Bayburt nadiren.<br>
+          <em>Mahalle (masa başında):</em> seçilen ilin mahalle listesi (TÜİK adres sistemi) alınır, aynı nüfusa orantılı kura ile 3 mahalle.<br>
+          <em>Ev (sahada):</em> mahallenin ev listesi yoktur; ekip sokağa çıkar, daireleri sayar (diyelim 400). Sonra sistematik: 400 / 20 = 20, 1 ile 20 arasında rassal başlangıç (diyelim 13), 13., 33., 53. ... daire.<br>
+          <em>Kişi (kapıda):</em> "Bu evde 18 yaş üstü kaç kişi var?" Üç kişi. Ya "doğum günü en son geçen kim?" denir ya da formdaki Kish tablosuna bakılır ("en yaşlıdan ikinci"). Seçilen kişi evde yoksa yerine başkası alınmaz, tekrar gidilir. Kotalı yöntemden fark budur: anketör "kim müsaitse" diyemez.</div>
+          <div class="mini-kutu"><b>Adalet nasıl sağlanır?</b> Büyük ile çok şans, küçük ile az şans verilir; büyük ilin içinden az, küçük ilin içinden çok mahalle alınır. Çarpım herkes için aynı çıkar: İstanbul'daki kişi ile Tunceli'deki kişinin seçilme olasılığı eşittir.</div>
+          <div class="mini-kutu"><b>Dikkat:</b> Aynı mahalleden gelenler birbirine benzer, hata payı biraz büyür. Çare: az ilde çok mahalle değil, çok ilde az mahalle.</div>
+          <div class="mini-kutu"><b>Nerede görürsünüz?</b> Bütün ulusal anketlerde. Künyede "çok aşamalı katmanlı küme örneklemesi" yazar: katman bölge demektir, küme mahalle demektir, çok aşamalı da bu basamaklar.</div></dd>
         <dt>Üniversite hesabı</dt>
         <dd>23.000 öğrenci, konu gençlerin gelecekten umutları. Fakülteler ve bölümler katman, sınıflar katman, dersler küme (kendi içinde heterojen). Her fakülteden 7 bölüm, her bölümden 4 sınıf, her sınıftan 2 ders, her dersten 10 öğrenci: 7 × 7 × 4 × 2 × 10 = <strong>3.920 öğrenci</strong>. Bu hesap sınıf, bölüm ve fakülteler arasındaki öğrenci sayısı farkını işleme katmaz; farkı büyüklüğe orantılı seçim giderir.</dd>
       </dl>

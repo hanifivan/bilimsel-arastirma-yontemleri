@@ -429,6 +429,9 @@ details.ayrinti[open] summary { margin-bottom: .6rem; }
 .sema-dal li span { display: block; font-size: 12px; color: #555; }
 .sema-dal .sd-alt { font-weight: 700; font-size: 12.5px; color: var(--teal); margin: .5rem 0 .15rem; }
 
+.mini-kutu { background: #EBF4FA; border-left: 4px solid var(--teal); border-radius: 6px; padding: .55rem .8rem; margin: .5rem 0 0; font-size: 13px; line-height: 1.6; color: #1f3350; }
+.mini-kutu b { color: var(--navy); }
+
 </style>
 </head>
 <body>
@@ -941,7 +944,9 @@ details.ayrinti[open] summary { margin-bottom: .6rem; }
       <div class="kt-bas">Olasılıklı yöntemler: tanımlar ve formüller</div>
       <dl>
         <dt>Basit rassal örnekleme</dt>
-        <dd>İdeal dünyada tercih edilmesi gereken yöntem. "Evrenimizdeki bütün birimleri içeren tam bir örneklem çerçevemiz olduğunu varsayıyoruz": bütün isimler torbaya atılır, örneklem büyüklüğü kadar isim çekilir (bilgisayarda rassal sayı üreteciyle). Çerçeve tam değilse uygulanamaz.</dd>
+        <dd>İdeal dünyada tercih edilmesi gereken yöntem. "Evrenimizdeki bütün birimleri içeren tam bir örneklem çerçevemiz olduğunu varsayıyoruz": bütün isimler torbaya atılır, örneklem büyüklüğü kadar isim çekilir (bilgisayarda rassal sayı üreteciyle). Çerçeve tam değilse uygulanamaz.
+          <div class="mini-kutu"><b>"Tam çerçeve" ne demek?</b> Evrenin kaç kişi olduğunu bilmek yetmez; her birimin tek tek <em>listede</em> olması gerekir. Üç şart: herkes listede (eksik yok), listede fazlalık yok (ölmüş, taşınmış, evrene ait olmayan kayıt yok), seçilen kişiye ulaşmanın yolu var (adres, telefon). Bölümün 500 öğrencisi için öğrenci işlerinin güncel listesi tam çerçevedir. Türkiye seçmeni için böyle bir liste araştırmacının elinde yoktur: sayıyı bilirsiniz (yaklaşık 60 milyon) ama listesi yoktur.</div>
+          <div class="mini-kutu"><b>Sayı çok büyükse ne olur?</b> İki durumu ayırın. <em>Liste var ama çok uzun:</em> sorun yok, kurayı bilgisayar çeker; 60 milyon satırdan da 1.200 numara çekilir, gereken örneklem evren büyüdükçe büyümez (10. bölüm). Asıl zorluk sahadadır: seçilen 1.200 kişi ülkenin her köşesine dağılır, her birine ayrı gidilir; bu yüzden liste olsa bile çoğu araştırmacı sistematik ya da çok aşamalı tasarıma geçer. <em>Liste yok:</em> basit rassal uygulanamaz; çerçeve parça parça kurulur. İl listesi vardır, seçilen illerde mahalle listesi vardır, seçilen mahallede haneler sahada sayılır, hanede kişiler listelenir. Her aşamada küçük ve tam bir çerçeve olduğu için kura her aşamada adil çekilir. Bu, çok aşamalı örneklemedir (9. bölüm). Kısacası: büyüklük engel değildir, listenin olmaması engeldir.</div></dd>
         <dt>Sistematik rassal örnekleme</dt>
         <dd>Basit rassalla "aynı sonuçları üretebiliyor", daha hızlıdır. Altı adım: (1) evrenin büyüklüğünü (N) hesaplayın; (2) örneklem büyüklüğünü (n) hesaplayın; (3) her birimin temsil edeceği kişi sayısını bulun: <strong>F = N / n</strong> = nüfus büyüklüğü / örneklem büyüklüğü; (4) 1 ile F arasında rassal bir başlangıç seçin; (5) F ekleyerek ilerleyin, denk gelen her birimi alın; (6) örneklem hızla çekilmiş olur. Tam liste yoksa imkânsızdır.</dd>
         <dt>Katmanlama (stratification)</dt>

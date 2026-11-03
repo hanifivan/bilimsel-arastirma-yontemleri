@@ -355,6 +355,14 @@
   .gb-alt { text-align: center; font-size: 12.5px; margin: 1.5rem auto 0; max-width: 1600px; color: var(--gray); }
   .gb-alt a { color: var(--teal); }
 
+/* kitabın birebir tanımları */
+.kitap-tanim { border: 1px solid var(--border); border-left: 5px solid var(--navy); background: #F7F8FC; border-radius: 8px; padding: .8rem 1.1rem; margin: .6rem 0 1rem; }
+.kitap-tanim .kt-bas { font-weight: 800; color: var(--navy); font-size: 13px; letter-spacing: .03em; text-transform: uppercase; margin-bottom: .5rem; }
+.kitap-tanim dl { margin: 0; }
+.kitap-tanim dt { font-weight: 700; color: var(--navy); margin-top: .55rem; font-size: 14px; }
+.kitap-tanim dt .sayfa { font-weight: 400; font-size: 11.5px; color: var(--gray); margin-left: .4rem; }
+.kitap-tanim dd { margin: .15rem 0 0; font-size: 13.5px; line-height: 1.6; color: #2b2f3a; }
+
 </style>
 </head>
 <body>
@@ -362,24 +370,22 @@
 
 <nav id="sidebar">
   <div class="logo">Bilimsel Araştırma Yöntemleri<small>5. Bölüm: Örneklem Nasıl Seçilir?</small></div>
-  <div class="section-label">Giriş</div>
+  <div class="section-label">Kısım 1 · Tanımlar ve genel anlatım</div>
   <a href="#s1">1. Neden Örneklem?</a>
   <a href="#s2">2. Kısa Tarih</a>
   <a href="#s3">3. Temel Kavramlar</a>
   <a href="#s4">4. Örnekleme Çerçevesi</a>
-  <div class="section-label">Kuram</div>
+  <div class="section-label">Kısım 2 · Yöntemler ve formüller</div>
   <a href="#s5">5. MLT ve Hata Payı</a>
   <a href="#s6">6. Olasılıklı mı, Değil mi?</a>
-  <div class="section-label">Yöntemler</div>
   <a href="#s7">7. Olasılıksız Yöntemler</a>
   <a href="#s8">8. Olasılıklı Yöntemler</a>
   <a href="#s9">9. Çok Aşamalı Tasarım</a>
   <a href="#s10">10. Örneklem Hacmi</a>
-  <div class="section-label">Günümüz</div>
   <a href="#s11">11. Günümüz Gerçekleri</a>
   <a href="#s12">12. Nitel Araştırmada Örneklem</a>
   <a href="#s13">13. Saha ve Etik</a>
-  <div class="section-label">Tekrar</div>
+  <div class="section-label">Kısım 3 · Örnekler</div>
   <a href="#s14">14. Kendini Dene</a>
   <a href="#kaynakca">Kaynakça</a>
 </nav>
@@ -389,14 +395,12 @@
 <div class="hero">
   <p style="margin:0 auto 1rem;font-size:14px;font-weight:600;letter-spacing:.02em">Dr. M. Günay VAN</p>
   <h1>Örneklem Nasıl Seçilir?</h1>
-  <div class="sub">Bilimsel Araştırma Yöntemleri, 5. Bölüm: çerçeve, yöntem ve hacim kararları</div>
+  <div class="sub">Bilimsel Araştırma Yöntemleri, 5. Bölüm: önce tanımlar, sonra yöntemler ve formüller, sonra örnekler</div>
   <p>Ders notunun etkileşimli sürümü. Örneklem çekimini canlandırır, hata payını ve örneklem hacmini hesaplar, Merkezi Limit Teoremi'ni simülasyonla gösterir. Bütün hesaplar tarayıcıda çalışır.</p>
   <div class="badges">
-    <span class="badge" style="background:var(--c4)">Çerçeve</span>
-    <span class="badge" style="background:var(--c3)">Olasılıklı</span>
-    <span class="badge" style="background:var(--c1)">Olasılıksız</span>
-    <span class="badge" style="background:var(--c2)">Hacim</span>
-    <span class="badge" style="background:var(--c5)">Nitel</span>
+    <a class="badge" href="#s1" style="background:var(--c4);text-decoration:none">1 · Tanımlar ve genel anlatım</a>
+    <a class="badge" href="#s5" style="background:var(--c3);text-decoration:none">2 · Yöntemler ve formüller</a>
+    <a class="badge" href="#s14" style="background:var(--c2);text-decoration:none">3 · Örnekler</a>
   </div>
   <p style="margin:.6rem auto 0;font-size:13px">Ana kaynaklar: ders sunumu (Van, 2019) ve Erdoğan ile Uyan-Semerci (2021), Toplumsal Araştırma Yöntemleri İçin Bir Rehber, 5. Bölüm</p>
 </div>
@@ -405,19 +409,26 @@
 <div class="section anchor" id="s1" data-odak="1">
   <div class="section-header"><span class="num">1</span> Neden Örneklem?</div>
   <div class="section-body">
-    <p>Uluslararası ilişkiler araştırmacısı sürekli örneklemle çalışır: "Türk kamuoyu NATO'ya nasıl bakıyor?" sorusu 60 milyon seçmene, "Suriyeli mülteciler ne ölçüde uyum sağladı?" sorusu 3 milyon kişiye, "BM Genel Kurulu kararlarında insan hakları söylemi nasıl değişti?" sorusu on binlerce belgeye işaret eder. Hiçbirinin tamamına bakamayız. Bilimsel araştırmanın temel amaçlarından biri <strong>genelleme</strong> yapabilmektir: kendi zamanımızda ve coğrafyamızda topladığımız sınırlı veriden yola çıkarak çok daha geniş bir evren hakkında konuşmak isteriz. Bunu mümkün kılan şey örneklem tasarımıdır. Tasarım kusurluysa bulgular yalnızca veriyi topladığımız kişilerle sınırlı kalır; yani birer anekdot olur.</p>
+    <p><strong>Örneklem nedir, neden tercih edilir?</strong> Bir topluluğun tamamı hakkında bilgi edinmenin iki yolu vardır: herkesi saymak (tamsayım) ya da topluluğun bir parçasını inceleyip sonucu bütüne genellemek (örneklem). On dokuzuncu yüzyılda devletlerin tercihi tamsayımdı; nüfus sayımı gibi her birime ulaşmayı amaçlayan, pahalı ve yavaş bir işti. Oysa bilimsel araştırmanın temel amaçlarından biri <strong>genelleme</strong> yapabilmektir: kendi zamanımızda ve coğrafyamızda topladığımız sınırlı veriden yola çıkarak çok daha geniş bir evren için konuşmak. Örneklem bunu mümkün kılar, çünkü doğru çekilmiş küçük bir parça bütünü belli bir hata payıyla temsil eder. Böylece aynı bilgiye çok daha az para, zaman ve personelle, üstelik çoğu zaman daha az hatayla ulaşılır; sahada binlerce yerine yüzlerce görüşme yapılır, veri daha dikkatli toplanır ve işlenir.</p>
+    <p><strong>İlk kim yaptı?</strong> Fikri bilim dünyasına taşıyan kişi, kendisi de bir devlet görevlisi olan Norveç İstatistik Dairesi Başkanı Anders Kiaer'dir. Kiaer 1895'te Uluslararası İstatistik Enstitüsü (ISI) toplantısında "temsili yöntem" adını verdiği yaklaşımla topladığı verilerin tamsayımla elde edilenler kadar sağlıklı olduğunu savundu; ona göre yöntem yalnız insanları değil, ağaçları ve başka şeyleri saymak için de yararlıydı. Dönemin otoriteleri bu görüşü reddetti, hatta "tartışmaya değmez" buldu. Yine de birkaç on yıl sonra fikir kabul gördü: ISI 1924'te "temsili örneklem" üzerine bir komisyon kurdu ve 1934'te Jerzy Neyman'ın makalesi rassal (olasılıklı) seçimin matematiksel temelini ortaya koydu. Yöntemin bilim dünyasından halkın gündemine geçişi ise anketlerle oldu; 1936 ve 1948 seçim anketleri bu geçişin iki dönüm noktasıdır (2. bölüm).</p>
+    <p>Uluslararası ilişkiler araştırmacısı da sürekli örneklemle çalışır: "Türk kamuoyu NATO'ya nasıl bakıyor?" sorusu 60 milyon seçmene, "Suriyeli mülteciler ne ölçüde uyum sağladı?" sorusu 3 milyon kişiye, "BM Genel Kurulu kararlarında insan hakları söylemi nasıl değişti?" sorusu on binlerce belgeye işaret eder. Hiçbirinin tamamına bakamayız. Bunu mümkün kılan şey örneklem tasarımıdır; tasarım kusurluysa bulgular yalnızca veriyi topladığımız kişilerle sınırlı kalır, yani birer anekdot olur.</p>
     <div class="odak-surum">
-      <div class="g">Uluslararası ilişkiler araştırmacısı sürekli örneklemle çalışır:</div>
+      <div class="g">Örneklem neden tercih edilir?</div>
       <ul>
-        <li>"Türk kamuoyu NATO'ya nasıl bakıyor?" <span class="ok">→</span> 60 milyon seçmen</li>
-        <li>"Suriyeli mülteciler ne ölçüde uyum sağladı?" <span class="ok">→</span> 3 milyon kişi</li>
-        <li>"BM kararlarında insan hakları söylemi nasıl değişti?" <span class="ok">→</span> on binlerce belge</li>
+        <li>İki yol: herkesi saymak (<strong>tamsayım</strong>) ya da bir parçayı inceleyip bütüne genellemek (<strong>örneklem</strong>).</li>
+        <li>Amaç <strong>genelleme</strong>: sınırlı veriden geniş bir evren için konuşmak.</li>
+        <li>Doğru çekilmiş küçük parça bütünü belli bir <strong>hata payıyla</strong> temsil eder; daha az para, zaman, personel ve çoğu zaman daha az hata.</li>
       </ul>
-      <div class="g">Hiçbirinin tamamına bakamayız.</div>
+      <div class="g">İlk kim yaptı?</div>
       <ul>
-        <li>Bilimsel araştırmanın temel amacı <strong>genelleme</strong>: sınırlı veriden geniş bir evren hakkında konuşmak.</li>
-        <li>Bunu mümkün kılan şey <strong>örneklem tasarımı</strong>dır.</li>
-        <li>Tasarım kusurluysa bulgular veriyi topladığımız kişilerle sınırlı kalır: birer <strong>anekdot</strong> olur.</li>
+        <li><strong>Anders Kiaer</strong> (Norveç İstatistik Dairesi), 1895, ISI: "temsili yöntem". Otoriteler reddetti: "tartışmaya değmez".</li>
+        <li>1924: ISI komisyonu; 1934: <strong>Neyman</strong>, rassal seçimin matematiksel temeli.</li>
+        <li>Halkın gündemine anketlerle girdi: 1936 ve 1948 (2. bölüm).</li>
+      </ul>
+      <div class="g">Uluslararası ilişkilerde evrenler</div>
+      <ul>
+        <li>NATO'ya bakış <span class="ok">→</span> 60 milyon seçmen; Suriyeli uyumu <span class="ok">→</span> 3 milyon kişi; BM kararları <span class="ok">→</span> on binlerce belge.</li>
+        <li>Hiçbirinin tamamına bakamayız; tasarım kusurluysa bulgu <strong>anekdot</strong> olur.</li>
       </ul>
     </div>
     <div class="grid3">
@@ -506,6 +517,42 @@
 <div class="section anchor" id="s3" data-odak="1">
   <div class="section-header"><span class="num">3</span> Temel Kavramlar</div>
   <div class="section-body">
+    <p>Bu bölümdeki kavramlar notun geri kalanının temelidir. Önce kitabın tanımlarını olduğu gibi veriyoruz (Erdoğan ve Uyan-Semerci, 2021; sayfa numaraları kitabın baskısına göredir), sonra her kavramı Uluslararası İlişkiler örnekleriyle açıyoruz.</p>
+    <div class="kitap-tanim">
+      <div class="kt-bas">Kitabın tanımları</div>
+      <dl>
+        <dt>Evren <span class="sayfa">s. 76</span></dt>
+        <dd>"Herhangi bir çalışmanın evreni, hakkında bilgi toplamak istediğim kişi, nesne ya da vakaların tamamından oluşur." Evren araştırma sorusuna göre coğrafyayla (Çukurova Bölgesi'ndeki mevsimlik tarım işçileri) ya da yaşla (seçmen 18 yaş ve üstü; genç 15-24, 19-24 ya da 19-29) sınırlanabilir. "Her durumda hangi evren tanımlanmışsa, çalışmanın bulguları da bu evreni temsil eder, yani o evrene genellenebilir."</dd>
+        <dt>Birim <span class="sayfa">s. 77</span></dt>
+        <dd>"Evreni bir küme olarak düşünürsek her bileşenine eleman ya da birim adı veriyoruz. Her bir seçmen, genç, çocuk, geçici koruma statüsündeki Suriyeliler ya da mevsimlik tarım işçisi birer birim olarak tanımlanabilir."</dd>
+        <dt>Örnekleme çerçevesi <span class="sayfa">s. 77</span></dt>
+        <dd>"Örnekleme çerçevesi, araştırma evreninde yer alan ve ulaşmayı hedeflediğiniz bütün kişi ya da nesnelerin aslında var olmayan bir listesi olarak tanımlanabilir. İdeal bir dünyada bu listeler var olurdu ve erişebilirdik, ama değiliz." Çerçeveye kimin dahil edilip kimin dışarıda bırakıldığı açıkça belirtildiği sürece sorun olmaz; ama bulgular çerçevede yer almayan kişilere genellenemez (s. 78).</dd>
+        <dt>Örneklem <span class="sayfa">s. 78</span></dt>
+        <dd>"Örneklem, sizin örneklem çerçevenizden araştırma çalışmanız için seçtiğiniz küçük bir grup insan ya da nesne. Niceliksel araştırmaların amacı bu örneklem istatistiklerinden evrenin parametreleri hakkında bir çıkarım yapmak olarak tanımlanıyor."</dd>
+        <dt>Örnekleme ve hata payı <span class="sayfa">s. 79</span></dt>
+        <dd>Örneklem ortalaması ile evren ortalaması arasında "oluşabilecek farka istatistiksel sapma ya da hata payı diyoruz, onu da hesaplamak mümkün. Ancak burada vurgulanması gereken örnekleme yönteminizin olasılıksal olması koşulu. Örneklem tanımlama sürecine 'örnekleme' adı veriyoruz, örneklemenin nasıl tasarlandığı, geçerliliği olup olmayacağını belirliyor."</dd>
+        <dt>Merkezi Limit Teoremi (MLT) <span class="sayfa">s. 79</span></dt>
+        <dd>"Hangi evren olursa olsun, o evrenden bir küçük örneklem çekip, evren hakkında genelleme yapmamızı sağlayan matematiksel prensibe Merkezi Limit Teoremi (MLT) diyoruz." Kitabın üç maddesi: (1) rassal çekilen örneklemlerin ortalamalarının dağılımı normaldir; (2) bu ortalamaların ortalaması evren ortalamasına eşittir; (3) ortalamaların standart sapması evrenin standart sapmasının örneklem büyüklüğüne (√n) bölümüdür, "buna da standart hata denir". Formülü ve simülasyonu 5. bölümde.</dd>
+        <dt>Güven düzeyi <span class="sayfa">s. 81</span></dt>
+        <dd>"Güven düzeyi, yapacağınız yüz tahminin kaçında yanlış yapmayı göze alırsınız sorusuna verdiğiniz yanıta bağlı olur. %80 güven düzeyinde yüz tahminin yirmisinin, %99 güven düzeyinde yüz tahminin birinin yanlış olmasını kabul edeceğinizi söylemiş olursunuz."</dd>
+        <dt>Olasılıklı ve olasılıklı olmayan yöntemler <span class="sayfa">s. 82</span></dt>
+        <dd>"Olasılıklı yöntemler, evrendeki her birimin örnekleme dahil olma olasılığının hesaplanabildiği ve eşit olduğu yöntemler olarak tanımlanır." Sınıfta 20 öğrenciden 5 kişilik örneklemde her öğrencinin seçilme olasılığı 5/20 = 1/4; 20 milyon seçmenden 1.000 kişide 1.000/20.000.000. Hata payı yalnız olasılıklı yöntemlerde hesaplanabilir. Yöntemlerin kendisi 6-9. bölümlerde.</dd>
+      </dl>
+    </div>
+    <div class="odak-surum">
+      <div class="g">Kitabın tanımları (Erdoğan ve Uyan-Semerci, 2021)</div>
+      <ul>
+        <li><strong>Evren:</strong> "hakkında bilgi toplamak istediğim kişi, nesne ya da vakaların tamamı" (s. 76). Bulgular yalnız tanımlanan evrene genellenir.</li>
+        <li><strong>Birim:</strong> evrenin her bir elemanı (s. 77).</li>
+        <li><strong>Örnekleme çerçevesi:</strong> evrendeki bütün birimlerin "aslında var olmayan bir listesi" (s. 77).</li>
+        <li><strong>Örneklem:</strong> çerçeveden seçilen küçük grup; istatistiklerinden evren parametreleri tahmin edilir (s. 78).</li>
+        <li><strong>Örnekleme:</strong> örneklemi tanımlama süreci; <strong>hata payı:</strong> örneklem ile evren arasındaki fark, yalnız olasılıksal çekimde hesaplanır (s. 79).</li>
+        <li><strong>MLT:</strong> küçük örneklemden evrene genellemeyi sağlayan matematiksel ilke; üç madde (s. 79).</li>
+        <li><strong>Güven düzeyi:</strong> yüz tahminin kaçında yanılmayı göze aldığınız (s. 81).</li>
+        <li><strong>Olasılıklı yöntem:</strong> her birimin seçilme olasılığı hesaplanabilir ve eşit (s. 82).</li>
+      </ul>
+    </div>
+    <h4 style="margin:1.2rem 0 .5rem;color:var(--navy)">Kavramlar Uluslararası İlişkiler örnekleriyle</h4>
     <div class="grid2">
       <div class="card"><span class="tag" style="background:var(--navy)">Evren</span><h4>Hakkında bilgi toplamak istediğimiz birimlerin tümü</h4>Seçim anketinde Türkiye seçmenleri; AB üyeliğine destek çalışmasında 18 yaş üstü nüfus; Türkiye'de yaşayan geçici koruma altındaki Suriyeliler; Dışişleri Bakanlığı'nın meslek memurları; 1990-2025 arası BM Güvenlik Konseyi kararları; Avrupa'daki Türkiye kökenli seçmenler. Evren araştırma sorusuna göre coğrafya, yaş, statü ya da dönem gibi ölçütlerle daraltılır. <strong>Bulgular yalnız tanımlanan evrene genellenir.</strong><div class="ek ek-ornek"><b>Örnek</b>"Türkiye'de gençlerin AB'ye bakışı" dediğinizde genç kimdir? 15-24, 18-24 ya da 18-29. Hangisini seçtiyseniz bulgu yalnız o yaş aralığına genellenir; 30 yaşındaki için hiçbir şey söyleyemezsiniz.</div></div>
       <div class="card"><span class="tag" style="background:var(--navy)">Birim</span><h4>Evrenin her bir elemanı</h4>Her bir seçmen, genç, hane, köy, firma ya da gazete haberi bir birimdir. Birimlerin üst üste çakışmaması ve hiçbirinin dışarıda kalmaması gerekir.<div class="ek ek-tartis"><b>Tartışalım</b>Hane anketinde birim hane mi, kişi mi? 5 kişilik haneden 1 kişiyle görüşürseniz o kişinin seçilme olasılığı tek kişilik hanedekinin beşte biri olur. Bu farkı nasıl düzeltirsiniz? (9. bölüm: Kish tablosu, ağırlık)</div></div>
@@ -648,10 +695,10 @@
     <div class="widget" id="w-sen">
       <div class="sen" id="sen"></div>
     </div>
-    <div class="info-box"><strong>Veri toplama yöntemi de seçimi etkiler (ders notu).</strong> Veri posta ya da telefonla toplanıyorsa basit ya da tabakalı rassal örnekleme tercih edilir. Yüz yüze görüşmede her görüşmenin ulaşım ve anketör maliyeti vardır; evren coğrafi olarak yayıldıkça tabakalı, kota ve özellikle küme örneklemesi, kapsanan alan büyüdükçe çok aşamalı küme örneklemesi tercih edilir (Gray, 2007).</div>
-    <div class="odak-surum"><div class="g">Veri toplama yöntemi de seçimi etkiler (ders notu)</div><ul><li>Veri <strong>posta ya da telefonla</strong> toplanıyorsa basit ya da tabakalı rassal örnekleme tercih edilir.</li><li><strong>Yüz yüze</strong> görüşmede her görüşmenin ulaşım ve anketör maliyeti vardır; evren coğrafi olarak yayıldıkça tabakalı, kota ve özellikle <strong>küme</strong> örneklemesi tercih edilir.</li><li>Kapsanan alan büyüdükçe <strong>çok aşamalı küme</strong> örneklemesi tercih edilir (Gray, 2007).</li></ul><div class="ek ek-sayi"><b>Sayı</b>Yüz yüze ulusal ankette görüşme başına maliyet Türkiye'de 2025 itibarıyla birkaç yüz lira; 81 ile dağılmış basit rassal örneklemde ulaşım maliyeti bunu katlar. Küme örneklemesi yol maliyetini düşürür, karşılığında tasarım etkisi öder (10. bölüm).</div></div>
+    <div class="info-box"><strong>Veri toplama yöntemi de seçimi etkiler (ders notu).</strong> Veri posta ya da telefonla toplanıyorsa basit ya da katmanlı rassal örnekleme tercih edilir. Yüz yüze görüşmede her görüşmenin ulaşım ve anketör maliyeti vardır; evren coğrafi olarak yayıldıkça katmanlı, kota ve özellikle küme örneklemesi, kapsanan alan büyüdükçe çok aşamalı küme örneklemesi tercih edilir (Gray, 2007).</div>
+    <div class="odak-surum"><div class="g">Veri toplama yöntemi de seçimi etkiler (ders notu)</div><ul><li>Veri <strong>posta ya da telefonla</strong> toplanıyorsa basit ya da katmanlı rassal örnekleme tercih edilir.</li><li><strong>Yüz yüze</strong> görüşmede her görüşmenin ulaşım ve anketör maliyeti vardır; evren coğrafi olarak yayıldıkça katmanlı, kota ve özellikle <strong>küme</strong> örneklemesi tercih edilir.</li><li>Kapsanan alan büyüdükçe <strong>çok aşamalı küme</strong> örneklemesi tercih edilir (Gray, 2007).</li></ul><div class="ek ek-sayi"><b>Sayı</b>Yüz yüze ulusal ankette görüşme başına maliyet Türkiye'de 2025 itibarıyla birkaç yüz lira; 81 ile dağılmış basit rassal örneklemde ulaşım maliyeti bunu katlar. Küme örneklemesi yol maliyetini düşürür, karşılığında tasarım etkisi öder (10. bölüm).</div></div>
     <div class="soru-kutu"><div class="im">?</div><div>Kendi çalıştığınız konuyu düşünün: olasılıklı olabilir mi? Yani evrendeki her birimin örnekleminize girme olasılığı hesaplanabilir ve eşit mi? Değilse, bunun bulgularınız için sonucu nedir?</div></div>
-    <div class="odak-surum"><div class="g">Kendi konunuzu düşünün</div><ul><li>Olasılıklı olabilir mi? Evrendeki <strong>her birimin</strong> örnekleminize girme olasılığı hesaplanabilir ve eşit mi?</li><li>Değilse, bunun bulgularınız için <strong>sonucu</strong> nedir?</li></ul><div class="ek ek-tartis"><b>Tartışalım</b>Çoğu lisans ve yüksek lisans tezi kolayda örneklemle yapılır ve yine de "anlamlılık testi" raporlar. Bu testler ne anlama gelir? Dürüst raporlama nasıl olmalı?</div></div>
+    <div class="odak-surum"><div class="g">Kendi konunuzu düşünün</div><ul><li>Olasılıklı olabilir mi? Evrendeki <strong>her birimin</strong> örnekleminize girme olasılığı hesaplanabilir ve eşit mi?</li><li>Değilse, bunun bulgularınız için <strong>sonucu</strong> nedir?</li></ul><div class="ek ek-tartis"><b>Tartışalım</b>Çoğu lisans ve yüksek lisans tezi gelişigüzel (kolayda) örneklemle yapılır ve yine de "anlamlılık testi" raporlar. Bu testler ne anlama gelir? Dürüst raporlama nasıl olmalı?</div></div>
   </div>
 </div>
 
@@ -769,7 +816,7 @@
         <div class="tr"><b>Bedeli</b>Listede her 10. adres köşe dairesiyse (döngü) yanlılık doğar; liste önce karıştırılır.</div>
         <button onclick="evGoster('sistematik')">▶ Canlandırmada göster</button>
         <div class="ek ek-sayi"><b>Sayı</b>N = 24.000 öğrenci, n = 400: F = 60. Başlangıç 17 ise 17, 77, 137, ... Basit rassal ile aynı sonucu çok daha hızlı verir.</div></div>
-      <div class="card tarif"><span class="tag" style="background:var(--c3)">Katmanlı (tabakalı)</span><h4>Her tencereden ayrı kaşık</h4>
+      <div class="card tarif"><span class="tag" style="background:var(--c3)">Katmanlı (kitapta "katmanlama"; tabakalı)</span><h4>Her tencereden ayrı kaşık</h4>
         <div class="tr"><b>Ne gerekir</b>Tam liste + her hanenin katman bilgisi (yerli/göçmen; ya da mahalle, kır/kent).</div>
         <div class="tr"><b>Nasıl yapılır</b>Evren kendi içinde homojen katmanlara bölünür: 1.400 yerli, 600 göçmen. Her katmana nüfusla orantılı pay: 140 yerli, 60 göçmen hane; her katman içinde rassal çekim.</div>
         <div class="tr"><b>Ne elde edilir</b>Göçmen payı <strong>tam olarak</strong> %30; hata payı basit rassaldan düşük. Olasılık her katmanda 0,10: eşit ve bilinir. Pay eşit (100/100) verilirse sonra ağırlıklandırma gerekir.</div>
